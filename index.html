@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFA | Unbiased Franchise Evaluation</title>
-    <meta name="description" content="Olson Franchise Advisory provides unbiased franchise evaluation to help you find the right fit without selling you a brand's pitch.">
+    <title>OFA | Protect Your Family's Future</title>
+    <meta name="description" content="Olson Franchise Advisory helps families make confident franchise decisions through unbiased evaluation. Get clarity on what is right for your future.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="OFA | Unbiased Franchise Evaluation">
-    <meta property="og:description" content="Olson Franchise Advisory provides unbiased franchise evaluation to help you find the right fit without selling you a brand's pitch.">
+    <meta property="og:title" content="OFA | Protect Your Family's Future">
+    <meta property="og:description" content="Olson Franchise Advisory helps families make confident franchise decisions through unbiased evaluation. Get clarity on what is right for your future.">
     <meta property="og:type" content="website">
     
     <!-- Fonts -->
@@ -137,8 +137,16 @@
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--text-secondary);
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+        
+        .hero-stakes {
+            font-size: 1.1rem;
+            color: var(--accent);
             margin-bottom: 40px;
             max-width: 600px;
+            font-style: italic;
         }
         
         .cta-button {
@@ -174,12 +182,7 @@
             color: var(--accent);
         }
         
-        /* Problem Section */
-        .problem {
-            padding: 120px 0;
-            background: var(--bg-secondary);
-        }
-        
+        /* Section Labels */
         .section-label {
             color: var(--accent);
             font-size: 0.85rem;
@@ -193,6 +196,12 @@
             font-family: 'Playfair Display', serif;
             font-size: clamp(2rem, 4vw, 3rem);
             margin-bottom: 24px;
+        }
+        
+        /* Problem Section */
+        .problem {
+            padding: 120px 0;
+            background: var(--bg-secondary);
         }
         
         .problem-grid {
@@ -264,10 +273,82 @@
             font-size: 0.85rem;
         }
         
+        /* Stakes Section */
+        .stakes {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+        }
+        
+        .stakes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+        
+        .stakes-card {
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .stakes-card.success {
+            background: rgba(201, 168, 76, 0.05);
+            border-color: rgba(201, 168, 76, 0.3);
+        }
+        
+        .stakes-card.failure {
+            background: rgba(180, 40, 40, 0.05);
+            border-color: rgba(180, 40, 40, 0.2);
+        }
+        
+        .stakes-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .stakes-card.success h3 {
+            color: var(--accent);
+        }
+        
+        .stakes-card.failure h3 {
+            color: #b42828;
+        }
+        
+        .stakes-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .stakes-card li {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+        
+        .stakes-card li::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 12px;
+            vertical-align: middle;
+        }
+        
+        .stakes-card.success li::before {
+            background: var(--accent);
+        }
+        
+        .stakes-card.failure li::before {
+            background: #b42828;
+        }
+        
         /* Process Section */
         .process {
             padding: 120px 0;
-            background: var(--bg-secondary);
         }
         
         .process-steps {
@@ -345,7 +426,8 @@
         
         /* Responsive */
         @media (max-width: 768px) {
-            .guide-content {
+            .guide-content,
+            .stakes-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -366,9 +448,9 @@
         <div class="container">
             <a href="#" class="logo">Olson Franchise Advisory</a>
             <div class="nav-links">
-                <a href="#problem">The Challenge</a>
+                <a href="#stakes">The Stakes</a>
                 <a href="#process">Our Approach</a>
-                <a href="#contact" class="cta-button" style="padding: 10px 24px; font-size: 0.9rem;">Start Your Evaluation</a>
+                <a href="#contact" class="cta-button" style="padding: 10px 24px; font-size: 0.9rem;">Get Clarity Now</a>
             </div>
         </div>
     </nav>
@@ -377,11 +459,12 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="tagline">Unbiased Franchise Evaluation</span>
-                <h1>Find the Right Fit. Not Another Sales Pitch.</h1>
-                <p class="hero-subtitle">Most franchise advisors represent one brand. Their job is to sell you. Ours is to figure out whether franchise ownership actually fits your situation. If it does, we'll show you which model gives you the best shot at what you're looking for.</p>
+                <span class="tagline">Unbiased Franchise Evaluation for Families</span>
+                <h1>You Are Not Looking for a Sales Pitch. You Are Looking for Clarity.</h1>
+                <p class="hero-subtitle">One of the biggest decisions your family will ever make deserves more than a brand's sales deck. You need an honest answer to one question: does franchise ownership actually fit your situation?</p>
+                <p class="hero-stakes">Because getting this wrong is not an option.</p>
                 <div>
-                    <a href="#contact" class="cta-button">Start Your Evaluation</a>
+                    <a href="#contact" class="cta-button">Get Clarity on What Is Right for Your Family</a>
                     <a href="#process" class="cta-secondary">See How It Works →</a>
                 </div>
             </div>
@@ -391,8 +474,8 @@
     <!-- Problem Section -->
     <section id="problem" class="problem">
         <div class="container">
-            <p class="section-label">The Franchise Decision Is Broken</p>
-            <h2>You Submitted an Inquiry. Here's What Usually Happens Next:</h2>
+            <p class="section-label">Why This Decision Feels So Heavy</p>
+            <h2>You Submitted an Inquiry. Here Is What Usually Happens Next:</h2>
             
             <div class="problem-grid">
                 <div class="problem-card">
@@ -402,12 +485,12 @@
                 
                 <div class="problem-card">
                     <h3>The Pressure Timeline</h3>
-                    <p>"This territory won't last long." "You need to decide by Friday." Real decisions about business ownership don't happen under manufactured urgency. They happen with clarity.</p>
+                    <p>"This territory won't last long." "You need to decide by Friday." Real decisions about business ownership do not happen under manufactured urgency. They happen with clarity.</p>
                 </div>
                 
                 <div class="problem-card">
                     <h3>The Unanswered Question</h3>
-                    <p>"Is franchise ownership even the right move for me?" Most advisors can't answer that honestly. If it isn't the right move, they don't get paid. You deserve someone whose job is to tell you the truth.</p>
+                    <p>"Is franchise ownership even the right move for me?" Most advisors cannot answer that honestly. If it is not the right move, they do not get paid. You deserve someone whose job is to tell you the truth.</p>
                 </div>
             </div>
         </div>
@@ -419,9 +502,10 @@
             <div class="guide-content">
                 <div class="guide-text">
                     <p class="section-label">The OFA Approach</p>
-                    <h2>We Don't Represent Any Franchise Brand. That's the Point.</h2>
-                    <p>Austin works as an independent franchise advisor who evaluates prospects across multiple brands rather than representing one company. His job isn't to sell you a franchise. It's to figure out whether ownership makes sense for your situation, and if it does, which model gives you the best shot at what you're looking for.</p>
-                    <p>If franchise ownership isn't the right path? He'll tell you directly. No obligation at any point.</p>
+                    <h2>I Know How Scary This Decision Is. Let Me Help You Navigate It.</h2>
+                    <p>Austin works as an independent franchise advisor who evaluates prospects across multiple brands rather than representing one company. He understands that you are not just buying a business. You are making a decision about your family's future, your time, and your financial security.</p>
+                    <p>His job is not to sell you a franchise. His job is to figure out whether ownership makes sense for your situation, and if it does, which model gives you the best shot at what you're looking for.</p>
+                    <p>If franchise ownership isn't the right path? He will tell you directly. No obligation at any point.</p>
                     
                     <div class="trust-signals">
                         <div class="signal">
@@ -440,8 +524,36 @@
                 </div>
                 
                 <div style="background: var(--bg-card); padding: 48px; border-radius: 16px; border: 1px solid var(--border); text-align: center;">
-                    <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 24px;">"The best franchise decision isn't about finding the perfect brand. It's about making sure you're evaluating the right options for your specific situation."</p>
+                    <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 24px;">"The best franchise decision is not about finding the perfect brand. It is about making sure you are evaluating the right options for your specific situation."</p>
                     <p style="color: var(--text-secondary); font-style: italic;">Austin, OFA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stakes Section -->
+    <section id="stakes" class="stakes">
+        <div class="container">
+            <p class="section-label">The Real Cost of This Decision</p>
+            <h2 style="text-align: center;">What Happens If You Get This Wrong?</h2>
+            
+            <div class="stakes-grid">
+                <div class="stakes-card failure">
+                    <h3>If You Rush Into the Wrong Choice</h3>
+                    <ul>
+                        <li>You commit to a brand that does not fit your skills, timeline, or goals.</li>
+                        <li>Your family's financial security becomes tied to someone else's sales pitch.</li>
+                        <li>You spend years trying to make a bad decision work instead of starting fresh with clarity.</li>
+                    </ul>
+                </div>
+                
+                <div class="stakes-card success">
+                    <h3>If You Get Clarity First</h3>
+                    <ul>
+                        <li>You walk away from the table knowing exactly what fits your situation and what does not.</li>
+                        <li>Your family's financial security is protected by honest evaluation, not urgency.</li>
+                        <li>You move forward with confidence because you know you made the right choice for your family.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -456,20 +568,20 @@
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Territory Check</h3>
-                    <p>We place a territory availability check on your behalf first. That tells us whether the brand you're interested in is actually available in your area.</p>
+                    <h3>We Handle the Research</h3>
+                    <p>We place a territory availability check on your behalf first. That tells us whether the brand you are interested in is actually available in your area.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Evaluation Framework</h3>
-                    <p>We look at three things: what you're leaving behind, what you need from ownership to make the switch worthwhile, and whether your investment timeline aligns with your constraints.</p>
+                    <h3>We Evaluate Your Situation</h3>
+                    <p>We look at three things: what you are leaving behind, what you need from ownership to make the switch worthwhile, and whether your investment timeline aligns with your constraints.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Honest Recommendation</h3>
-                    <p>You get a clear answer: does franchise ownership make sense for you, and if so, which option gives you the best shot at what you're looking for?</p>
+                    <h3>You Get a Clear Answer</h3>
+                    <p>You get a clear answer: does franchise ownership make sense for you, and if so, which option gives you the best shot at what you are looking for?</p>
                 </div>
             </div>
         </div>
@@ -478,9 +590,9 @@
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <h2>Ready to Find Out If Franchise Ownership Makes Sense for You?</h2>
-            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Tell us what you're interested in, where you are, and what you're hoping to achieve. We'll handle the rest. That includes an honest assessment of whether this is the right move.</p>
-            <a href="mailto:austin@olsoncg.com?subject=Franchise Evaluation Request" class="cta-button">Start Your Free Evaluation</a>
+            <h2>Ready to Find Out If Franchise Ownership Makes Sense for Your Family?</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Tell us what you are interested in, where you are, and what you are hoping to achieve. We will handle the rest. That includes an honest assessment of whether this is the right move.</p>
+            <a href="mailto:austin@olsoncg.com?subject=Franchise Evaluation Request" class="cta-button">Get Clarity on What Is Right for Your Family</a>
         </div>
     </section>
 
