@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFA | Clarity Before You Commit to a Franchise</title>
-    <meta name="description" content="Olson Franchise Advisory helps prospective franchise owners make confident decisions through unbiased evaluation. Get clarity on what is right for your situation.">
+    <meta name="description" content="Olson Franchise Advisory helps prospective franchise owners make confident decisions through unbiased evaluation. JD + 15 years public service background. Get clarity on what is right for your situation.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="OFA | Clarity Before You Commit to a Franchise">
-    <meta property="og:description" content="Olson Franchise Advisory helps prospective franchise owners make confident decisions through unbiased evaluation. Get clarity on what is right for your situation.">
+    <meta property="og:description" content="Olson Franchise Advisory helps prospective franchise owners make confident decisions through unbiased evaluation. JD + 15 years public service background. Get clarity on what is right for your situation.">
     <meta property="og:type" content="website">
     
     <!-- Fonts -->
@@ -141,9 +141,18 @@
             max-width: 600px;
         }
         
+        .hero-credentials {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 40px;
+            max-width: 600px;
+            padding-left: 16px;
+            border-left: 3px solid var(--accent);
+        }
+        
         .hero-stakes {
             font-size: 1.1rem;
-            color: var(--accent);
+            color: var(--text-secondary);
             margin-bottom: 40px;
             max-width: 600px;
             font-style: italic;
@@ -255,6 +264,7 @@
             display: flex;
             gap: 32px;
             margin-top: 40px;
+            flex-wrap: wrap;
         }
         
         .signal {
@@ -273,10 +283,41 @@
             font-size: 0.85rem;
         }
         
+        /* Differentiator Section */
+        .differentiators {
+            padding: 120px 0;
+            background: var(--bg-secondary);
+        }
+        
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .diff-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .diff-card h3 {
+            color: var(--accent);
+            margin-bottom: 16px;
+            font-size: 1.2rem;
+        }
+        
+        .diff-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
         /* Stakes Section */
         .stakes {
             padding: 120px 0;
-            background: var(--bg-secondary);
         }
         
         .stakes-grid {
@@ -349,6 +390,7 @@
         /* Process Section */
         .process {
             padding: 120px 0;
+            background: var(--bg-secondary);
         }
         
         .process-steps {
@@ -448,6 +490,7 @@
         <div class="container">
             <a href="#" class="logo">Olson Franchise Advisory</a>
             <div class="nav-links">
+                <a href="#differentiators">Why OFA</a>
                 <a href="#stakes">The Stakes</a>
                 <a href="#process">Our Approach</a>
                 <a href="#contact" class="cta-button" style="padding: 10px 24px; font-size: 0.9rem;">Get Clarity Now</a>
@@ -459,9 +502,10 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="tagline">Unbiased Franchise Evaluation for Anyone Considering Ownership</span>
+                <span class="tagline">JD + 15 Years Public Service · Unbiased Franchise Evaluation</span>
                 <h1>You Are Not Looking for a Sales Pitch. You Are Looking for Clarity.</h1>
                 <p class="hero-subtitle">One of the biggest decisions you will ever make deserves more than a brand's sales deck. You need an honest answer to one question: does franchise ownership actually fit your situation?</p>
+                <p class="hero-credentials">I am Austin Olson. I have spent 15 years helping people through some of the hardest decisions of their lives. Now I do it for anyone considering franchise ownership.</p>
                 <p class="hero-stakes">Because getting this wrong is not an option.</p>
                 <div>
                     <a href="#contact" class="cta-button">Get Clarity on What Is Right for You</a>
@@ -503,22 +547,39 @@
                 <div class="guide-text">
                     <p class="section-label">The OFA Approach</p>
                     <h2>I Know How Scary This Decision Is. Let Me Help You Navigate It.</h2>
-                    <p>Austin works as an independent franchise advisor who evaluates prospects across multiple brands rather than representing one company. He understands that you are not just buying a business. You are making a decision about your future, your time, and your financial security.</p>
-                    <p>His job is not to sell you a franchise. His job is to figure out whether ownership makes sense for your situation, and if it does, which model gives you the best shot at what you're looking for.</p>
-                    <p>If franchise ownership isn't the right path? He will tell you directly. No obligation at any point.</p>
+                    
+                    <p>I have been an entrepreneur my entire life. Before high school, I was picking apples from a family lot and selling them at the Billings, Montana farmers market every Saturday morning. My dad is a general contractor, so business ownership has always been in my blood.</p>
+                    
+                    <p>But I also genuinely believe in helping people. So I spent 15+ years in public service: behavioral health program management, child welfare systems, school counseling. I worked with at-risk youth, families in crisis, and people who had lost all hope of a better path forward.</p>
+                    
+                    <p>Here is what I learned: counseling was starving my entrepreneurial passion. And trying to help people while constrained by systems and bureaucracy taught me something important. There has to be a better way to change lives for the real.</p>
+                    
+                    <p>So I went to law school (JD, Seattle U 2025), focused on business and entrepreneurial law, and fell in love with entrepreneurship all over again. While researching opportunities, I discovered franchise brokering. And it clicked.</p>
+                    
+                    <p>This is where my two passions finally meet: helping people change their lives AND satisfying my drive for entrepreneurship. Being the person who helps others achieve freedom, economic independence, and entrepreneurial passion gives me a sense of purpose that counseling never did.</p>
+                    
+                    <p>I have also been through this myself. I invested in my own franchise licensing agreement in February 2020. Weeks later, the world shut down. My entire business plan went upside down. The company I bought from collapsed financially during COVID and pulled all their promised support. I scratched and clawed my way to solvency.</p>
+                    
+                    <p>That experience taught me something critical: a true path forward cannot depend on luck or things going our way. We must make sure the plan is so safe and solid that it will survive the inevitable bumps along the way.</p>
+                    
+                    <p>If franchise ownership isn't the right path? I will tell you directly. No obligation at any point.</p>
                     
                     <div class="trust-signals">
                         <div class="signal">
-                            <span class="signal-number">10+</span>
-                            <span class="signal-label">Years Evaluating<br>Franchise Fit</span>
+                            <span class="signal-number">JD</span>
+                            <span class="signal-label">Seattle U<br>School of Law</span>
                         </div>
                         <div class="signal">
-                            <span class="signal-number">50+</span>
-                            <span class="signal-label">Brands Evaluated<br>Across Industries</span>
+                            <span class="signal-number">MS</span>
+                            <span class="signal-label">Psychology<br>(Grand Canyon)</span>
                         </div>
                         <div class="signal">
-                            <span class="signal-number">100%</span>
-                            <span class="signal-label">Unbiased<br>Evaluations</span>
+                            <span class="signal-number">MPA</span>
+                            <span class="signal-label">Public Admin<br>(Midwestern State)</span>
+                        </div>
+                        <div class="signal">
+                            <span class="signal-number">15+</span>
+                            <span class="signal-label">Years Helping People<br>Through Crisis</span>
                         </div>
                     </div>
                 </div>
@@ -526,6 +587,31 @@
                 <div style="background: var(--bg-card); padding: 48px; border-radius: 16px; border: 1px solid var(--border); text-align: center;">
                     <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--accent); margin-bottom: 24px;">"The best franchise decision is not about finding the perfect brand. It is about making sure you are evaluating the right options for your specific situation."</p>
                     <p style="color: var(--text-secondary); font-style: italic;">Austin, OFA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Differentiators Section -->
+    <section id="differentiators" class="differentiators">
+        <div class="container">
+            <p class="section-label">What Makes OFA Different</p>
+            <h2 style="text-align: center;">Most Advisors Want You to Buy. I Want You to Be Right.</h2>
+            
+            <div class="diff-grid">
+                <div class="diff-card">
+                    <h3>I Will Say "No" When It Matters</h3>
+                    <p>The most important thing an advisor can say is no. Not because they don't want your business. But because protecting your financial security matters more than any commission. I have been burned by a franchise deal myself. I know what happens when the plan depends on luck instead of solid fundamentals.</p>
+                </div>
+                
+                <div class="diff-card">
+                    <h3>I Meet You Where You Are</h3>
+                    <p>I am in my comfort zone talking venture capital trends with C-suite executives. And I am equally comfortable talking to a blue-collar plumber wanting to go into business for himself. This is not something I learned from a textbook. It comes from growing up working construction, loading trucks while still in high school, and spending 15 years helping people from every walk of life.</p>
+                </div>
+                
+                <div class="diff-card">
+                    <h3>Your Background Does Not Matter as Much as You Think</h3>
+                    <p>So many people think they need to be wealthy or have a specific background to buy a franchise. That is not true. Many successful franchises require well under $20K total investment. And SBA financing can cover up to 70% of that. The question is not "can I afford it?" It is "is franchise ownership the right move for me?"</p>
                 </div>
             </div>
         </div>
@@ -568,20 +654,20 @@
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>We Handle the Research</h3>
-                    <p>We place a territory availability check on your behalf first. That tells us whether the brand you are interested in is actually available in your area.</p>
+                    <h3>We Understand Your Situation</h3>
+                    <p>Before we look at any brands, I need to understand what you are leaving behind, what you need from ownership to make the switch worthwhile, and whether your investment timeline aligns with your constraints.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>We Evaluate Your Situation</h3>
-                    <p>We look at three things: what you are leaving behind, what you need from ownership to make the switch worthwhile, and whether your investment timeline aligns with your constraints.</p>
+                    <h3>We Evaluate Across Multiple Brands</h3>
+                    <p>I evaluate prospects across 50+ brands in multiple industries. I place territory availability checks on your behalf first. That tells us whether each brand is actually available in your area before we go deeper.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>You Get a Clear Answer</h3>
-                    <p>You get a clear answer: does franchise ownership make sense for you, and if so, which option gives you the best shot at what you are looking for?</p>
+                    <p>You get a clear answer: does franchise ownership make sense for you, and if so, which option gives you the best shot at what you are looking for? If it doesn't make sense, I will tell you that too.</p>
                 </div>
             </div>
         </div>
@@ -591,7 +677,7 @@
     <section id="contact" class="cta-section">
         <div class="container">
             <h2>Ready to Find Out If Franchise Ownership Makes Sense for You?</h2>
-            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Tell us what you are interested in, where you are, and what you are hoping to achieve. We will handle the rest. That includes an honest assessment of whether this is the right move.</p>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">Tell me what you are interested in, where you are, and what you are hoping to achieve. I will handle the rest. That includes an honest assessment of whether this is the right move.</p>
             <a href="mailto:austin@olsoncg.com?subject=Franchise Evaluation Request" class="cta-button">Get Clarity on What Is Right for You</a>
         </div>
     </section>
