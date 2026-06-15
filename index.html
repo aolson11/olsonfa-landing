@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFA | The Franchise Decision Nobody Should Make Alone</title>
-    <meta name="description" content="Olson Franchise Advisory uses clinical psychology, legal analysis, and 15+ years of leadership to help you determine if franchise ownership is actually right for you. Unbiased evaluation. No brand affiliation.">
+    <title>OFA | Corporate Burnout Is a Signal, Not a Life Sentence</title>
+    <meta name="description" content="Olson Franchise Advisory helps burned-out professionals map the gap between where they are and where they could be — before making any ownership decision. Clinical psychology + legal analysis + 15+ years leadership. Unbiased evaluation. No brand affiliation.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="OFA | The Franchise Decision Nobody Should Make Alone">
-    <meta property="og:description" content="Olson Franchise Advisory uses clinical psychology, legal analysis, and 15+ years of leadership to help you determine if franchise ownership is actually right for you. Unbiased evaluation. No brand affiliation.">
+    <meta property="og:title" content="OFA | Corporate Burnout Is a Signal, Not a Life Sentence">
+    <meta property="og:description" content="Olson Franchise Advisory helps burned-out professionals map the gap between where they are and where they could be — before making any ownership decision. Clinical psychology + legal analysis + 15+ years leadership. Unbiased evaluation. No brand affiliation.">
     <meta property="og:type" content="website">
     
     <!-- Fonts -->
@@ -167,6 +167,210 @@
             background: var(--accent-hover);
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3);
+        }
+
+        /* Lead Magnet Section */
+        .lead-magnet {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .lead-magnet-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .lead-magnet-label {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        
+        .lead-magnet h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        
+        .lead-magnet p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .lead-magnet-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        
+        .lead-magnet-form input {
+            flex: 1;
+            padding: 14px 18px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .lead-magnet-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+        }
+        
+        .lead-magnet-form button {
+            padding: 14px 28px;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .lead-magnet-form button:hover {
+            background: var(--accent-hover);
+        }
+        
+        .lead-magnet-note {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 16px;
+            opacity: 0.7;
+        }
+
+        /* Gap Section */
+        .gap-section {
+            padding: 120px 0;
+        }
+        
+        .gap-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 64px;
+        }
+        
+        .gap-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 16px;
+        }
+        
+        .gap-header p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+        }
+        
+        .gap-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .gap-column {
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        
+        .gap-column.current {
+            background: rgba(180, 40, 40, 0.03);
+            border-color: rgba(180, 40, 40, 0.2);
+        }
+        
+        .gap-column.future {
+            background: rgba(201, 168, 76, 0.03);
+            border-color: rgba(201, 168, 76, 0.25);
+        }
+        
+        .gap-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .gap-column.current .gap-label {
+            color: #b42828;
+        }
+        
+        .gap-column.future .gap-label {
+            color: var(--accent);
+        }
+        
+        .gap-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+        
+        .gap-column.current h3 {
+            color: #d4a0a0;
+        }
+        
+        .gap-column.future h3 {
+            color: var(--accent);
+        }
+        
+        .gap-dimension {
+            margin-bottom: 24px;
+        }
+        
+        .gap-dimension-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+        
+        .gap-column.current .gap-dimension-label {
+            color: #a07070;
+        }
+        
+        .gap-column.future .gap-dimension-label {
+            color: #c9a84c;
+        }
+        
+        .gap-dimension p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        .gap-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px;
+        }
+        
+        .gap-arrow {
+            color: var(--accent);
+            font-size: 2rem;
+            opacity: 0.5;
         }
 
         /* Contact Form */
@@ -554,7 +758,8 @@
         /* Responsive */
         @media (max-width: 768px) {
             .guide-content,
-            .stakes-grid {
+            .stakes-grid,
+            .gap-columns {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
@@ -566,6 +771,10 @@
             .nav-links {
                 display: none;
             }
+            
+            .lead-magnet-form {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -575,6 +784,7 @@
         <div class="container">
             <a href="#" class="logo">Olson Franchise Advisory</a>
             <div class="nav-links">
+                <a href="#gap">The Gap</a>
                 <a href="#differentiators">Why OFA</a>
                 <a href="#stakes">The Stakes</a>
                 <a href="#process">Our Approach</a>
@@ -587,14 +797,113 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="tagline">Unbiased Franchise Evaluation</span>
-                <h1>Most People Get Sold Into a Franchise They Shouldn't Buy.</h1>
-                <p class="hero-subtitle">You are not looking for another sales pitch. You need someone who has spent 15 years in government, behavioral health, and courts plus a JD and psychology degree to evaluate whether franchise ownership actually fits your situation.</p>
-                <p class="hero-stakes">Because getting this wrong costs more than money.</p>
+                <span class="tagline">The Franchise Decision Nobody Should Make Alone</span>
+                <h1>Corporate Burnout Is a Signal, Not a Life Sentence.</h1>
+                <p class="hero-subtitle">You are not looking for another sales pitch. You need someone who has spent 15 years in government, behavioral health, and courts plus a JD and psychology degree to map the gap between where you are and where you could be — before making any ownership decision.</p>
+                <p class="hero-stakes">Because getting this wrong costs more than money. And most people don't even know what they're afraid of until someone names it.</p>
                 <div>
                     <a href="#contact" class="cta-button">Get Clarity on What Is Right for You</a>
-                    <a href="#process" class="cta-secondary">See How It Works →</a>
+                    <a href="#gap" class="cta-secondary">See the Gap →</a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Magnet Section -->
+    <section id="lead-magnet" class="lead-magnet">
+        <div class="container">
+            <div class="lead-magnet-inner">
+                <p class="lead-magnet-label">Free Guide</p>
+                <h2>5 Questions to Ask Before Buying a Franchise (So You Don't Waste $100K)</h2>
+                <p>Most people skip the questions that actually matter. Get the framework I use in my first consultation — free.</p>
+                <form class="lead-magnet-form" action="https://formsubmit.co/austin@olsonfa.com" method="POST">
+                    <input type="hidden" name="_subject" value="Lead Magnet Download: 5 Questions Before Buying a Franchise">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://olsonfa.com?submitted=true">
+                    <input type="email" name="Email" placeholder="Your email address" required>
+                    <button type="submit">Download Free</button>
+                </form>
+                <p class="lead-magnet-note">No spam. Unsubscribe anytime. I send one useful insight per week, max.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gap Selling Section: Where You Are / Where You Could Be -->
+    <section id="gap" class="gap-section">
+        <div class="container">
+            <div class="gap-header">
+                <p class="section-label">The Gap Between Where You Are and Where You Could Be</p>
+                <h2>Before You Look at a Single Franchise, Map This First.</h2>
+                <p>Gap Selling isn't about selling. It's about making the gap between your current reality and what's possible feel real — before anyone tries to fill it with their agenda.</p>
+            </div>
+            
+            <div class="gap-columns">
+                <!-- Current State -->
+                <div class="gap-column current">
+                    <span class="gap-label">Where You Are</span>
+                    <h3>The Current Reality</h3>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Facts</p>
+                        <p>You're burned out. Maybe you've been for years. You've tried coping strategies, career pivots, side hustles. Nothing sticks because they treat symptoms, not root causes.</p>
+                    </div>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Problems</p>
+                        <p>You don't know what you actually want — just that what you have isn't working. You've seen enough "follow your passion" advice to be deeply skeptical of anyone who tells you what to do.</p>
+                    </div>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Impact</p>
+                        <p>Your health is deteriorating. Your relationships suffer from irritability and exhaustion. You watch peers who took different paths and wonder if you made the wrong call — or worse, if there's no right call.</p>
+                    </div>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Root Cause</p>
+                        <p>You traded autonomy for stability and discovered that stability without control is just a slower form of insecurity. The system you trusted didn't protect you — it made you dependent on people who don't have your interests at heart.</p>
+                    </div>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Emotion</p>
+                        <p>Fear of making the wrong move. Fear of wasting what's left of your prime years on another dead end. The quiet terror that you're too old to start over and too young to settle.</p>
+                    </div>
+                </div>
+                
+                <!-- Future State -->
+                <div class="gap-column future">
+                    <span class="gap-label">Where You Could Be</span>
+                    <h3>The Other Side of the Gap</h3>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Facts</p>
+                        <p>You own a business that runs because you built it right — not because someone else's playbook says so. Your income is tied to your decisions, not someone else's commission structure.</p>
+                    </div>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Problems Solved</p>
+                        <p>The burnout stops because you control the pace. The uncertainty ends because you chose this deliberately, not by accident. You have a framework for evaluating opportunities instead of reacting to sales pitches.</p>
+                    </div>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Impact</p>
+                        <p>Your health improves because stress comes from meaningful challenges, not meaningless obligations. Your relationships recover because you're present again — not just physically, but mentally and emotionally.</p>
+                    </div>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Root Cause Addressed</p>
+                        <p>You regain autonomy through a proven system rather than reinventing the wheel. The stability you wanted is now self-generated — not dependent on an employer, a market, or anyone else's goodwill.</p>
+                    </div>
+                    
+                    <div class="gap-dimension">
+                        <p class="gap-dimension-label">Emotion</p>
+                        <p>Calm certainty. The kind that comes from knowing you evaluated this honestly — including the possibility that it isn't right for you yet. That honesty is what most people can't give themselves.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gap-divider">
+                <span class="gap-arrow">→</span>
             </div>
         </div>
     </section>
