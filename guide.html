@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Questions Before Buying a Franchise | Free Guide - Olson Franchise Advisory</title>
+    <meta name="description" content="Free guide: 5 questions to ask before buying a franchise so you don't waste $100K. A framework from Olson Franchise Advisory.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="5 Questions Before Buying a Franchise | Free Guide">
+    <meta property="og:description" content="A framework from Olson Franchise Advisory. Before you look at a single brand, answer these five questions.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9494a3;
+            --accent: #c9a84c;
+            --accent-hover: #d4b85e;
+            --border: #2a2a3a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 16px 0;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Guide Hero / Lead Capture */
+        .guide-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .guide-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .guide-hero-content {
+            max-width: 720px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tagline {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            padding: 8px 16px;
+            border: 1px solid var(--accent);
+            border-radius: 4px;
+        }
+        
+        .guide-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+        
+        .guide-hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Lead Capture Form */
+        .lead-capture {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+        
+        .lead-capture h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--accent);
+        }
+        
+        .lead-capture p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+        
+        .lead-capture-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        
+        .lead-capture-form input {
+            padding: 14px 18px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .lead-capture-form input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+        }
+        
+        .lead-capture-form button {
+            padding: 14px 28px;
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .lead-capture-form button:hover {
+            background: var(--accent-hover);
+        }
+        
+        .lead-capture-note {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 16px;
+            opacity: 0.7;
+            text-align: center;
+        }
+        
+        /* Guide Content */
+        .guide-content {
+            padding: 80px 0 120px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .guide-section {
+            margin-bottom: 64px;
+        }
+        
+        .guide-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 24px;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+        
+        .guide-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+        
+        .guide-section p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        
+        .guide-section ul,
+        .guide-section ol {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+        
+        .guide-section li {
+            margin-bottom: 12px;
+        }
+        
+        .guide-section strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .hard-truth {
+            background: rgba(180, 40, 40, 0.05);
+            border-left: 3px solid #b42828;
+            padding: 20px 24px;
+            margin: 32px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .hard-truth p {
+            color: var(--text-primary);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+        
+        .your-move {
+            background: rgba(201, 168, 76, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 20px 24px;
+            margin: 32px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .your-move p {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+        
+        /* Bottom CTA */
+        .guide-cta {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        .guide-cta-inner {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        
+        .guide-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        .guide-cta p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+        }
+        
+        .about-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 48px auto 0;
+            text-align: left;
+        }
+        
+        .about-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 24px;
+        }
+        
+        .about-box ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 32px;
+        }
+        
+        .about-box li {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 12px;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .about-box li::before {
+            content: '—';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        .contact-line {
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 24px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+        
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .lead-capture {
+                padding: 24px;
+            }
+            
+            .guide-content {
+                padding: 60px 0 80px;
+            }
+            
+            .hard-truth,
+            .your-move {
+                padding: 16px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="container">
+        <a href="/" class="logo">OFA</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Guide Hero / Lead Capture -->
+<section class="guide-hero">
+    <div class="container">
+        <div class="guide-hero-content">
+            <span class="tagline">Free Guide</span>
+            <h1>5 Questions to Ask Before Buying a Franchise (So You Don't Waste $100K)</h1>
+            <p class="guide-hero-subtitle">A framework from Olson Franchise Advisory. Before you look at a single brand, answer these five questions.</p>
+            
+            <!-- LEAD CAPTURE FORM -->
+            <!-- 
+                TODO: Replace action URL with your email service endpoint (Mailchimp, ConvertKit, etc.)
+                Current behavior: logs to console for testing. Swap the form action and method below.
+            -->
+            <div class="lead-capture">
+                <h3>Get Your Free Copy</h3>
+                <p>Enter your email and we'll send you the full guide instantly.</p>
+                <form class="lead-capture-form" id="guideForm" action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <button type="submit">Send Me the Guide</button>
+                </form>
+                <p class="lead-capture-note">No spam. Unsubscribe anytime. I send one useful insight per week, max.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Full Guide Content -->
+<article class="guide-content container">
+
+    <!-- Introduction -->
+    <section class="guide-section">
+        <h2>Introduction</h2>
+        <p>Most people start by looking at franchise brands. They browse websites, attend discovery days, and fall in love with a concept that sounds exciting.</p>
+        <p>Then they spend $100K to $500K discovering that the wrong franchise is worse than no franchise at all.</p>
+        <p>This guide gives you the framework I use in my first consultation — before we ever look at a single brand.</p>
+        <p><strong>Answer these five questions honestly. If you can't, that's your first red flag.</strong></p>
+    </section>
+
+    <!-- Question 1 -->
+    <section class="guide-section">
+        <h3>Question 1: Are You Running Toward Something or Away From Something?</h3>
+        <p><strong>Why this matters:</strong> People who escape burnout into franchise ownership usually replace one stressor with another — just a different kind. The difference between success and failure often comes down to whether you're running toward something specific or just away from what you hate.</p>
+        
+        <p>Ask yourself:</p>
+        <ul>
+            <li>What does your ideal day look like 3 years from now? Not the vision board version. The Tuesday in November version.</li>
+            <li>If money were no object, would you still want this kind of business ownership?</li>
+            <li>Can you name three things about franchise operations that genuinely interest you — not just the idea of being your own boss?</li>
+        </ul>
+        
+        <div class="hard-truth">
+            <p><strong>The hard truth:</strong> There is no shame in answering "I'm running away." But if that's where you start, pause. Spend time understanding what you're actually running toward before you invest anything but time and money into a brand.</p>
+        </div>
+    </section>
+
+    <!-- Question 2 -->
+    <section class="guide-section">
+        <h3>Question 2: What Territory Is Actually Available — Not Just Promised?</h3>
+        <p><strong>Why this matters:</strong> Franchisors sell dreams. They will tell you "there's opportunity everywhere" until you sign. The difference between a good franchise and the wrong one often comes down to territory availability in your actual market.</p>
+        
+        <p>What most people don't know:</p>
+        <ul>
+            <li>Many franchises have already sold their best territories to other operators</li>
+            <li>Some brands operate on first-come, first-served basis with no formal territory protection</li>
+            <li>"Exclusive territory" means different things to different franchisors — always read the FDD (Franchise Disclosure Document) carefully</li>
+            <li>Territory availability changes. What's open today may be closed tomorrow</li>
+        </ul>
+        
+        <div class="your-move">
+            <p><strong>Your move:</strong> Before you fall in love with any brand, ask: "Show me your current territory map and tell me what is actually available for someone in my location." If they can't show you a real-time map, that's answer enough.</p>
+        </div>
+    </section>
+
+    <!-- Question 3 -->
+    <section class="guide-section">
+        <h3>Question 3: What Happens When Things Go Wrong? (Because They Will)</h3>
+        <p><strong>Why this matters:</strong> Every franchise owner faces problems. The question isn't whether you'll encounter challenges — it's what support structure exists when they do. This is where most people discover the gap between a franchisor's marketing and their actual operational reality.</p>
+        
+        <p>Questions to ask any franchisor:</p>
+        <ul>
+            <li>What percentage of your current operators are profitable? (Not "most" — what percentage?)</li>
+            <li>Can you connect me with three operators who have been in business 3+ years? Not one. Three.</li>
+            <li>What does your training program actually look like? How many days? In-person or online? Who pays for travel?</li>
+            <li>When an operator struggles, what is the actual support process? Name it step by step.</li>
+            <li>What has changed in your FDD since last year? (If they hesitate here, walk away.)</li>
+        </ul>
+        
+        <div class="hard-truth">
+            <p><strong>The hard truth:</strong> If a franchisor won't put their support commitments in writing inside the FDD, those commitments don't exist. Period.</p>
+        </div>
+    </section>
+
+    <!-- Question 4 -->
+    <section class="guide-section">
+        <h3>Question 4: Does This Franchise Match Who You Actually Are — Not Who You Want to Be?</h3>
+        <p><strong>Why this matters:</strong> Most people evaluate franchises based on budget and passion. Both are necessary but insufficient. The real question is whether your actual strengths, temperament, and lifestyle preferences align with the day-to-day reality of that specific franchise model.</p>
+        
+        <p>Consider:</p>
+        <ul>
+            <li>Do you want a business where you work inside it (hands-on operations) or outside it (management and strategy)? These require completely different skill sets.</li>
+            <li>Are you comfortable with the daily tasks this franchise requires? A cleaning franchise means managing cleaners, not just approving invoices. A food franchise means dealing with health inspections, supply chain issues, and staff turnover — every single day.</li>
+            <li>What is your actual risk tolerance? Not what you tell people at dinner parties. Your real number. The amount of money you could lose without it affecting your family's stability.</li>
+        </ul>
+        
+        <div class="your-move">
+            <p><strong>Your move:</strong> Write down the daily reality of running this franchise — not the fantasy version. Then compare it honestly to your actual skills and temperament. If they don't align, no amount of passion will save you.</p>
+        </div>
+    </section>
+
+    <!-- Question 5 -->
+    <section class="guide-section">
+        <h3>Question 5: What Is Your Exit Strategy?</h3>
+        <p><strong>Why this matters:</strong> Most people never think about selling a franchise until they're already inside one and realize they should have. The resale value, transferability rules, and franchisor approval process vary dramatically between brands — and some franchises are essentially impossible to sell without taking massive losses.</p>
+        
+        <p>What you need to know:</p>
+        <ul>
+            <li>Some franchisors require their approval of any buyer (and can say no for any reason)</li>
+            <li>Some franchises have right-of-first-refusal clauses that let the company buy back at a fraction of market value</li>
+            <li>Some brands have active resale markets; others are essentially dead on arrival if you try to sell</li>
+            <li>The average time to recoup your investment varies wildly between franchise models</li>
+        </ul>
+        
+        <div class="your-move">
+            <p><strong>Your move:</strong> Before signing anything, ask: "What is the typical resale process for this franchise? What percentage of operators successfully exit with a return? Show me the transfer fee schedule." If they can't answer these questions clearly, you're buying blind.</p>
+        </div>
+    </section>
+
+    <!-- Bottom Line -->
+    <section class="guide-section">
+        <h2>The Bottom Line</h2>
+        <p>If you answered these five questions and feel confident in your answers — great. You're ahead of 90% of people who walk into franchise sales meetings.</p>
+        <p>If some of them made you uncomfortable? That's not a reason to stop. It's a reason to slow down, get clarity, and talk to someone who has evaluated hundreds of franchise opportunities from an unbiased position.</p>
+        <p><strong>That's what I do. And the first step is always free.</strong></p>
+    </section>
+
+</article>
+
+<!-- Bottom CTA / About OFA -->
+<section class="guide-cta" id="contact">
+    <div class="container">
+        <div class="guide-cta-inner">
+            <h2>About Olson Franchise Advisory</h2>
+            
+            <div class="about-box">
+                <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">Olson Franchise Advisory helps prospective franchise owners evaluate whether ownership makes sense for their situation — before they invest a single dollar.</p>
+                
+                <ul>
+                    <li>Independent evaluation across 50+ brands</li>
+                    <li>No brand affiliation. No commission from franchisors.</li>
+                    <li>Clinical psychology + legal analysis + 15+ years leadership experience applied to franchise decision-making</li>
+                    <li>If franchise ownership isn't the right move? I will tell you directly.</li>
+                </ul>
+                
+                <p class="contact-line">Get Clarity on What Is Right for You<br>
+                [775] 420-2007 | austin@olsonfa.com | olsonfa.com</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Olson Franchise Advisory. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+// ============================================================
+// LEAD CAPTURE HANDLER — SWAP THIS OUT WHEN CONNECTING TO EMAIL SERVICE
+// ============================================================
+// Current behavior: logs to console for testing (placeholder)
+// To connect to Mailchimp/ConvertKit/etc.:
+//   Option A: Change the form <form action="YOUR_ENDPOINT" method="POST"> above and remove this script
+//   Option B: Replace the fetch() call below with your service's API endpoint
+// ============================================================
+
+document.getElementById('guideForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    
+    // TODO: Replace this with your actual email service integration
+    // Example for Mailchimp: POST to your Mailchimp list endpoint
+    // Example for ConvertKit: POST to your ConvertKit form endpoint
+    
+    console.log('Lead captured:', { name, email });
+    
+    // Placeholder success state — swap with real redirect/thank-you page later
+    const btn = this.querySelector('button');
+    btn.textContent = 'Check Your Email!';
+    btn.disabled = true;
+    btn.style.background = '#2d8a4e';
+    
+    setTimeout(() => {
+        alert(`Thanks ${name}! In production, you'd receive the guide at ${email}.`);
+        btn.textContent = 'Send Me the Guide';
+        btn.disabled = false;
+        btn.style.background = '';
+    }, 1500);
+});
+</script>
+
+</body>
+</html>
