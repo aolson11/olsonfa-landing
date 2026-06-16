@@ -6,8 +6,24 @@ Single Vercel project (`olsonfa-landing`) supports multiple custom domains for c
 ## Current Domains
 | Domain | Purpose | Status |
 |--------|---------|--------|
-| `olsonfa.com` / `www.olsonfa.com` | Main brand site | Live |
-| `[other domain]` | [Pending - add campaign name] | Not yet configured |
+| `olsonfa.com` / `www.olsonfa.com` | Main brand site (franchise advisory) | Live |
+| `olsoncg.com` | Parent LLC — Olson Consulting Group | DNS needs verification, page ready |
+
+## Domain: olsoncg.com (Olson Consulting Group)
+- **LLC name**: Olson Consulting Group
+- **Campaign page**: `/campaigns/olsoncg.html` (ready to deploy)
+- **Purpose**: Parent brand / consulting umbrella — can host multiple franchise campaigns under one roof
+- **Status**: Page created, alias pending DNS verification in Vercel dashboard
+
+### To Activate olsoncg.com
+1. Add `olsoncg.com` as a site in your Vercel dashboard (Settings → Domains)
+2. Verify DNS ownership (add the CNAME/A records Vercel provides to your domain registrar)
+3. Once verified, alias it: `vercel alias add olsoncg.com`
+4. Deploy: `vercel deploy --prod --yes`
+
+### Why Two Domains?
+- **olsonfa.com** = Franchise broker brand (StoryBrand positioning, guide framework)
+- **olsoncg.com** = Parent LLC / consulting umbrella (broader positioning, can host multiple campaigns)
 
 ## How to Add a New Campaign Domain
 

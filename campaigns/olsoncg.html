@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olson Consulting Group | Franchise Evaluation & Advisory</title>
+    <meta name="description" content="Olson Consulting Group — clinical franchise evaluation for serious buyers. Austin Olson, J.D., helps entrepreneurs navigate franchise ownership with analytical rigor and behavioral insight.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --navy: #1a2332;
+            --blue: #2d5f8a;
+            --gold: #c9a84c;
+            --light-gold: #f5e6b8;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-600: #6b7280;
+            --gray-800: #1f2937;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--gray-800);
+            line-height: 1.6;
+            background: var(--white);
+        }
+        
+        .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+        
+        /* Navigation */
+        nav {
+            background: var(--navy);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: var(--white);
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        
+        .logo span { color: var(--gold); }
+        
+        .nav-cta {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+        
+        .nav-cta:hover { background: #b8953f; }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #2a3d56 100%);
+            color: var(--white);
+            padding: 100px 0 80px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-sub {
+            font-size: 18px;
+            color: rgba(255,255,255,0.8);
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.2s, background 0.2s;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            background: #b8953f;
+        }
+        
+        /* Section styles */
+        section { padding: 80px 0; }
+        
+        .section-label {
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            color: var(--navy);
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+        
+        .section-text {
+            font-size: 17px;
+            color: var(--gray-600);
+            max-width: 680px;
+            line-height: 1.8;
+        }
+        
+        /* Pain points */
+        .pain-section { background: var(--gray-50); }
+        
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 48px;
+        }
+        
+        .pain-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 10px;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        
+        .pain-card h3 {
+            font-size: 17px;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+        
+        .pain-card p {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        /* How it works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+        
+        .step-num {
+            width: 48px;
+            height: 48px;
+            background: var(--gold);
+            color: var(--navy);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .step-card h3 {
+            font-size: 18px;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        
+        .step-card p {
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+        
+        /* Bio */
+        .bio-section { background: var(--navy); color: var(--white); }
+        
+        .bio-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-top: 48px;
+        }
+        
+        .bio-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 12px;
+            background: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 14px;
+        }
+        
+        .bio-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+        
+        .bio-cred {
+            color: var(--gold);
+            font-size: 15px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .bio-text p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--gold) 0%, #d4b45a 100%);
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cta-section h2 { color: var(--navy); margin-bottom: 16px; }
+        
+        .cta-section p {
+            font-size: 17px;
+            color: rgba(26,35,50,0.7);
+            max-width: 500px;
+            margin: 0 auto 32px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.2s, background 0.2s;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background: #2a3d56;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-800);
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            padding: 40px 0;
+            font-size: 13px;
+        }
+        
+        footer a { color: var(--gold); text-decoration: none; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .pain-grid, .steps-grid { grid-template-columns: 1fr; }
+            .bio-grid { grid-template-columns: 1fr; text-align: center; }
+            .bio-photo { margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="container nav-inner">
+        <a href="#" class="logo">Olson<span>CG</span></a>
+        <a href="#contact" class="nav-cta">Schedule Your Evaluation</a>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <h1>Don't Buy a Franchise Until You Know This</h1>
+        <p class="hero-sub">Clinical franchise evaluation for serious buyers. Austin Olson, J.D., helps entrepreneurs navigate franchise ownership with analytical rigor and behavioral insight.</p>
+        <a href="#contact" class="hero-cta">Get Your Free Assessment</a>
+    </div>
+</section>
+
+<!-- Pain Points -->
+<section class="pain-section">
+    <div class="container">
+        <p class="section-label">The Problem</p>
+        <h2>You're Not Alone in Feeling Stuck</h2>
+        <p class="section-text">Most people who come to us share the same three frustrations:</p>
+        
+        <div class="pain-grid">
+            <div class="pain-card">
+                <h3>"I've been thinking about this for years"</h3>
+                <p>You have the drive and some capital, but every franchise opportunity looks the same on paper. You need clarity, not more brochures.</p>
+            </div>
+            <div class="pain-card">
+                <h3>"I don't want to lose what I've built"</h3>
+                <p>You understand the risk. A bad franchise decision can wipe out years of savings and stability. You need someone who reads between the lines.</p>
+            </div>
+            <div class="pain-card">
+                <h3>"I need an honest answer, not a sales pitch"</h3>
+                <p>Franchise brokers earn commission whether you buy or not. You deserve an advisor whose only job is to tell you the truth — even if that means waiting.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section>
+    <div class="container">
+        <p class="section-label">How It Works</p>
+        <h2>A Clear Path From Confusion to Confidence</h2>
+        
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h3>Free Assessment Call</h3>
+                <p>We discuss your goals, budget, risk tolerance, and timeline. No pitch — just a clinical evaluation of whether franchise ownership makes sense for you right now.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h3>Franchise Matching & Analysis</h3>
+                <p>If it's the right path, we identify and evaluate franchises that match your profile — including territory availability, financial requirements, and growth potential.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h3>Informed Decision</h3>
+                <p>You get a clear recommendation with the data to back it up. If now isn't the right time, we'll tell you that too — and what to work toward.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bio -->
+<section class="bio-section">
+    <div class="container">
+        <p class="section-label" style="color: var(--gold);">Your Advisor</p>
+        <h2>Built for This Work</h2>
+        
+        <div class="bio-grid">
+            <div class="bio-photo">[Photo]</div>
+            <div class="bio-text">
+                <h3>Austin Olson, J.D.</h3>
+                <p class="bio-cred">M.S. Psychology · M.P.A. Public Administration · M.Ed. Education</p>
+                
+                <p>Austin spent 15+ years in high-stakes environments — child welfare, juvenile justice, behavioral health policy — before earning his J.D. and applying that same analytical rigor to franchise advisory.</p>
+                
+                <p>What sets him apart isn't just the credentials. It's the ability to read between the lines of a Franchise Disclosure Document, spot territory risks other brokers miss, and match buyers with franchises they're actually suited for — not just ones paying commission.</p>
+                
+                <p><em>"The best time to plant an oak tree is 20 years ago. The second best time is right now."</em></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+    <div class="container">
+        <h2>Ready to Stop Wondering and Start Knowing?</h2>
+        <p>Your free assessment call takes 15 minutes. No commitment, no pitch — just clarity.</p>
+        <a href="mailto:austin@olsoncg.com" class="cta-btn">Schedule Your Free Assessment</a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Olson Consulting Group. All rights reserved.</p>
+        <p style="margin-top: 8px;">Austin Olson, J.D. | <a href="mailto:austin@olsoncg.com">austin@olsoncg.com</a></p>
+    </div>
+</footer>
+
+</body>
+</html>
