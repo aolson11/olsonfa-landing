@@ -418,14 +418,14 @@
             <p class="guide-hero-subtitle">A framework from Olson Franchise Advisory. Before you look at a single brand, answer these five questions.</p>
             
             <!-- LEAD CAPTURE FORM -->
-            <!-- 
-                TODO: Replace action URL with your email service endpoint (Mailchimp, ConvertKit, etc.)
-                Current behavior: logs to console for testing. Swap the form action and method below.
-            -->
             <div class="lead-capture">
                 <h3>Get Your Free Copy</h3>
                 <p>Enter your email and we'll send you the full guide instantly.</p>
-                <form class="lead-capture-form" id="guideForm" action="#" method="POST">
+                <form class="lead-capture-form" action="https://formsubmit.co/austin@olsoncg.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Guide Download Request from olsonfa.com">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://olsonfa.com/thankyou.html">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <button type="submit">Send Me the Guide</button>
@@ -576,44 +576,6 @@
         <p>&copy; 2026 Olson Franchise Advisory. All rights reserved.</p>
     </div>
 </footer>
-
-<script>
-// ============================================================
-// LEAD CAPTURE HANDLER - SWAP THIS OUT WHEN CONNECTING TO EMAIL SERVICE
-// ============================================================
-// Current behavior: logs to console for testing (placeholder)
-// To connect to Mailchimp/ConvertKit/etc.:
-//   Option A: Change the form <form action="YOUR_ENDPOINT" method="POST"> above and remove this script
-//   Option B: Replace the fetch() call below with your service's API endpoint
-// ============================================================
-
-document.getElementById('guideForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    const formData = new FormData(this);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    
-    // TODO: Replace this with your actual email service integration
-    // Example for Mailchimp: POST to your Mailchimp list endpoint
-    // Example for ConvertKit: POST to your ConvertKit form endpoint
-    
-    console.log('Lead captured:', { name, email });
-    
-    // Placeholder success state - swap with real redirect/thank-you page later
-    const btn = this.querySelector('button');
-    btn.textContent = 'Check Your Email!';
-    btn.disabled = true;
-    btn.style.background = '#2d8a4e';
-    
-    setTimeout(() => {
-        alert(`Thanks ${name}! In production, you'd receive the guide at ${email}.`);
-        btn.textContent = 'Send Me the Guide';
-        btn.disabled = false;
-        btn.style.background = '';
-    }, 1500);
-});
-</script>
 
 </body>
 </html>
