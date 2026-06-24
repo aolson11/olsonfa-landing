@@ -1,9 +1,8 @@
 {
   "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
+    {"source": "/thankyou", "destination": "/thankyou.html"},
+    {"source": "/guide", "destination": "/guide.html"},
+    {"source": "/(.*)", "destination": "/index.html"}
   ],
   "headers": [
     {
