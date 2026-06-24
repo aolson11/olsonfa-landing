@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFA | Franchise Fit Assessment</title>
+    <meta name="description" content="A structured assessment to determine if franchise ownership makes sense for you. Covers financial readiness, experience alignment, and territory availability. Austin Olson, J.D.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="OFA | Franchise Fit Assessment">
+    <meta property="og:description" content="Structured assessment covering financial readiness, experience alignment, and territory availability. No brand-first sales.">
+    <meta property="og:type" "website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9494a3;
+            --accent: #c9a84c;
+            --accent-hover: #d4b85e;
+            --border: #2a2a3a;
+            --success: #4ade80;
+            --warning: #fbbf24;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 32px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 40px 0 80px;
+        }
+
+        .form-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 48px;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .form-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .progress-bar::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--border);
+            z-index: 1;
+        }
+
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .progress-step.completed {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        /* Form Steps */
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+        }
+
+        .step-subtitle {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .label-hint {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .radio-option,
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            padding: 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .radio-option:hover,
+        .checkbox-option:hover {
+            border-color: var(--accent);
+        }
+
+        .radio-option input,
+        .checkbox-option input {
+            margin-right: 12px;
+            accent-color: var(--accent);
+        }
+
+        .radio-option.selected,
+        .checkbox-option.selected {
+            border-color: var(--accent);
+            background: rgba(201, 168, 76, 0.1);
+        }
+
+        /* Financial Section Styling */
+        .financial-section {
+            margin-bottom: 32px;
+        }
+
+        .financial-section h4 {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .financial-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .financial-grid .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .financial-total {
+            background: rgba(201, 168, 76, 0.05);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+
+        .financial-total label {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Info Callout */
+        .info-callout {
+            background: rgba(201, 168, 76, 0.05);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-callout p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Buttons */
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Guide Section */
+        .guide-section {
+            padding: 80px 0;
+            background: var(--bg-secondary);
+        }
+
+        .guide-card {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .guide-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 24px;
+        }
+
+        .guide-credentials {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+
+        .credential {
+            text-align: center;
+        }
+
+        .credential-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .credential-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .success-message.active {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .form-card {
+                padding: 32px 24px;
+            }
+
+            .button-group {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .financial-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">OFA</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/guide.html">About Austin</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Franchise Fit Assessment</h1>
+            <p>A structured evaluation covering financial readiness, experience alignment, and territory availability. Takes about 8 minutes.</p>
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="form-section" id="assessment">
+        <div class="container">
+            <div class="form-card">
+                <div class="progress-bar">
+                    <div class="progress-step active" data-step="1">1</div>
+                    <div class="progress-step" data-step="2">2</div>
+                    <div class="progress-step" data-step="3">3</div>
+                    <div class="progress-step" data-step="4">4</div>
+                </div>
+
+                <form id="assessment-form" action="https://formsubmit.co/austin@olsoncg.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Franchise Fit Assessment Submission">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="/thankyou.html">
+
+                    <!-- STEP 1: Personal Background -->
+                    <div class="form-step active" data-step="1">
+                        <h3 class="step-title">Personal Background</h3>
+                        <p class="step-subtitle">Help me understand who you are and what you're working with.</p>
+
+                        <div class="info-callout">
+                            <p>This information stays confidential. It helps me match you with franchises that fit your actual situation, not a generic profile.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="full-name">Full Name *</label>
+                            <input type="text" id="full-name" name="full_name" required placeholder="Your full name">
+                        </div>
+
+                        <div class="financial-grid">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                            </div>
+                        </div>
+
+                        <div class="financial-grid">
+                            <div class="form-group">
+                                <label for="city-state">City, State</label>
+                                <input type="text" id="city-state" name="location" placeholder="Where you live now">
+                            </div>
+                            <div class="form-group">
+                                <label for="marital-status">Marital Status</label>
+                                <select id="marital-status" name="marital_status">
+                                    <option value="">Select one</option>
+                                    <option value="single">Single</option>
+                                    <option value="married">Married</option>
+                                    <option value="divorced">Divorced</option>
+                                    <option value="widowed">Widowed</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group" id="partner-field" style="display:none;">
+                            <label for="partner-name">Partner/Spouse Name</label>
+                            <input type="text" id="partner-name" name="partner_name" placeholder="Their full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Will your partner be involved in the business or decision?</label>
+                            <div class="radio-group">
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="partner_involvement" value="yes-active"> Yes, actively involved
+                                </label>
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="partner_involvement" value="yes-decision"> Yes, in the decision only
+                                </label>
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="partner_involvement" value="no"> No
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <a href="/" class="btn btn-secondary">Cancel</a>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(2)">Continue →</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 2: Financial Readiness -->
+                    <div class="form-step" data-step="2">
+                        <h3 class="step-title">Financial Profile</h3>
+                        <p class="step-subtitle">Estimates are fine. This helps me understand your financing options.</p>
+
+                        <div class="info-callout">
+                            <p>All fields are estimates. You can skip anything you're unsure about. Nothing here is a commitment or affects your credit score.</p>
+                        </div>
+
+                        <!-- Assets -->
+                        <div class="financial-section">
+                            <h4>Liquid & Investable Assets</h4>
+                            <div class="financial-grid">
+                                <div class="form-group">
+                                    <label for="checking-savings">Checking & Savings Accounts</label>
+                                    <input type="text" id="checking-savings" name="assets_checking_savings" placeholder="$0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="stocks-bonds">Stocks & Bonds</label>
+                                    <input type="text" id="stocks-bonds" name="assets_stocks_bonds" placeholder="$0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="receivables">Accounts/Notes Receivable</label>
+                                    <span class="label-hint">Money owed to you</span>
+                                    <input type="text" id="receivables" name="assets_receivables" placeholder="$0">
+                                </div>
+                                <div class="form-group financial-total">
+                                    <label for="liquid-total">Total Liquid Assets (Lines 1-3)</label>
+                                    <input type="text" id="liquid-total" name="assets_liquid_total" placeholder="$0" readonly style="background: rgba(201,168,76,0.05); border-color: var(--accent);">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Retirement & Business Equity -->
+                        <div class="financial-section">
+                            <h4>Retirement & Business Equity</h4>
+                            <div class="financial-grid">
+                                <div class="form-group">
+                                    <label for="ira-pension">IRA & Pension Funds</label>
+                                    <span class="label-hint">401k, IRA, pension balances</span>
+                                    <input type="text" id="ira-pension" name="assets_ira_pension" placeholder="$0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="business-equity">Equity in Businesses Owned</label>
+                                    <input type="text" id="business-equity" name="assets_business_equity" placeholder="$0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Real Estate -->
+                        <div class="financial-section">
+                            <h4>Real Estate</h4>
+                            <div class="financial-grid">
+                                <div class="form-group">
+                                    <label for="primary-residence">Primary Residence Value</label>
+                                    <input type="text" id="primary-residence" name="assets_primary_residence" placeholder="$0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="other-real-estate">Other Real Estate Value</label>
+                                    <input type="text" id="other-real-estate" name="assets_other_real_estate" placeholder="$0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Liabilities -->
+                        <div class="financial-section">
+                            <h4>Liabilities</h4>
+                            <div class="financial-grid">
+                                <div class="form-group">
+                                    <label for="primary-mortgage">Mortgage on Primary Residence</label>
+                                    <input type="text" id="primary-mortgage" name="liab_primary_mortgage" placeholder="$0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="other-mortgage">Mortgage on Other Real Estate</label>
+                                    <input type="text" id="other-mortgage" name="liab_other_mortgage" placeholder="$0">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="other-liabilities">Other Liabilities</label>
+                                    <span class="label-hint">Loans, credit cards, other debts</span>
+                                    <input type="text" id="other-liabilities" name="liab_other" placeholder="$0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Net Worth Summary -->
+                        <div class="financial-total" style="margin-top: 24px;">
+                            <div class="financial-grid">
+                                <div class="form-group">
+                                    <label for="total-assets">Total Assets</label>
+                                    <input type="text" id="total-assets" name="assets_total" placeholder="$0" readonly style="background: rgba(201,168,76,0.05); border-color: var(--accent); font-weight: 700;">
+                                </div>
+                                <div class="form-group">
+                                    <label for="total-liabilities">Total Liabilities</label>
+                                    <input type="text" id="total-liabilities" name="liabilities_total" placeholder="$0" readonly style="background: rgba(201,168,76,0.05); border-color: var(--accent); font-weight: 700;">
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-top: 16px;">
+                                <label for="net-worth">Estimated Net Worth</label>
+                                <input type="text" id="net-worth" name="net_worth" placeholder="$0" readonly style="background: rgba(201,168,76,0.05); border-color: var(--accent); font-weight: 700; font-size: 1.2rem;">
+                            </div>
+                        </div>
+
+                        <!-- Income -->
+                        <div class="financial-section" style="margin-top: 32px;">
+                            <h4>Annual Income</h4>
+                            <div class="financial-grid">
+                                <div class="form-group">
+                                    <label for="your-income">Your Salary/Bonus/Commissions</label>
+                                    <input type="text" id="your-income" name="income_your" placeholder="$0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="spouse-income">Spouse Salary/Bonus/Commissions</label>
+                                    <input type="text" id="spouse-income" name="income_spouse" placeholder="$0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="business-income">Income from Business Owned</label>
+                                    <input type="text" id="business-income" name="income_business" placeholder="$0">
+                                </div>
+                                <div class="form-group">
+                                    <label for="other-income">Other Income</label>
+                                    <input type="text" id="other-income" name="income_other" placeholder="$0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <a href="#" class="btn btn-secondary" onclick="prevStep(1)">← Back</a>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(3)">Continue →</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: Business Readiness -->
+                    <div class="form-step" data-step="3">
+                        <h3 class="step-title">Business Readiness</h3>
+                        <p class="step-subtitle">This helps me understand your starting point and what kind of support you'll need.</p>
+
+                        <!-- Education -->
+                        <div class="form-group">
+                            <label>Your Highest Education Level</label>
+                            <select id="education" name="education_level">
+                                <option value="">Select one</option>
+                                <option value="high-school">High School</option>
+                                <option value="vocational">Vocational Training</option>
+                                <option value="2-year">2-Year College</option>
+                                <option value="4-year">4-Year College Degree</option>
+                                <option value="graduate">Graduate Degree(s)</option>
+                                <option value="other-education">Other Education/Training</option>
+                            </select>
+                        </div>
+
+                        <!-- Work Experience -->
+                        <div class="form-group">
+                            <label for="work-experience">Describe Your Work Experience or Professional Background</label>
+                            <span class="label-hint">Include any businesses you've owned</span>
+                            <textarea id="work-experience" name="work_experience" placeholder="e.g., 10 years in construction management, previously ran a small retail store..."></textarea>
+                        </div>
+
+                        <!-- Veteran Status -->
+                        <div class="form-group">
+                            <label>Veteran Status</label>
+                            <div class="radio-group">
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="veteran_status" value="yes"> Yes
+                                </label>
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="veteran_status" value="no"> No
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Why Self-Employment -->
+                        <div class="form-group">
+                            <label for="why-self-employment">Why are you looking at self-employment or franchise ownership?</label>
+                            <textarea id="why-self-employment" name="why_self_employment" placeholder="What's driving this decision now?"></textarea>
+                        </div>
+
+                        <!-- Who Else Involved -->
+                        <div class="form-group">
+                            <label for="who-involved">Who else will be involved in the business or in the decision to acquire a business?</label>
+                            <span class="label-hint">Partners, family members, advisors. Feel free to have them fill out a separate questionnaire.</span>
+                            <textarea id="who-involved" name="who_involved" placeholder="Names and roles of anyone involved..."></textarea>
+                        </div>
+
+                        <!-- Timeline -->
+                        <div class="form-group">
+                            <label>What is your timeline for ownership?</label>
+                            <div class="radio-group">
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="timeline" value="ready-now"> I'm ready now / yesterday
+                                </label>
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="timeline" value="3-6-months"> 3-6 months
+                                </label>
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="timeline" value="1-3-years"> 1-3 years
+                                </label>
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="timeline" value="when-funds"> When I have the funds
+                                </label>
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="timeline" value="exploring"> I'm just exploring my options
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Capital -->
+                        <div class="financial-grid">
+                            <div class="form-group">
+                                <label for="available-capital">Available Liquid Capital</label>
+                                <span class="label-hint">Cash you can put toward this right now</span>
+                                <input type="text" id="available-capital" name="available_liquid_capital" placeholder="$0">
+                            </div>
+                            <div class="form-group">
+                                <label for="total-invest">Total Amount Willing to Invest</label>
+                                <span class="label-hint">Including financing if needed</span>
+                                <input type="text" id="total-invest" name="total_investment_willing" placeholder="$0">
+                            </div>
+                        </div>
+
+                        <!-- Financing -->
+                        <div class="form-group">
+                            <label>Will you want help with financing?</label>
+                            <div class="radio-group">
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="financing_help" value="yes"> Yes
+                                </label>
+                                <label class="radio-option" onclick="selectRadio(this)">
+                                    <input type="radio" name="financing_help" value="no"> No
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Prior Research -->
+                        <div class="form-group">
+                            <label for="prior-franchises">Have you spoken with any franchises recently or completed any online applications?</label>
+                            <textarea id="prior-franchises" name="prior_franchise_research" placeholder="List the brands and what stage you're at..."></textarea>
+                        </div>
+
+                        <!-- Business Knowledge -->
+                        <div class="form-group">
+                            <label>How would you describe your business knowledge?</label>
+                            <select id="business-knowledge" name="business_knowledge_level">
+                                <option value="">Select one</option>
+                                <option value="just-starting">Just starting out</option>
+                                <option value="reading-researching">Reading and researching</option>
+                                <option value="some-courses">Some business courses</option>
+                                <option value="business-owner">Current/former business owner</option>
+                                <option value="family-business">Family is in business</option>
+                                <option value="business-degree">Business degree(s)</option>
+                                <option value="moderate">Moderate level of knowledge and experience</option>
+                                <option value="high">High level of knowledge and experience</option>
+                            </select>
+                        </div>
+
+                        <!-- Franchise Knowledge -->
+                        <div class="form-group">
+                            <label>How would you describe your franchise knowledge?</label>
+                            <select id="franchise-knowledge" name="franchise_knowledge_level">
+                                <option value="">Select one</option>
+                                <option value="no-knowledge">No knowledge</option>
+                                <option value="online-magazines">Online and magazines</option>
+                                <option value="reading-researching">Reading and researching</option>
+                                <option value="franchise-owner">Current/former franchise owner</option>
+                                <option value="worked-franchise">Worked in a franchise</option>
+                                <option value="moderate">Moderate level of knowledge and experience</option>
+                                <option value="high">High level of knowledge and experience</option>
+                            </select>
+                        </div>
+
+                        <div class="button-group">
+                            <a href="#" class="btn btn-secondary" onclick="prevStep(2)">← Back</a>
+                            <button type="button" class="btn btn-primary" onclick="nextStep(4)">Continue →</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 4: Preferences & Contact -->
+                    <div class="form-step" data-step="4">
+                        <h3 class="step-title">Your Preferences</h3>
+                        <p class="step-subtitle">The final piece. This helps me narrow down the right franchises for you.</p>
+
+                        <!-- Location Preference -->
+                        <div class="form-group">
+                            <label for="location-pref">Geographic Choice -- First Priority</label>
+                            <input type="text" id="location-pref" name="geo_choice_1" placeholder="City, State or 'Nationwide'">
+                        </div>
+
+                        <div class="financial-grid">
+                            <div class="form-group">
+                                <label for="geo-choice-2">Geographic Choice -- Second Priority</label>
+                                <input type="text" id="geo-choice-2" name="geo_choice_2" placeholder="City, State or 'Open to relocation'">
+                            </div>
+                            <div class="form-group">
+                                <label for="geo-choice-3">Geographic Choice -- Third Priority</label>
+                                <input type="text" id="geo-choice-3" name="geo_choice_3" placeholder="City, State or 'N/A'">
+                            </div>
+                        </div>
+
+                        <!-- Industries -->
+                        <div class="form-group">
+                            <label>Which industries interest you? (Select all that apply)</label>
+                            <div class="checkbox-group">
+                                <label class="checkbox-option" onclick="toggleCheckbox(this)">
+                                    <input type="checkbox" name="industries[]" value="food-beverage"> Food & Beverage
+                                </label>
+                                <label class="checkbox-option" onclick="toggleCheckbox(this)">
+                                    <input type="checkbox" name="industries[]" value="health-wellness"> Health & Wellness
+                                </label>
+                                <label class="checkbox-option" onclick="toggleCheckbox(this)">
+                                    <input type="checkbox" name="industries[]" value="home-services"> Home Services (cleaning, restoration, etc.)
+                                </label>
+                                <label class="checkbox-option" onclick="toggleCheckbox(this)">
+                                    <input type="checkbox" name="industries[]" value="business-services"> Business Services
+                                </label>
+                                <label class="checkbox-option" onclick="toggleCheckbox(this)">
+                                    <input type="checkbox" name="industries[]" value="education-training"> Education & Training
+                                </label>
+                                <label class="checkbox-option" onclick="toggleCheckbox(this)">
+                                    <input type="checkbox" name="industries[]" value="retail"> Retail
+                                </label>
+                                <label class="checkbox-option" onclick="toggleCheckbox(this)">
+                                    <input type="checkbox" name="industries[]" value="childcare"> Childcare / Early Education
+                                </label>
+                                <label class="checkbox-option" onclick="toggleCheckbox(this)">
+                                    <input type="checkbox" name="industries[]" value="not-sure"> Not sure yet, need guidance
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Operating Preference -->
+                        <div class="form-group">
+                            <label>Preferred ownership model?</label>
+                            <select id="ownership-model" name="ownership_model">
+                                <option value="">Select one</option>
+                                <option value="owner-operator">Owner-operator (hands-on)</option>
+                                <option value="semi-absentee">Semi-absentee (some oversight)</option>
+                                <option value="multi-unit">Multi-unit / portfolio builder</option>
+                                <option value="not-sure">Not sure yet</option>
+                            </select>
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="form-group">
+                            <label for="linkedin">LinkedIn Profile (optional)</label>
+                            <input type="text" id="linkedin" name="linkedin_profile" placeholder="https://linkedin.com/in/...">
+                        </div>
+
+                        <!-- Final Contact -->
+                        <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border);">
+                            <h4 class="step-title" style="font-size: 1.2rem;">Where Should I Send Your Results?</h4>
+                            <p class="step-subtitle">I'll review your answers, run the matching analysis, and schedule a discovery call.</p>
+
+                            <div class="financial-grid">
+                                <div class="form-group">
+                                    <label for="contact-name">Full Name *</label>
+                                    <input type="text" id="contact-name" name="contact_name" required placeholder="Your full name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email *</label>
+                                    <input type="email" id="contact-email" name="contact_email" required placeholder="your@email.com">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contact-phone">Phone</label>
+                                <input type="tel" id="contact-phone" name="contact_phone" placeholder="(555) 123-4567">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="best-time">Best time to reach you</label>
+                                <select id="best-time" name="best_time_to_call">
+                                    <option value="">Select one</option>
+                                    <option value="morning">Morning (8am-12pm)</option>
+                                    <option value="afternoon">Afternoon (12pm-5pm)</option>
+                                    <option value="evening">Evening (5pm-8pm)</option>
+                                    <option value="anytime">Anytime</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="best-days">Best days to reach you</label>
+                                <input type="text" id="best-days" name="best_days_to_call" placeholder="e.g., Weekdays, Tuesday/Thursday...">
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <a href="#" class="btn btn-secondary" onclick="prevStep(3)">← Back</a>
+                            <button type="submit" class="btn btn-primary">Submit Assessment →</button>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="success-message">
+                        <div class="success-icon">&#10003;</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px;">Assessment Received</h3>
+                        <p style="color: var(--text-secondary); max-width: 400px; margin: 0 auto;">I'll review your answers and reach out within 24 hours to schedule your discovery call.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="guide-section">
+        <div class="container">
+            <div class="guide-card">
+                <h2>Why This Assessment?</h2>
+                <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">Most franchise buyers skip the evaluation step and go straight to brand research. That's how you get sold into an opportunity that looks good on paper but doesn't fit your actual situation.</p>
+                <div class="guide-credentials">
+                    <div class="credential">
+                        <div class="credential-number">750+</div>
+                        <div class="credential-label">Franchises Analyzed</div>
+                    </div>
+                    <div class="credential">
+                        <div class="credential-number">JD</div>
+                        <div class="credential-label">Legal + Clinical Lens</div>
+                    </div>
+                    <div class="credential">
+                        <div class="credential-number">15+</div>
+                        <div class="credential-label">Years Evaluating Fit</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Olson Franchise Advisory. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function updateProgress() {
+            document.querySelectorAll('.progress-step').forEach(step => {
+                const stepNum = parseInt(step.dataset.step);
+                step.classList.remove('active', 'completed');
+                if (stepNum === currentStep) {
+                    step.classList.add('active');
+                } else if (stepNum < currentStep) {
+                    step.classList.add('completed');
+                }
+            });
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            const target = document.querySelector(`.form-step[data-step="${step}"]`);
+            if (target) target.classList.add('active');
+            currentStep = step;
+            updateProgress();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function nextStep(step) {
+            showStep(step);
+        }
+
+        function prevStep(step) {
+            showStep(step);
+        }
+
+        function selectRadio(label) {
+            const name = label.querySelector('input').name;
+            document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+                input.closest('.radio-option').classList.remove('selected');
+            });
+            label.classList.add('selected');
+            label.querySelector('input').checked = true;
+        }
+
+        function toggleCheckbox(label) {
+            const checkbox = label.querySelector('input');
+            checkbox.checked = !checkbox.checked;
+            label.classList.toggle('selected', checkbox.checked);
+        }
+
+        // Show partner field if married
+        document.getElementById('marital-status').addEventListener('change', function() {
+            document.getElementById('partner-field').style.display = this.value === 'married' ? 'block' : 'none';
+        });
+
+        // Auto-calculate financial totals
+        function parseDollar(val) {
+            if (!val) return 0;
+            return parseFloat(String(val).replace(/[$,]/g, '')) || 0;
+        }
+
+        function formatDollar(num) {
+            return '$' + num.toLocaleString('en-US');
+        }
+
+        function updateFinancialTotals() {
+            const l1 = parseDollar(document.getElementById('checking-savings').value);
+            const l2 = parseDollar(document.getElementById('stocks-bonds').value);
+            const l3 = parseDollar(document.getElementById('receivables').value);
+            const liquidTotal = l1 + l2 + l3;
+
+            document.getElementById('liquid-total').value = formatDollar(liquidTotal);
+
+            const ira = parseDollar(document.getElementById('ira-pension').value);
+            const bizEq = parseDollar(document.getElementById('business-equity').value);
+            const primaryRes = parseDollar(document.getElementById('primary-residence').value);
+            const otherRE = parseDollar(document.getElementById('other-real-estate').value);
+            const totalAssets = liquidTotal + ira + bizEq + primaryRes + otherRE;
+
+            document.getElementById('total-assets').value = formatDollar(totalAssets);
+
+            const primMort = parseDollar(document.getElementById('primary-mortgage').value);
+            const otherMort = parseDollar(document.getElementById('other-mortgage').value);
+            const otherLiab = parseDollar(document.getElementById('other-liabilities').value);
+            const totalLiab = primMort + otherMort + otherLiab;
+
+            document.getElementById('total-liabilities').value = formatDollar(totalLiab);
+
+            const netWorth = totalAssets - totalLiab;
+            document.getElementById('net-worth').value = formatDollar(netWorth);
+        }
+
+        // Attach listeners to all financial inputs
+        ['checking-savings', 'stocks-bonds', 'receivables', 'ira-pension', 'business-equity',
+         'primary-residence', 'other-real-estate', 'primary-mortgage', 'other-mortgage', 'other-liabilities'
+        ].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', updateFinancialTotals);
+        });
+
+        // Form submission handler
+        document.getElementById('assessment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.querySelector('.progress-bar').style.display = 'none';
+            document.getElementById('success-message').classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Initialize
+        updateProgress();
+    </script>
+</body>
+</html>
