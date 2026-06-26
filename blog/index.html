@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Franchise Blog | Insights for Career Changers & Aspiring Franchise Owners</title>
+    <meta name="description" content="Expert franchise advice from Austin Olson, JD. Guides on evaluating franchises, financing options, career transitions, and building your franchise portfolio.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Franchise Blog | Olson Franchise Advisory">
+    <meta property="og:description" content="Expert franchise advice for career changers, laid-off professionals, and aspiring business owners.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://olsonfa.com/blog/">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9494a3;
+            --accent: #c9a84c;
+            --accent-hover: #d4b85e;
+            --border: #2a2a3a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 16px 0;
+        }
+        
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Blog Header */
+        .blog-header {
+            padding: 140px 0 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .blog-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        .blog-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            padding: 60px 0;
+        }
+        
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .blog-card-content {
+            padding: 32px;
+        }
+        
+        .blog-category {
+            display: inline-block;
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .blog-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        
+        .blog-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .read-more:hover {
+            color: var(--accent-hover);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 60px 0 32px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+        
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            line-height: 1.8;
+        }
+        
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">OFA</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/guide.html">About</a>
+                <a href="/assessment">Assessment</a>
+                <a href="/blog/">Blog</a>
+                <a href="/#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>Franchise Insights & Guides</h1>
+            <p>Evidence-based analysis for professionals evaluating franchise ownership as a career transition strategy.</p>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <main class="container">
+        <div class="blog-grid">
+            <!-- Article 1 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Economy Anxiety</span>
+                    <h3><a href="/blog/best-franchises-after-layoff" class="read-more">Best Franchises to Start After a Layoff (2026 Guide)</a></h3>
+                    <p>Laid off? Discover the best franchise opportunities that offer stability, proven systems, and faster ROI than starting from scratch.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/best-franchises-after-layoff" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Economy Anxiety</span>
+                    <h3><a href="/blog/franchise-cost-guide" class="read-more">How Much Does It Cost to Buy a Franchise? (2026 Complete Guide)</a></h3>
+                    <p>The real cost of buying a franchise in 2026 — from modest home-based models to substantial established brandsands. Includes funding options and ROI timelines.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/franchise-cost-guide" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Healthcare</span>
+                    <h3><a href="/blog/best-franchises-for-nurses" class="read-more">Best Franchises for Nurses and Healthcare Workers (2026)</a></h3>
+                    <p>Nurses, doctors, therapists — your clinical skills translate to franchise ownership. Discover healthcare-adjacent franchises with lower stress and higher income potential.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/best-franchises-for-nurses" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Blue-Collar</span>
+                    <h3><a href="/blog/blue-collar-franchises" class="read-more">Best Blue-Collar Franchises to Own in 2026 (Tradesmen's Guide)</a></h3>
+                    <p>HVAC, plumbing, cleaning, pest control — the best blue-collar franchise opportunities for tradespeople ready to own their business.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/blue-collar-franchises" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Career Transition</span>
+                    <h3><a href="/blog/no-experience-franchise" class="read-more">Can I Buy a Franchise With No Experience? (The Honest Answer)</a></h3>
+                    <p>Yes, but with important caveats. Learn what franchisors really look for in first-time buyers and which franchises welcome beginners.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/no-experience-franchise" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Education</span>
+                    <h3><a href="/blog/how-to-evaluate-franchise" class="read-more">How to Evaluate a Franchise Opportunity (JD's Checklist)</a></h3>
+                    <p>A franchise consultant and attorney's step-by-step framework for evaluating any franchise opportunity — from FDD analysis to territory assessment.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/how-to-evaluate-franchise" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 7 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Education</span>
+                    <h3><a href="/blog/sba-loans-franchises" class="read-more">SBA Loans for Franchises: Complete Guide to Financing (2026)</a></h3>
+                    <p>How to get an SBA loan for a franchise — requirements, process, interest rates, and tips from someone who's helped dozens of professionals secure financing.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/sba-loans-franchises" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 8 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Education</span>
+                    <h3><a href="/blog/franchise-vs-independent-business" class="read-more">Franchise vs Starting Your Own Business — Which Makes Sense?</a></h3>
+                    <p>Honest comparison of franchise ownership vs independent entrepreneurship — costs, risks, support, and timelines to help you decide.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/franchise-vs-independent-business" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 9 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Career Transition</span>
+                    <h3><a href="/blog/best-franchises-for-teachers" class="read-more">Best Franchises for Teachers Transitioning to Business Ownership (2026)</a></h3>
+                    <p>Teachers have skills that translate perfectly to franchise ownership. Discover which franchises value your education background and offer work-life balance.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/best-franchises-for-teachers" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 10 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Education</span>
+                    <h3><a href="/blog/franchise-due-diligence-checklist" class="read-more">Franchise Due Diligence Checklist: 25 Questions Every Buyer Must Ask</a></h3>
+                    <p>The complete franchise due diligence checklist — 25 critical questions to ask franchisors, existing franchisees, and yourself before investing.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/franchise-due-diligence-checklist" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 11 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Blue-Collar</span>
+                    <h3><a href="/blog/blue-collar-franchises" class="read-more">Best Blue-Collar Franchises to Own in 2026 (Tradesmen's Guide)</a></h3>
+                    <p>HVAC, plumbing, cleaning, pest control — the best blue-collar franchise opportunities for tradespeople ready to own their business.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/blue-collar-franchises" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 12 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Education</span>
+                    <h3><a href="/blog/how-to-evaluate-franchise" class="read-more">How to Evaluate a Franchise Opportunity (JD's Checklist)</a></h3>
+                    <p>A franchise consultant and attorney's step-by-step framework for evaluating any franchise opportunity — from FDD analysis to territory assessment.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/how-to-evaluate-franchise" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 13 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Education</span>
+                    <h3><a href="/blog/sba-loans-franchises" class="read-more">SBA Loans for Franchises: Complete Guide to Financing (2026)</a></h3>
+                    <p>How to get an SBA loan for a franchise — requirements, process, interest rates, and tips from someone who's helped dozens of professionals secure financing.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/sba-loans-franchises" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 14 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Education</span>
+                    <h3><a href="/blog/franchise-vs-independent-business" class="read-more">Franchise vs Starting Your Own Business — Which Makes Sense?</a></h3>
+                    <p>Honest comparison of franchise ownership vs independent entrepreneurship — costs, risks, support, and timelines to help you decide.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/franchise-vs-independent-business" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 15 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Career Transition</span>
+                    <h3><a href="/blog/best-franchises-for-teachers" class="read-more">Best Franchises for Teachers Transitioning to Business Ownership (2026)</a></h3>
+                    <p>Teachers have skills that translate perfectly to franchise ownership. Discover which franchises value your education background and offer work-life balance.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/best-franchises-for-teachers" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 16 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Economy Anxiety</span>
+                    <h3><a href="/blog/best-franchises-for-nurses" class="read-more">Best Franchises for Nurses and Healthcare Workers (2026)</a></h3>
+                    <p>Nurses, doctors, therapists — your clinical skills translate to franchise ownership. Discover healthcare-adjacent franchises with lower stress and higher income potential.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/best-franchises-for-nurses" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 17 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Economy Anxiety</span>
+                    <h3><a href="/blog/no-experience-franchise" class="read-more">Can I Buy a Franchise With No Experience? (The Honest Answer)</a></h3>
+                    <p>Yes, but with important caveats. Learn what franchisors really look for in first-time buyers and which franchises welcome beginners.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/no-experience-franchise" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 18 -->
+            <article class="blog-card">
+                <div class="blog-card-content">
+                    <span class="blog-category">Education</span>
+                    <h3><a href="/blog/franchise-cost-guide" class="read-more">How Much Does It Cost to Buy a Franchise? (2026 Complete Guide)</a></h3>
+                    <p>The real cost of buying a franchise in 2026 — from modest home-based models to substantial established brandsands. Includes funding options and ROI timelines.</p>
+                    <div class="blog-meta">
+                        <span>Austin Olson, JD</span>
+                        <a href="/blog/franchise-cost-guide" class="read-more">Read →</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Olsen Franchise Advisory</h4>
+                    <p>Evidence-based franchise evaluation for professionals navigating career transitions. No brand-first sales — just honest analysis of what makes sense for your situation.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <p><a href="/">Home</a></p>
+                    <p><a href="/guide.html">About Austin</a></p>
+                    <p><a href="/assessment">Franchise Fit Assessment</a></p>
+                    <p><a href="/blog/">Blog</a></p>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>Email: austin@olsoncg.com</p>
+                    <p>Phone: 775-420-2007</p>
+                    <p>Address: 5139 Dacite Ct, Sparks, NV 89436</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Olsen Franchise Advisory. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
