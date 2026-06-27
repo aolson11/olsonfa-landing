@@ -1,73 +1,10 @@
 {
   "rewrites": [
-    {
-      "source": "/thankyou",
-      "destination": "/thankyou.html"
-    },
-    {
-      "source": "/guide",
-      "destination": "/guide.html"
-    },
-    {
-      "source": "/blog/best-blue-collar-franchises-2026",
-      "destination": "/blog/best-blue-collar-franchises-2026.html"
-    },
-    {
-      "source": "/blog/best-franchises-after-layoff",
-      "destination": "/blog/best-franchises-after-layoff.html"
-    },
-    {
-      "source": "/blog/best-franchises-for-nurses-healthcare-workers",
-      "destination": "/blog/best-franchises-for-nurses-healthcare-workers.html"
-    },
-    {
-      "source": "/blog/best-franchises-for-nurses",
-      "destination": "/blog/best-franchises-for-nurses.html"
-    },
-    {
-      "source": "/blog/best-franchises-for-teachers",
-      "destination": "/blog/best-franchises-for-teachers.html"
-    },
-    {
-      "source": "/blog/blue-collar-franchises",
-      "destination": "/blog/blue-collar-franchises.html"
-    },
-    {
-      "source": "/blog/buy-franchise-with-no-experience",
-      "destination": "/blog/buy-franchise-with-no-experience.html"
-    },
-    {
-      "source": "/blog/franchise-due-diligence-checklist",
-      "destination": "/blog/franchise-due-diligence-checklist.html"
-    },
-    {
-      "source": "/blog/franchise-vs-independent-business",
-      "destination": "/blog/franchise-vs-independent-business.html"
-    },
-    {
-      "source": "/blog/franchise-vs-starting-your-own-business",
-      "destination": "/blog/franchise-vs-starting-your-own-business.html"
-    },
-    {
-      "source": "/blog/how-to-evaluate-franchise-opportunity",
-      "destination": "/blog/how-to-evaluate-franchise-opportunity.html"
-    },
-    {
-      "source": "/blog/how-to-evaluate-franchise",
-      "destination": "/blog/how-to-evaluate-franchise.html"
-    },
-    {
-      "source": "/blog/no-experience-franchise",
-      "destination": "/blog/no-experience-franchise.html"
-    },
-    {
-      "source": "/blog/sba-loans-for-franchises-guide",
-      "destination": "/blog/sba-loans-for-franchises-guide.html"
-    },
-    {
-      "source": "/blog/sba-loans-franchises",
-      "destination": "/blog/sba-loans-franchises.html"
-    }
+    { "source": "/thankyou", "destination": "/thankyou.html" },
+    { "source": "/guide", "destination": "/guide.html" },
+    { "source": "/assessment", "destination": "/assessment.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/blog/(.*)", "destination": "/blog/$1.html" }
   ],
   "headers": [
     {
