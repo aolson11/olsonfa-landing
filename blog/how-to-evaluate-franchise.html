@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"How to Evaluate a Franchise Opportunity (JD's Checklist)" | Olson Franchise Advisory</title>
-    <meta name="description" content=""A franchise consultant's step-by-step framework for evaluating any franchise opportunity . from FDD analysis to territory assessment to financial modeling.""
+    <title>How to Evaluate a Franchise: A Framework Most People Never See | Olson Franchise Advisory</title>
+    <meta name="description" content="When you're considering buying a franchise, the information you receive comes from one source: the franchisor. Their entire business model depends on convi...">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Best Franchises for Teachers Transitioning to Business Ownership (2026)">
-    <meta property="og:description" content="Teachers have skills that translate perfectly to franchise ownership. Discover which franchises value your education background and offer the work-life balance you deserve.">
+    <meta property="og:title" content="How to Evaluate a Franchise: A Framework Most People Never See">
+    <meta property="og:description" content="When you're considering buying a franchise, the information you receive comes from one source: the franchisor. Their entire business model depends on convi...">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://olsonfa.com/blog/best-franchises-for-teachers">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://olsonfa.com/blog/best-franchises-for-teachers">
+    <meta property="og:url" content="https://olsonfa.com/blog/how-to-evaluate-franchise">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
+
         :root {
             --bg-primary: #0a0a0f;
             --bg-secondary: #12121a;
@@ -32,7 +30,11 @@
             --border: #2a2a3a;
         }
         
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -41,476 +43,349 @@
             line-height: 1.6;
         }
         
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
         
+        /* Navigation */
         nav {
-            position: fixed; top: 0; width: 100%;
-            background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border); z-index: 100; padding: 16px 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 16px 0;
         }
         
-        nav .container { display: flex; justify-content: space-between; align-items: center; }
-        
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
-        
-        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 32px; font-size: 0.9rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
-        
-        .article-header { padding: 140px 0 60px; border-bottom: 1px solid var(--border); margin-bottom: 60px; }
-        .article-category { display: inline-block; background: rgba(201, 168, 76, 0.1); color: var(--accent); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 20px; margin-bottom: 24px; }
-        .article-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 24px; color: var(--text-primary); line-height: 1.2; }
-        .article-meta { display: flex; gap: 24px; color: var(--text-secondary); font-size: 0.9rem; }
-        
-        .article-content { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; }
-        .article-content h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 48px 0 24px; color: var(--text-primary); }
-        .article-content h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 48px 0 24px; color: var(--text-primary); }
-        .article-content h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 36px 0 16px; color: var(--text-primary); }
-        .article-content p { margin-bottom: 24px; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content ul, .article-content ol { margin: 24px 0; padding-left: 32px; color: var(--text-secondary); }
-        .article-content li { margin-bottom: 12px; font-size: 1.1rem; line-height: 1.6; }
-        .article-content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); transition: color 0.3s; }
-        .article-content a:hover { color: var(--accent-hover); }
-        
-        /* Tables */
-        .article-content table { width: 100%; margin: 24px 0; border-collapse: collapse; }
-        .article-content th, .article-content td { padding: 12px 16px; border: 1px solid var(--border); text-align: left; font-size: 1rem; }
-        .article-content th { background: var(--bg-card); color: var(--text-primary); font-weight: 600; }
-        .article-content td { color: var(--text-secondary); }
-        
-        /* Code blocks */
-        .article-content pre { background: var(--bg-secondary); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 24px 0; }
-        .article-content code { font-family: 'SF Mono', Monaco, monospace; font-size: 0.9rem; }
-        
-        /* Blockquote */
-        .article-content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 24px 0; color: var(--text-secondary); font-style: italic; }
-        
-        .cta-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 48px; margin: 60px 0; text-align: center; }
-        .cta-section h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; color: var(--text-primary); }
-        .cta-section p { color: var(--text-secondary); margin-bottom: 32px; font-size: 1.1rem; }
-        .cta-button { display: inline-block; background: var(--accent); color: var(--bg-primary); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
-        .cta-button:hover { background: var(--accent-hover); }
-        
-        .about-section { border-top: 1px solid var(--border); padding-top: 48px; margin-top: 60px; }
-        .about-content { display: flex; gap: 32px; align-items: start; }
-        .about-text p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
-        
-        footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 60px 0 32px; margin-top: 60px; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 48px; margin-bottom: 48px; }
-        .footer-section h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 16px; color: var(--text-primary); }
-        .footer-section p, .footer-section a { color: var(--text-secondary); text-decoration: none; line-height: 1.8; }
-        .footer-section a:hover { color: var(--accent); }
-        .footer-bottom { border-top: 1px solid var(--border); padding-top: 32px; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
-        
-        @media (max-width: 768px) {
-            .article-header h1 { font-size: 2rem; }
-            .about-content { flex-direction: column; }
-        }
-    </style>
-</head>
-<body>
-    <nav><div class="container"><a href="/" class="logo">OFA</a><div class="nav-links"><a href="/">Home</a><a href="/guide.html">About</a><a href="/assessment">Assessment</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></div></div></nav>
-    <header class="article-header"><div class="container"><span class="article-category">franchise-guide</span><h1>"How to Evaluate a Franchise Opportunity (JD's Checklist)"</h1><div class="article-meta"><span>By Austin Olson, JD</span><span>June 26, 2026</span></div></div></header>
-    <article class="article-content">
-        <h1 id="how-to-evaluate-a-franchise-opportunity-jds-checklist">How to Evaluate a Franchise Opportunity (JD's Checklist)</h1>
-<p><strong>Buying a franchise is not like buying a house or a stock.</strong> You're not just assessing an asset; you're entering a business relationship that will last 10-20 years. That requires a different kind of due diligence. One most first-time buyers never learn until it's too late.</p>
-<p>Evaluating a franchise isn't like buying a house or a stock. You're not just assessing an asset; you're entering a business relationship that will last 10-20 years. That requires a different kind of due diligence.</p>
-<h2 id="the-franchise-disclosure-document-fdd-your-primary-tool">The Franchise Disclosure Document (FDD) . Your Primary Tool</h2>
-<p>Every legitimate franchisor must provide an FDD. It's 100+ pages of required disclosures. Here's what to focus on:</p>
-<h3 id="item-1-the-franchisor">Item 1: The Franchisor</h3>
-<ul>
-<li>How long have they been in business?</li>
-<li>Any litigation history? (Red flag if frequent)</li>
-<li>Bankruptcy history of the company or its executives</li>
-<li><strong>What I look for:</strong> Stability and transparency. Companies with clean histories and straightforward leadership are lower risk.</li>
-</ul>
-<h3 id="item-3-litigation">Item 3: Litigation</h3>
-<ul>
-<li>Suits against the franchisor by franchisees or customers</li>
-<li>Arbitration requirements (limits your ability to sue)</li>
-<li><strong>Red flags:</strong> Frequent franchisee lawsuits, mandatory arbitration clauses that favor the franchisor</li>
-</ul>
-<h3 id="item-4-bankruptcy">Item 4: Bankruptcy</h3>
-<ul>
-<li>Bankruptcy history of the company or its executives</li>
-<li><strong>What I look for:</strong> Any bankruptcy in the last 10 years requires serious scrutiny</li>
-</ul>
-<h3 id="item-5-restrictions-on-where-you-can-operate">Item 5: Restrictions on Where You Can Operate</h3>
-<ul>
-<li>Territory definitions (exclusive vs. non-exclusive)</li>
-<li>Demographic requirements</li>
-<li>Right of first refusal for new locations</li>
-<li><strong>Critical question:</strong> Does the territory protect you from competition, or is it just a sales pitch?</li>
-</ul>
-<h3 id="item-7-initial-fees-and-other-costs">Item 7: Initial Fees and Other Costs</h3>
-<ul>
-<li>Franchise fee (a modest amount-a modest amount typical)</li>
-<li>Build-out costs (varies wildly by industry)</li>
-<li>Initial inventory and supplies</li>
-<li>Working capital requirements</li>
-<li><strong>What I look for:</strong> Realistic cost estimates, not optimistic projections</li>
-</ul>
-<h3 id="item-8-training-and-support">Item 8: Training and Support</h3>
-<ul>
-<li>Duration and location of initial training</li>
-<li>Ongoing support services</li>
-<li>Marketing assistance</li>
-<li><strong>Red flags:</strong> Vague descriptions, minimal training hours, no ongoing support mentioned</li>
-</ul>
-<h3 id="item-19-financial-performance-representations-the-gold-mine">Item 19: Financial Performance Representations (The Gold Mine)</h3>
-<ul>
-<li>Actual revenue and profit data from existing franchisees</li>
-<li>Sample size and selection methodology</li>
-<li>Time period covered</li>
-<li><strong>What I look for:</strong> Transparent data, not just best-case scenarios. If they don't provide this, that's a red flag.</li>
-</ul>
-<h3 id="item-20-franchisee-outlet-information">Item 20: Franchisee Outlet Information</h3>
-<ul>
-<li>Total number of franchises</li>
-<li>Number sold in the last 3 years</li>
-<li>Number closed/terminated in the last 3 years</li>
-<li><strong>Critical calculation:</strong> Closure rate. More than 15% closure rate in 3 years is concerning.</li>
-</ul>
-<h2 id="the-due-diligence-process-step-by-step">The Due Diligence Process . Step by Step</h2>
-<h3 id="phase-1-initial-screening-weeks-1-2">Phase 1: Initial Screening (Weeks 1-2)</h3>
-<ol>
-<li><strong>Request the FDD</strong> . Legitimate franchisors will provide it promptly</li>
-<li><strong>Review Items 1-5</strong> . Basic company health check</li>
-<li><strong>Check Item 20</strong> . Closure rates and growth trends</li>
-<li><strong>Verify claims independently</strong> . Don't take their word for anything</li>
-</ol>
-<h3 id="phase-2-deep-dive-weeks-3-6">Phase 2: Deep Dive (Weeks 3-6)</h3>
-<ol>
-<li><strong>Study Item 19 carefully</strong> . Talk to franchisees listed in the data</li>
-<li><strong>Visit multiple locations</strong> . Not just the "show" location they want you to see</li>
-<li><strong>Talk to current franchisees</strong> . Ask about profitability, support quality, and challenges</li>
-<li><strong>Get expert review</strong> . Have a qualified professional review the FDD (I recommend this for every client)</li>
-</ol>
-<h3 id="phase-3-financial-modeling-weeks-7-8">Phase 3: Financial Modeling (Weeks 7-8)</h3>
-<ol>
-<li><strong>Create your own projections</strong> . Don't rely on franchisor numbers alone</li>
-<li><strong>Stress test assumptions</strong> . What if revenue is 20% lower than projected?</li>
-<li><strong>Calculate break-even timeline</strong> . How long until you're profitable?</li>
-<li><strong>Plan for worst case</strong> . Can you survive 18 months of losses?</li>
-</ol>
-<h3 id="phase-4-final-evaluation-weeks-9-10">Phase 4: Final Evaluation (Weeks 9-10)</h3>
-<ol>
-<li><strong>Compare multiple opportunities</strong> . Never evaluate one franchise in isolation</li>
-<li><strong>Assess your fit</strong> . Does this match your skills, budget, and goals?</li>
-<li><strong>Make a decision</strong> . Based on data, not emotions or pressure</li>
-</ol>
-<h2 id="the-questions-most-buyers-dont-ask-but-should">The Questions Most Buyers Don't Ask (But Should)</h2>
-<h3 id="to-the-franchisor">To the Franchisor</h3>
-<ul>
-<li>"What percentage of your franchisees are profitable?"</li>
-<li>"Can you introduce me to 5 current franchisees I can talk to independently?"</li>
-<li>"What's your average franchisee's revenue in year 3?"</li>
-<li>"How do you handle territory conflicts?"</li>
-</ul>
-<h3 id="to-current-franchisees-when-you-meet-them">To Current Franchisees (When You Meet Them)</h3>
-<ul>
-<li>"What surprised you most about owning this franchise?"</li>
-<li>"What would you do differently if you could start over?"</li>
-<li>"How responsive is the franchisor when problems arise?"</li>
-<li>"Are you profitable? If not, why not?"</li>
-</ul>
-<h3 id="to-yourself">To Yourself</h3>
-<ul>
-<li>"Am I evaluating this objectively or because I want it to work?"</li>
-<li>"What's my exit strategy if this doesn't work out?"</li>
-<li>"Can I afford to lose everything I invest here?"</li>
-<li>"Does this align with my long-term goals or just solve a short-term problem?"</li>
-</ul>
-<h2 id="red-flags-that-should-make-you-walk-away">Red Flags That Should Make You Walk Away</h2>
-<ol>
-<li><strong>Pressure to sign quickly</strong> . "This opportunity won't last" is never true</li>
-<li><strong>Reluctance to provide FDD</strong> . Legitimate franchisors expect you to review it</li>
-<li><strong>Unrealistic profit claims</strong> . If it sounds too good, it is</li>
-<li><strong>High closure rates</strong> . More than 15% in 3 years is concerning</li>
-<li><strong>Litigation history with franchisees</strong> . Pattern of disputes is a warning sign</li>
-<li><strong>Vague territory definitions</strong> . "Non-exclusive" territories offer little protection</li>
-<li><strong>No Item 19 data</strong> . If they won't share financial performance, why should you trust them?</li>
-</ol>
-<h2 id="the-green-flags-that-signal-a-good-fit">The Green Flags That Signal a Good Fit</h2>
-<ol>
-<li><strong>Transparent FDD</strong> . Clear, honest disclosures without hiding anything</li>
-<li><strong>Strong franchisee network</strong> . Willingness to connect you with existing owners</li>
-<li><strong>Realistic projections</strong> . Based on actual data, not best-case scenarios</li>
-<li><strong>Solid training program</strong> . Comprehensive and ongoing support</li>
-<li><strong>Fair territory protection</strong> . Clear definitions that actually protect your investment</li>
-<li><strong>Reasonable fees</strong> . Not the cheapest option, but fair for what you're getting</li>
-<li><strong>Long track record</strong> . At least 5-10 years in business with growing franchisee base</li>
-</ol>
-<h2 id="why-you-need-independent-advice">Why You Need Independent Advice</h2>
-<p>Here's what I see repeatedly: First-time buyers get swept up in the franchisor's presentation and skip critical due diligence steps. They:
-- Don't talk to enough existing franchisees
-- Don't stress-test financial projections
-- Don't get legal review of the FDD
-- Make decisions based on emotion rather than data</p>
-<p>That's where I come in. I provide objective analysis of franchise opportunities, help you navigate the FDD, and ensure you're making an informed decision . not a sales-driven one.</p>
-<h2 id="ready-for-professional-evaluation">Ready for Professional Evaluation?</h2>
-<p>Every franchise opportunity deserves thorough, independent analysis before you invest six figures (or more). Don't rely on franchisor presentations alone.</p>
-<p><strong><a href="/assessment">Take the Franchise Fit Assessment</a></strong> → Free evaluation to determine if a specific franchise opportunity makes sense for your situation.</p>
-<hr />
-<p><em>About Austin Olson: I help franchise buyers evaluate opportunities with the same rigor I brought to 20 years of public service. With a JD and psychology background, I've developed frameworks that cut through franchisor presentations and get to what actually matters for your investment.</em></p>
-    </article>
-    <footer class="article-footer"><div class="container"><p>Ready to explore which franchise fits your situation? <a href="/#contact">Get in touch</a> for a free consultation.</p></div></footer>
-</body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>"How to Evaluate a Franchise Opportunity (JD's Checklist)" | Olson Franchise Advisory</title>
-    <meta name="description" content=""A franchise consultant's step-by-step framework for evaluating any franchise opportunity . from FDD analysis to territory assessment to financial modeling.""
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Best Franchises for Teachers Transitioning to Business Ownership (2026)">
-    <meta property="og:description" content="Teachers have skills that translate perfectly to franchise ownership. Discover which franchises value your education background and offer the work-life balance you deserve.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://olsonfa.com/blog/best-franchises-for-teachers">
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://olsonfa.com/blog/best-franchises-for-teachers">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a25;
-            --text-primary: #e8e8ed;
-            --text-secondary: #9494a3;
-            --accent: #c9a84c;
-            --accent-hover: #d4b85e;
-            --border: #2a2a3a;
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
         
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-primary);
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 32px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Blog Header */
+        .blog-header {
+            padding: 140px 0 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .blog-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 16px;
             color: var(--text-primary);
+        }
+        
+        .blog-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Blog Grid */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            padding: 60px 0;
+        }
+        
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        .blog-card-content {
+            padding: 32px;
+        }
+        
+        .blog-category {
+            display: inline-block;
+            background: rgba(201, 168, 76, 0.1);
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+        }
+        
+        .blog-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        
+        .blog-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
             line-height: 1.6;
+            margin-bottom: 24px;
         }
         
-        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
-        
-        nav {
-            position: fixed; top: 0; width: 100%;
-            background: rgba(10, 10, 15, 0.95); backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border); z-index: 100; padding: 16px 0;
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
         }
         
-        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
         
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+        .read-more:hover {
+            color: var(--accent-hover);
+        }
         
-        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 32px; font-size: 0.9rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        /* Footer */
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 60px 0 32px;
+            margin-top: 60px;
+        }
         
-        .article-header { padding: 140px 0 60px; border-bottom: 1px solid var(--border); margin-bottom: 60px; }
-        .article-category { display: inline-block; background: rgba(201, 168, 76, 0.1); color: var(--accent); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; padding: 4px 12px; border-radius: 20px; margin-bottom: 24px; }
-        .article-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 24px; color: var(--text-primary); line-height: 1.2; }
-        .article-meta { display: flex; gap: 24px; color: var(--text-secondary); font-size: 0.9rem; }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 48px;
+            margin-bottom: 48px;
+        }
         
-        .article-content { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; }
-        .article-content h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin: 48px 0 24px; color: var(--text-primary); }
-        .article-content h2 { font-family: 'Playfair Display', serif; font-size: 2rem; margin: 48px 0 24px; color: var(--text-primary); }
-        .article-content h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 36px 0 16px; color: var(--text-primary); }
-        .article-content p { margin-bottom: 24px; color: var(--text-secondary); font-size: 1.1rem; line-height: 1.8; }
-        .article-content strong { color: var(--text-primary); }
-        .article-content ul, .article-content ol { margin: 24px 0; padding-left: 32px; color: var(--text-secondary); }
-        .article-content li { margin-bottom: 12px; font-size: 1.1rem; line-height: 1.6; }
-        .article-content a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); transition: color 0.3s; }
-        .article-content a:hover { color: var(--accent-hover); }
+        .footer-section h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
         
-        /* Tables */
-        .article-content table { width: 100%; margin: 24px 0; border-collapse: collapse; }
-        .article-content th, .article-content td { padding: 12px 16px; border: 1px solid var(--border); text-align: left; font-size: 1rem; }
-        .article-content th { background: var(--bg-card); color: var(--text-primary); font-weight: 600; }
-        .article-content td { color: var(--text-secondary); }
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            line-height: 1.8;
+        }
         
-        /* Code blocks */
-        .article-content pre { background: var(--bg-secondary); padding: 16px; border-radius: 8px; overflow-x: auto; margin: 24px 0; }
-        .article-content code { font-family: 'SF Mono', Monaco, monospace; font-size: 0.9rem; }
+        .footer-section a:hover {
+            color: var(--accent);
+        }
         
-        /* Blockquote */
-        .article-content blockquote { border-left: 3px solid var(--accent); padding-left: 16px; margin: 24px 0; color: var(--text-secondary); font-style: italic; }
-        
-        .cta-section { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 48px; margin: 60px 0; text-align: center; }
-        .cta-section h3 { font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px; color: var(--text-primary); }
-        .cta-section p { color: var(--text-secondary); margin-bottom: 32px; font-size: 1.1rem; }
-        .cta-button { display: inline-block; background: var(--accent); color: var(--bg-primary); padding: 16px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.3s; }
-        .cta-button:hover { background: var(--accent-hover); }
-        
-        .about-section { border-top: 1px solid var(--border); padding-top: 48px; margin-top: 60px; }
-        .about-content { display: flex; gap: 32px; align-items: start; }
-        .about-text p { color: var(--text-secondary); font-size: 1rem; line-height: 1.6; }
-        
-        footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 60px 0 32px; margin-top: 60px; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 48px; margin-bottom: 48px; }
-        .footer-section h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 16px; color: var(--text-primary); }
-        .footer-section p, .footer-section a { color: var(--text-secondary); text-decoration: none; line-height: 1.8; }
-        .footer-section a:hover { color: var(--accent); }
-        .footer-bottom { border-top: 1px solid var(--border); padding-top: 32px; text-align: center; color: var(--text-secondary); font-size: 0.9rem; }
+        .footer-bottom {
+            border-top: 1px solid var(--border);
+            padding-top: 32px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
         
         @media (max-width: 768px) {
-            .article-header h1 { font-size: 2rem; }
-            .about-content { flex-direction: column; }
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        /* Blog post specific styles */
+        .blog-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+        
+        .blog-post h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            line-height: 1.3;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+        
+        .blog-post h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            line-height: 1.4;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+        
+        .blog-post h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.5;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+        
+        .blog-post p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .blog-post ul, .blog-post ol {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+        
+        .blog-post li {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+        
+        .blog-post table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 32px;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .blog-post th, .blog-post td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .blog-post th {
+            background-color: var(--bg-secondary);
+            font-weight: 600;
+            color: var(--accent);
+        }
+        
+        .blog-post td {
+            color: var(--text-secondary);
+        }
+        
+        .blog-post strong {
+            color: var(--text-primary);
+        }
+        
+        .blog-post a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .blog-post a:hover {
+            color: var(--accent-hover);
+            border-bottom-color: var(--accent-hover);
+        }
+        
+        .blog-post blockquote {
+            border-left: 4px solid var(--accent);
+            padding-left: 20px;
+            margin: 32px 0;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+        
+        .blog-post hr {
+            border: none;
+            height: 1px;
+            background-color: var(--border);
+            margin: 48px 0;
+        }
+        
+        .blog-post em {
+            color: var(--text-secondary);
+            font-style: italic;
         }
     </style>
 </head>
 <body>
-    <nav><div class="container"><a href="/" class="logo">OFA</a><div class="nav-links"><a href="/">Home</a><a href="/guide.html">About</a><a href="/assessment">Assessment</a><a href="/blog/">Blog</a><a href="/#contact">Contact</a></div></div></nav>
-    <header class="article-header"><div class="container"><span class="article-category">franchise-guide</span><h1>"How to Evaluate a Franchise Opportunity (JD's Checklist)"</h1><div class="article-meta"><span>By Austin Olson, JD</span><span>June 26, 2026</span></div></div></header>
-    <article class="article-content">
-        <h1 id="how-to-evaluate-a-franchise-opportunity-jds-checklist">How to Evaluate a Franchise Opportunity (JD's Checklist)</h1>
-<p><strong>Buying a franchise is not like buying a house or a stock.</strong> You're not just assessing an asset; you're entering a business relationship that will last 10-20 years. That requires a different kind of due diligence. One most first-time buyers never learn until it's too late.</p>
-<p>Evaluating a franchise isn't like buying a house or a stock. You're not just assessing an asset; you're entering a business relationship that will last 10-20 years. That requires a different kind of due diligence.</p>
-<h2 id="the-franchise-disclosure-document-fdd-your-primary-tool">The Franchise Disclosure Document (FDD) . Your Primary Tool</h2>
-<p>Every legitimate franchisor must provide an FDD. It's 100+ pages of required disclosures. Here's what to focus on:</p>
-<h3 id="item-1-the-franchisor">Item 1: The Franchisor</h3>
-<ul>
-<li>How long have they been in business?</li>
-<li>Any litigation history? (Red flag if frequent)</li>
-<li>Bankruptcy history of the company or its executives</li>
-<li><strong>What I look for:</strong> Stability and transparency. Companies with clean histories and straightforward leadership are lower risk.</li>
-</ul>
-<h3 id="item-3-litigation">Item 3: Litigation</h3>
-<ul>
-<li>Suits against the franchisor by franchisees or customers</li>
-<li>Arbitration requirements (limits your ability to sue)</li>
-<li><strong>Red flags:</strong> Frequent franchisee lawsuits, mandatory arbitration clauses that favor the franchisor</li>
-</ul>
-<h3 id="item-4-bankruptcy">Item 4: Bankruptcy</h3>
-<ul>
-<li>Bankruptcy history of the company or its executives</li>
-<li><strong>What I look for:</strong> Any bankruptcy in the last 10 years requires serious scrutiny</li>
-</ul>
-<h3 id="item-5-restrictions-on-where-you-can-operate">Item 5: Restrictions on Where You Can Operate</h3>
-<ul>
-<li>Territory definitions (exclusive vs. non-exclusive)</li>
-<li>Demographic requirements</li>
-<li>Right of first refusal for new locations</li>
-<li><strong>Critical question:</strong> Does the territory protect you from competition, or is it just a sales pitch?</li>
-</ul>
-<h3 id="item-7-initial-fees-and-other-costs">Item 7: Initial Fees and Other Costs</h3>
-<ul>
-<li>Franchise fee (a modest amount-a modest amount typical)</li>
-<li>Build-out costs (varies wildly by industry)</li>
-<li>Initial inventory and supplies</li>
-<li>Working capital requirements</li>
-<li><strong>What I look for:</strong> Realistic cost estimates, not optimistic projections</li>
-</ul>
-<h3 id="item-8-training-and-support">Item 8: Training and Support</h3>
-<ul>
-<li>Duration and location of initial training</li>
-<li>Ongoing support services</li>
-<li>Marketing assistance</li>
-<li><strong>Red flags:</strong> Vague descriptions, minimal training hours, no ongoing support mentioned</li>
-</ul>
-<h3 id="item-19-financial-performance-representations-the-gold-mine">Item 19: Financial Performance Representations (The Gold Mine)</h3>
-<ul>
-<li>Actual revenue and profit data from existing franchisees</li>
-<li>Sample size and selection methodology</li>
-<li>Time period covered</li>
-<li><strong>What I look for:</strong> Transparent data, not just best-case scenarios. If they don't provide this, that's a red flag.</li>
-</ul>
-<h3 id="item-20-franchisee-outlet-information">Item 20: Franchisee Outlet Information</h3>
-<ul>
-<li>Total number of franchises</li>
-<li>Number sold in the last 3 years</li>
-<li>Number closed/terminated in the last 3 years</li>
-<li><strong>Critical calculation:</strong> Closure rate. More than 15% closure rate in 3 years is concerning.</li>
-</ul>
-<h2 id="the-due-diligence-process-step-by-step">The Due Diligence Process . Step by Step</h2>
-<h3 id="phase-1-initial-screening-weeks-1-2">Phase 1: Initial Screening (Weeks 1-2)</h3>
-<ol>
-<li><strong>Request the FDD</strong> . Legitimate franchisors will provide it promptly</li>
-<li><strong>Review Items 1-5</strong> . Basic company health check</li>
-<li><strong>Check Item 20</strong> . Closure rates and growth trends</li>
-<li><strong>Verify claims independently</strong> . Don't take their word for anything</li>
-</ol>
-<h3 id="phase-2-deep-dive-weeks-3-6">Phase 2: Deep Dive (Weeks 3-6)</h3>
-<ol>
-<li><strong>Study Item 19 carefully</strong> . Talk to franchisees listed in the data</li>
-<li><strong>Visit multiple locations</strong> . Not just the "show" location they want you to see</li>
-<li><strong>Talk to current franchisees</strong> . Ask about profitability, support quality, and challenges</li>
-<li><strong>Get expert review</strong> . Have a qualified professional review the FDD (I recommend this for every client)</li>
-</ol>
-<h3 id="phase-3-financial-modeling-weeks-7-8">Phase 3: Financial Modeling (Weeks 7-8)</h3>
-<ol>
-<li><strong>Create your own projections</strong> . Don't rely on franchisor numbers alone</li>
-<li><strong>Stress test assumptions</strong> . What if revenue is 20% lower than projected?</li>
-<li><strong>Calculate break-even timeline</strong> . How long until you're profitable?</li>
-<li><strong>Plan for worst case</strong> . Can you survive 18 months of losses?</li>
-</ol>
-<h3 id="phase-4-final-evaluation-weeks-9-10">Phase 4: Final Evaluation (Weeks 9-10)</h3>
-<ol>
-<li><strong>Compare multiple opportunities</strong> . Never evaluate one franchise in isolation</li>
-<li><strong>Assess your fit</strong> . Does this match your skills, budget, and goals?</li>
-<li><strong>Make a decision</strong> . Based on data, not emotions or pressure</li>
-</ol>
-<h2 id="the-questions-most-buyers-dont-ask-but-should">The Questions Most Buyers Don't Ask (But Should)</h2>
-<h3 id="to-the-franchisor">To the Franchisor</h3>
-<ul>
-<li>"What percentage of your franchisees are profitable?"</li>
-<li>"Can you introduce me to 5 current franchisees I can talk to independently?"</li>
-<li>"What's your average franchisee's revenue in year 3?"</li>
-<li>"How do you handle territory conflicts?"</li>
-</ul>
-<h3 id="to-current-franchisees-when-you-meet-them">To Current Franchisees (When You Meet Them)</h3>
-<ul>
-<li>"What surprised you most about owning this franchise?"</li>
-<li>"What would you do differently if you could start over?"</li>
-<li>"How responsive is the franchisor when problems arise?"</li>
-<li>"Are you profitable? If not, why not?"</li>
-</ul>
-<h3 id="to-yourself">To Yourself</h3>
-<ul>
-<li>"Am I evaluating this objectively or because I want it to work?"</li>
-<li>"What's my exit strategy if this doesn't work out?"</li>
-<li>"Can I afford to lose everything I invest here?"</li>
-<li>"Does this align with my long-term goals or just solve a short-term problem?"</li>
-</ul>
-<h2 id="red-flags-that-should-make-you-walk-away">Red Flags That Should Make You Walk Away</h2>
-<ol>
-<li><strong>Pressure to sign quickly</strong> . "This opportunity won't last" is never true</li>
-<li><strong>Reluctance to provide FDD</strong> . Legitimate franchisors expect you to review it</li>
-<li><strong>Unrealistic profit claims</strong> . If it sounds too good, it is</li>
-<li><strong>High closure rates</strong> . More than 15% in 3 years is concerning</li>
-<li><strong>Litigation history with franchisees</strong> . Pattern of disputes is a warning sign</li>
-<li><strong>Vague territory definitions</strong> . "Non-exclusive" territories offer little protection</li>
-<li><strong>No Item 19 data</strong> . If they won't share financial performance, why should you trust them?</li>
-</ol>
-<h2 id="the-green-flags-that-signal-a-good-fit">The Green Flags That Signal a Good Fit</h2>
-<ol>
-<li><strong>Transparent FDD</strong> . Clear, honest disclosures without hiding anything</li>
-<li><strong>Strong franchisee network</strong> . Willingness to connect you with existing owners</li>
-<li><strong>Realistic projections</strong> . Based on actual data, not best-case scenarios</li>
-<li><strong>Solid training program</strong> . Comprehensive and ongoing support</li>
-<li><strong>Fair territory protection</strong> . Clear definitions that actually protect your investment</li>
-<li><strong>Reasonable fees</strong> . Not the cheapest option, but fair for what you're getting</li>
-<li><strong>Long track record</strong> . At least 5-10 years in business with growing franchisee base</li>
-</ol>
-<h2 id="why-you-need-independent-advice">Why You Need Independent Advice</h2>
-<p>Here's what I see repeatedly: First-time buyers get swept up in the franchisor's presentation and skip critical due diligence steps. They:
-- Don't talk to enough existing franchisees
-- Don't stress-test financial projections
-- Don't get legal review of the FDD
-- Make decisions based on emotion rather than data</p>
-<p>That's where I come in. I provide objective analysis of franchise opportunities, help you navigate the FDD, and ensure you're making an informed decision . not a sales-driven one.</p>
-<h2 id="ready-for-professional-evaluation">Ready for Professional Evaluation?</h2>
-<p>Every franchise opportunity deserves thorough, independent analysis before you invest six figures (or more). Don't rely on franchisor presentations alone.</p>
-<p><strong><a href="/assessment">Take the Franchise Fit Assessment</a></strong> → Free evaluation to determine if a specific franchise opportunity makes sense for your situation.</p>
+    <div class="container">
+        <nav style="padding: 24px 0;">
+            <a href="/blog/" style="color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent);">← Back to Blog</a>
+        </nav>
+        
+        <article class="blog-post">
+<h1>How to Evaluate a Franchise: A Framework Most People Never See</h1>
+<p>When you're considering buying a franchise, the information you receive comes from one source: the franchisor. Their entire business model depends on convincing you that their system is the right fit—and while most franchisors are honest, they're also selling something. That means their perspective is inherently biased toward saying "yes."</p>
+<p>Here's what most people miss when evaluating a franchise opportunity—and how to see past the sales pitch to make an informed decision.</p>
+<h2>The Franchise Disclosure Document (FDD): What It Actually Tells You</h2>
+<p>Every legitimate franchisor must provide an FDD—a 100+ page document required by federal law that contains specific information about the business. Most buyers skim it; savvy evaluators focus on these critical sections:</p>
+<p><strong>Item 3: Litigation History.</strong> What legal disputes has the franchisor faced? Patterns of litigation with franchisees are red flags worth investigating carefully.</p>
+<p><strong>Item 7: Initial Fees and Estimated Startup Costs.</strong> The franchisor's own estimate of what you'll need to invest. Compare this against independent research—franchisors sometimes underestimate costs to make the opportunity appear more accessible.</p>
+<p><strong>Item 19: Financial Performance Representations.</strong> If available, this section shows actual revenue data from existing franchise locations. Not all franchisors provide it, but when they do, it's invaluable for evaluating realistic ROI potential.</p>
+<p><strong>Item 20: Franchisee Contact Information and Turnover Rates.</strong> This is where you find the people who've actually lived your future. Call them. Ask about profitability, support quality, and whether they'd do it again.</p>
+<h2>What Most People Get Wrong About Due Diligence</h2>
+<p>In my experience helping professionals evaluate franchise opportunities, the biggest mistake isn't skipping due diligence—it's doing it superficially. Many buyers rely solely on the franchisor's presentation and a handful of reference calls. That's like asking your real estate agent to recommend a contractor—they're incentivized to be positive regardless of quality.</p>
+<p>Real due diligence requires:
+- <strong>Independent market research:</strong> Is there actual demand for this service in your target area?
+- <strong>Financial modeling:</strong> Run conservative, moderate, and optimistic scenarios based on Item 19 data (if available).
+- <strong>Legal review:</strong> Have a franchise attorney review the FDD and operating agreement—don't rely on the franchisor's legal team.
+- <strong>Competitive analysis:</strong> How does this franchise compare to independent competitors in your market?</p>
+<h2>My Honest Assessment Framework</h2>
+<p>When I help clients evaluate specific franchise opportunities, we look at three factors:</p>
+<p><strong>1. The franchisor's track record.</strong> How long have they been in business? What's their franchisee retention rate? Are there patterns of litigation or complaints with the FTC or state regulators?</p>
+<p><strong>2. Your market fit.</strong> Even a great franchise can fail in the wrong location. Evaluate local demand, competition, and demographic alignment carefully before committing.</p>
+<p><strong>3. The total cost of ownership.</strong> Beyond initial fees, what are the ongoing royalties, marketing contributions, technology fees, and renewal costs? These compound significantly over the life of the agreement.</p>
+<h2>The Bottom Line</h2>
+<p>Evaluating a franchise requires looking past the sales presentation to understand the actual business model, financial realities, and long-term commitment involved. The professionals who make this decision successfully don't just trust what they're told—they verify it independently through multiple sources and frameworks.</p>
+<p>I help professionals evaluate both franchising and independent ownership objectively—without pushing any particular path. My job is to help you see clearly which makes sense for where you are right now.</p>
+<h2>Ready to Explore Your Options?</h2>
+<p>Every situation is different. The right choice depends on your skills, interests, and financial situation—not what worked for someone else.</p>
+<p><strong><a href="/assessment">Take the Franchise Fit Assessment</a></strong> → Free evaluation to determine whether a franchise or independent business makes more sense for your next chapter.</p>
 <hr />
-<p><em>About Austin Olson: I help franchise buyers evaluate opportunities with the same rigor I brought to 20 years of public service. With a JD and psychology background, I've developed frameworks that cut through franchisor presentations and get to what actually matters for your investment.</em></p>
-    </article>
-    <footer class="article-footer"><div class="container"><p>Ready to explore which franchise fits your situation? <a href="/#contact">Get in touch</a> for a free consultation.</p></div></footer>
+<p><em>About Austin Olson: I help entrepreneurs evaluate whether franchising or going independent makes more sense for their situation. With a JD, psychology background, and 20 years in public service, I bring both analytical rigor and practical insight to every consultation.</em></p>
+        </article>
+    </div>
+    
+    <!-- Footer -->
+    <footer style="padding: 48px 24px; text-align: center; border-top: 1px solid var(--border); margin-top: 64px;">
+        <p style="color: var(--text-secondary); font-size: 0.9rem;">&copy; 2026 Olson Franchise Advisory. All rights reserved.</p>
+    </footer>
 </body>
+</html>
