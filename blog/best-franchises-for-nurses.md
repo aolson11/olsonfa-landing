@@ -54,6 +54,8 @@ In my experience helping professionals evaluate career transitions, the biggest 
 
 ## How I Work With Nurses Making This Transition
 
+My wife is a nurse. Watching her navigate burnout, moral injury, and the gap between what she learned in school and what the job actually demands gave me a front-row seat to why most nurses never see their own options until it is too late. That perspective shapes everything about how I approach this work with you.
+
 When I help nurses evaluate this transition, we look at three factors:
 
 What aspect of care do you want to keep? Some people want to stay directly involved in client services. Others prefer operational roles where they manage systems and teams rather than providing hands-on care. There is no right answer here. Only the honest one. I have seen nurses thrive in both directions, but only when they are clear about which direction serves their actual goals.
