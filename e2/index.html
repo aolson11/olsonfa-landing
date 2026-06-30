@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-2 Visa Franchise Pathway | Olson Franchise Advisory</title>
+  <meta name="description" content="Secure your E-2 visa with a pre-vetted, treaty-compliant franchise investment. Guided by Austin Olson, JD — attorney-level expertise in franchise immigration strategy.">
+  <style>
+    :root {
+      --primary: #1a365d;
+      --accent: #c8a951;
+      --light: #f7f5f0;
+      --text: #2d3748;
+      --muted: #718096;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.7; }
+
+    /* Navigation */
+    nav { background: white; padding: 1rem 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
+    nav .logo { font-size: 1.2rem; font-weight: 700; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+    nav .logo span { color: var(--accent); }
+    nav a.cta-nav { background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
+    nav a.cta-nav:hover { background: #b8973f; }
+
+    /* Hero */
+    .hero { background: linear-gradient(135deg, var(--primary) 0%, #2d4a7a 100%); color: white; padding: 6rem 2rem 5rem; text-align: center; }
+    .hero-inner { max-width: 800px; margin: 0 auto; }
+    .hero .tagline { display: inline-block; background: rgba(200,169,81,0.2); color: var(--accent); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem; }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -1px; }
+    .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.8; }
+    .hero-cta { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary { background: var(--accent); color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.2s; display: inline-block; }
+    .btn-primary:hover { background: #b8973f; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(200,169,81,0.4); }
+    .btn-secondary { color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; border: 2px solid rgba(255,255,255,0.4); transition: all 0.2s; display: inline-block; }
+    .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+    /* Trust Bar */
+    .trust-bar { background: var(--light); padding: 2rem; text-align: center; border-bottom: 1px solid #e8e4dc; }
+    .trust-bar p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
+    .trust-logos { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.5; font-size: 0.95rem; color: var(--muted); font-weight: 600; }
+
+    /* Problem Section */
+    .problem { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
+    .problem h2 { font-size: 2rem; color: var(--primary); margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+    .problem p { font-size: 1.1rem; color: var(--muted); max-width: 650px; margin: 0 auto 1rem; }
+    .pain-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; text-align: left; }
+    .pain-point { background: white; border: 1px solid #e8e4dc; border-radius: 10px; padding: 1.5rem; }
+    .pain-point .icon { font-size: 2rem; margin-bottom: 0.8rem; }
+    .pain-point h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 0.5rem; }
+    .pain-point p { font-size: 0.95rem; color: var(--muted); margin: 0; }
+
+    /* Guide Section */
+    .guide { background: var(--light); padding: 5rem 2rem; }
+    .guide-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center; }
+    .guide-photo { background: var(--primary); border-radius: 12px; height: 320px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; }
+    .guide h2 { font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem; letter-spacing: -0.5px; }
+    .guide p { font-size: 1.05rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
+    .guide-credentials { display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    .credential { background: white; padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.85rem; color: var(--primary); font-weight: 600; border-left: 3px solid var(--accent); }
+
+    /* Plan Section */
+    .plan { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
+    .plan h2 { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; letter-spacing: -0.5px; }
+    .plan > p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
+    .steps { display: grid; gap: 2rem; text-align: left; }
+    .step { display: flex; gap: 1.5rem; align-items: flex-start; background: white; border: 1px solid #e8e4dc; border-radius: 10px; padding: 2rem; transition: box-shadow 0.2s; }
+    .step:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .step-num { background: var(--accent); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 800; flex-shrink: 0; }
+    .step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.4rem; }
+    .step p { color: var(--muted); font-size: 0.95rem; margin: 0; }
+
+    /* Success Section */
+    .success { background: linear-gradient(135deg, #2d6a4f 0%, #1a365d 100%); color: white; padding: 5rem 2rem; text-align: center; }
+    .success-inner { max-width: 800px; margin: 0 auto; }
+    .success h2 { font-size: 2rem; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
+    .success p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 3rem; line-height: 1.8; }
+    .outcomes { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; text-align: left; }
+    .outcome { background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; backdrop-filter: blur(10px); }
+    .outcome .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    .outcome h3 { font-size: 1rem; margin-bottom: 0.3rem; }
+    .outcome p { font-size: 0.9rem; opacity: 0.8; margin: 0; }
+
+    /* Warning Section */
+    .warning { padding: 4rem 2rem; max-width: 700px; margin: 0 auto; text-align: center; background: #fff8f0; border-radius: 12px; margin-top: -2rem; position: relative; z-index: 10; }
+    .warning h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 1rem; }
+    .warning p { color: var(--muted); font-size: 1rem; }
+
+    /* Final CTA */
+    .final-cta { padding: 5rem 2rem; text-align: center; background: var(--light); }
+    .final-cta h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem; letter-spacing: -0.5px; }
+    .final-cta p { color: var(--muted); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2.5rem; }
+
+    /* Footer */
+    footer { background: var(--primary); color: rgba(255,255,255,0.6); padding: 3rem 2rem; text-align: center; font-size: 0.9rem; }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer .disclaimer { max-width: 600px; margin: 1rem auto 0; font-size: 0.8rem; opacity: 0.5; line-height: 1.6; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .guide-inner { grid-template-columns: 1fr; text-align: center; }
+      .guide-credentials { justify-content: center; }
+      .hero { padding: 4rem 1.5rem 3.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="https://olsonfa.com" class="logo">Olson<span>FA</span></a>
+    <a href="#cta" class="cta-nav">Schedule Your Free Consultation</a>
+  </nav>
+
+  <!-- Hero: The Customer's Problem -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="tagline">E-2 Visa Franchise Pathway</div>
+      <h1>Your Family Deserves More Than Hope.<br>You Need a Plan.</h1>
+      <p>The E-2 visa is your fastest path to a US green card. But navigating franchise compliance, treaty requirements, and immigration law alone has sent hundreds of qualified investors into rejection cycles.</p>
+      <div class="hero-cta" id="cta">
+        <a href="#consultation" class="btn-primary">Get Your Free E-2 Eligibility Assessment</a>
+        <a href="#plan" class="btn-secondary">See How It Works ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <p>Trusted by investors from treaty nations worldwide</p>
+    <div class="trust-logos">
+      <span>Mexico</span>
+      <span>Turkey</span>
+      <span>Colombia</span>
+      <span>Jordan</span>
+      <span>Canada</span>
+      <span>Brazil</span>
+      <span>Caribbean Nations</span>
+    </div>
+  </div>
+
+  <!-- Problem: The Villain -->
+  <section class="problem">
+    <h2>The E-2 Visa Isn't Just a Form. It's a Minefield.</h2>
+    <p>You've heard the promise: invest in a US business, get your visa, secure your family's future. But between that dream and reality lies a maze of requirements most investors never see coming.</p>
+    <div class="pain-points">
+      <div class="pain-point">
+        <div class="icon">&#9888;</div>
+        <h3>"Substantial" Investment Ambiguity</h3>
+        <p>No fixed dollar amount. Consular officers decide case-by-case. Without guidance, your investment can be rejected for "not substantial enough."</p>
+      </div>
+      <div class="pain-point">
+        <div class="icon">&#128274;</div>
+        <h3>The Marginality Trap</h3>
+        <p>Your business must do more than just pay your salary. It must have the capacity to generate significantly more income than a marginal existence.</p>
+      </div>
+      <div class="pain-point">
+        <div class="icon">&#128309;</div>
+        <h3>Treaty Compliance Complexity</h3>
+        <p>Every treaty country has different requirements. Your franchise must meet specific E-2 criteria — not just any business qualifies.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide: Austin Olson -->
+  <section class="guide">
+    <div class="guide-inner">
+      <div class="guide-photo">&#9785;</div>
+      <div>
+        <h2>You Don't Need Another Consultant.<br>You Need a Guide.</h2>
+        <p>Austin Olson doesn't sell franchises. He helps investors like you navigate the complex intersection of franchise law, immigration compliance, and strategic investment — so you can focus on what matters: your family's future.</p>
+        <p>With a JD in business and entrepreneurial law, plus 15+ years guiding people through high-stakes transitions, Austin brings something no immigration attorney or franchise broker offers alone: the full picture of risk, compliance, and opportunity.</p>
+        <div class="guide-credentials">
+          <span class="credential">JD, Business & Entrepreneurial Law</span>
+          <span class="credential">15+ Years in High-Stakes Transitions</span>
+          <span class="credential">753 Franchises Vetted for E-2 Compliance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plan: The Three-Step Path -->
+  <section class="plan" id="plan">
+    <h2>Your Clear Path to an E-2 Compliant Franchise</h2>
+    <p>No guesswork. No rejection cycles. Just a proven process that gets you from "I'm interested" to "visa approved."</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Eligibility Assessment (Free)</h3>
+          <p>We review your treaty country, investment capacity, and timeline. If you qualify for the E-2 pathway, we move forward. If not, we tell you honestly — because trust is the foundation of everything we do.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>Franchise Matching & E-2 Compliance Review</h3>
+          <p>We match you with pre-vetted franchises from our database of 753+ opportunities — filtered specifically for E-2 treaty compliance, territory availability, and investment range that matches your capacity.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>Investment Execution & Immigration Coordination</h3>
+          <p>We coordinate with your immigration attorney to ensure the franchise structure meets all E-2 requirements: substantial investment, marginality compliance, and your role as a developing/executing enterprise owner.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Success: The Transformation -->
+  <section class="success">
+    <div class="success-inner">
+      <h2>This Isn't About Buying a Business.<br>It's About Securing Your Family's Future.</h2>
+      <p>Investors who work with us don't just get a franchise. They get clarity, compliance confidence, and a pathway that actually works.</p>
+      <div class="outcomes">
+        <div class="outcome">
+          <div class="icon">&#127891;</div>
+          <h3>Green Card Pathway</h3>
+          <p>Your family's long-term US residency, secured through a compliant E-2 investment structure.</p>
+        </div>
+        <div class="outcome">
+          <div class="icon">&#128640;</div>
+          <h3>Business Ownership</h3>
+          <p>A proven franchise system — not a startup gamble. Structured for success from day one.</p>
+        </div>
+        <div class="outcome">
+          <div class="icon">&#128176;</div>
+          <h3>Wealth Preservation</h3>
+          <p>Your investment works harder in a stable US economy than sitting idle in an unstable one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Warning: The Stakes -->
+  <div class="warning">
+    <h3>&#9888; What Happens If You Wait?</h3>
+    <p>E-2 visa processing times are increasing. Treaty country eligibility can change. Every month you spend "researching" alone is a month your family's timeline slips further away. The investors who succeed aren't the ones with the most money — they're the ones who started with the right guide.</p>
+  </div>
+
+  <!-- Final CTA -->
+  <section class="final-cta">
+    <h2>Your Family's Future Starts With One Conversation</h2>
+    <p>Schedule a free, no-obligation E-2 eligibility assessment. We'll tell you honestly whether this pathway makes sense for your situation.</p>
+    <a href="#" class="btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Schedule Your Free Consultation</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Olson Franchise Advisory. All rights reserved.</p>
+    <p><a href="https://olsonfa.com">olsonfa.com</a> | austin@olsoncg.com</p>
+    <div class="disclaimer">
+      Disclaimer: Olson Franchise Advisory does not provide immigration legal advice. We coordinate with qualified immigration attorneys to ensure your franchise investment meets E-2 visa requirements. All franchise data is provided for informational purposes and should be verified independently.
+    </div>
+  </footer>
+
+</body>
+</html>
