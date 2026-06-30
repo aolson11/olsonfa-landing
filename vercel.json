@@ -4,7 +4,8 @@
     { "source": "/guide", "destination": "/guide.html" },
     { "source": "/assessment", "destination": "/assessment.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/blog/(.*)", "destination": "/blog/$1.html" }
+    { "source": "/blog/(.*)", "destination": "/blog/$1.html" },
+    { "source": "/e2", "destination": "/e2/index.html" }
   ],
   "headers": [
     {
