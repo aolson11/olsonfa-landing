@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 Questions Before Buying a Franchise | Free Guide - Olson Franchise Advisory</title>
-    <meta name="description" content="Free guide: 5 questions to ask before buying a franchise so you don't waste $100K. A framework from Olson Franchise Advisory.">
+    <meta name="description" content="Free guide: five questions to ask before committing capital to a franchise. A decision framework from Olson Franchise Advisory.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="5 Questions Before Buying a Franchise | Free Guide">
@@ -204,6 +204,22 @@
         
         .lead-capture-form button:hover {
             background: var(--accent-hover);
+        }
+
+        .lead-capture-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            line-height: 1.45;
+            text-align: left;
+        }
+
+        .lead-capture-form .lead-capture-consent input {
+            width: auto;
+            padding: 0;
+            margin-top: 3px;
         }
         
         .lead-capture-note {
@@ -414,23 +430,32 @@
     <div class="container">
         <div class="guide-hero-content">
             <span class="tagline">Free Guide</span>
-            <h1>5 Questions to Ask Before Buying a Franchise (So You Don't Waste $100K)</h1>
+            <h1>5 Questions to Ask Before Committing Capital to a Franchise</h1>
             <p class="guide-hero-subtitle">A framework from Olson Franchise Advisory. Before you look at a single brand, answer these five questions.</p>
             
             <!-- LEAD CAPTURE FORM -->
             <div class="lead-capture">
                 <h3>Get Your Free Copy</h3>
-                <p>Enter your email and we'll send you the full guide instantly.</p>
-                <form class="lead-capture-form" action="https://formsubmit.co/austin@olsoncg.com" method="POST">
+                <p>Enter your email to unlock the full guide immediately.</p>
+                <form class="lead-capture-form" action="https://formsubmit.co/admin@olsoncg.com" method="POST">
                     <input type="hidden" name="_subject" value="New Guide Download Request from olsonfa.com">
+                    <input type="hidden" name="form_origin" value="guide_page">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="https://olsonfa.com/thankyou.html">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
-                    <button type="submit">Send Me the Guide</button>
+                    <label class="lead-capture-consent">
+                        <input type="checkbox" name="Guide_Request_Consent" value="yes" required>
+                        <span>I agree Olson Franchise Advisory may email me about this guide request.</span>
+                    </label>
+                    <label class="lead-capture-consent">
+                        <input type="checkbox" name="Marketing_Consent" value="yes">
+                        <span>Also send occasional franchise-ownership insights. Optional.</span>
+                    </label>
+                    <button type="submit">Open the Guide</button>
                 </form>
-                <p class="lead-capture-note">No spam. Unsubscribe anytime. I send one useful insight per week, max.</p>
+                <p class="lead-capture-note">Guide access appears after submission. Marketing messages are sent only if you check the optional box.</p>
             </div>
         </div>
     </div>
@@ -540,8 +565,8 @@
     <!-- Bottom Line -->
     <section class="guide-section">
         <h2>The Bottom Line</h2>
-        <p>If you answered these five questions and feel confident in your answers, great. You're ahead of 90% of people who walk into franchise sales meetings.</p>
-        <p>If some of them made you uncomfortable? That's not a reason to stop. It's a reason to slow down, get clarity, and talk to someone who has evaluated hundreds of franchise opportunities from an unbiased position.</p>
+        <p>If you answered these five questions and feel confident in your answers, you have a stronger foundation for evaluating specific opportunities.</p>
+        <p>If some of them made you uncomfortable, that is not a reason to stop. It is a reason to slow down, get clarity, and use a structured process before committing capital.</p>
         <p><strong>That's what I do. And the first step is always free.</strong></p>
     </section>
 
@@ -557,9 +582,9 @@
                 <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; margin-bottom: 24px;">Olson Franchise Advisory helps prospective franchise owners evaluate whether ownership makes sense for their situation, before they invest a single dollar.</p>
                 
                 <ul>
-                    <li>Multi-brand evaluation across hundreds of franchise concepts</li>
-                    <li>No brand affiliation. No commission from franchisors.</li>
-                    <li>Psychology background + business law training + 15+ years leadership experience applied to franchise decision-making</li>
+                    <li>Multi-brand evaluation guided by your financial, lifestyle, and operating criteria</li>
+                    <li>No upfront advisory fee to prospective candidates; Olson Franchise Advisory may be compensated by a franchisor if a placement occurs</li>
+                    <li>Psychology background, legal training, and 15+ years of leadership experience applied to high-stakes decision support</li>
                     <li>If franchise ownership isn't the right move? I will tell you directly.</li>
                 </ul>
                 

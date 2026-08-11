@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFA | Franchise Categories</title>
+    <meta name="description" content="Explore franchise categories that match your strengths and goals. From home services to senior care, B2B services to semi-absentee models. Find what fits before you commit to a brand.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="OFA | Franchise Categories">
+    <meta property="og:description" content="Explore franchise categories that match your strengths and goals. Structured evaluation before brand commitment.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9494a3;
+            --accent: #c9a84c;
+            --accent-hover: #d4b85e;
+            --border: #2a2a3a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100; padding: 16px 0;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 32px; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Page Header */
+        .page-header { padding-top: 140px; padding-bottom: 60px; text-align: center; position: relative; }
+        .page-header::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 600px; height: 400px;
+            background: radial-gradient(ellipse, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .section-label { color: var(--accent); font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; display: block; }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.15; margin-bottom: 24px; position: relative; }
+        .page-header p { color: var(--text-secondary); font-size: 1.2rem; max-width: 700px; margin: 0 auto; position: relative; }
+
+        /* Category Grid */
+        .categories-grid { padding: 60px 0 120px; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; }
+
+        .category-card { background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border); padding: 36px; transition: all 0.3s; }
+        .category-card:hover { border-color: rgba(201, 168, 76, 0.4); transform: translateY(-2px); }
+
+        .category-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+
+        .category-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--accent); margin-bottom: 12px; }
+        .category-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+
+        /* CTA Section */
+        .cta-section { padding: 100px 0; text-align: center; background: var(--bg-secondary); border-top: 1px solid var(--border); }
+        .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 20px; }
+        .cta-section p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; }
+
+        .cta-button { display: inline-block; background: var(--accent); color: var(--bg-primary); padding: 16px 32px; font-size: 1rem; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s; border: none; cursor: pointer; }
+        .cta-button:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3); }
+
+        /* Footer */
+        footer { padding: 48px 0; border-top: 1px solid var(--border); text-align: center; }
+        footer p { color: var(--text-secondary); font-size: 0.9rem; }
+        .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 16px; }
+        .social-link { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .social-link:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .categories-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Olson Franchise Advisory</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/how-it-works">How It Works</a>
+                <a href="/right-for-me">Is This Right for Me?</a>
+                <a href="/categories" style="color: var(--accent);">Franchise Categories</a>
+                <a href="/funding">Funding & Readiness</a>
+                <a href="/blog/">Blog</a>
+                <a href="/assessment.html" class="cta-button" style="padding: 10px 24px; font-size: 0.9rem;">Take the Assessment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-label">Explore Options</span>
+            <h1>Franchise Categories That Match Your Strengths</h1>
+            <p>The right franchise category aligns with your skills, goals, and lifestyle preferences. Not what sounds exciting today. What fits the life you are trying to build.</p>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories-grid">
+        <div class="container" style="display: contents;">
+
+            <div class="category-card">
+                <span class="category-icon">&#127968;</span>
+                <h3>Home Services</h3>
+                <p>Plumbing, electrical, HVAC, cleaning, and specialty trade franchises. Strong demand, recurring revenue models, and opportunities for both owner-operator and semi-absentee ownership.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#128154;</span>
+                <h3>Senior Care</h3>
+                <p>The aging population drives sustained demand for in-home care services. Non-medical and companion care franchises offer lower startup costs with strong growth potential.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#128139;</span>
+                <h3>Health and Wellness</h3>
+                <p>Fitness centers, wellness studios, and health-focused services. Growing market with strong consumer demand and multiple ownership models available.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#128202;</span>
+                <h3>B2B Services</h3>
+                <p>Business-to-business service franchises including commercial cleaning, security, staffing, and specialized consulting models. Often lower investment with strong margins.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#128524;</span>
+                <h3>Children's Education</h3>
+                <p>Educational enrichment, tutoring, and early learning franchises. Parents continue investing in children's development regardless of economic conditions.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#127829;</span>
+                <h3>Food and Beverage</h3>
+                <p>Restaurants, quick-service concepts, and specialty food franchises. Higher investment range with established brand recognition and proven operational systems.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#128059;</span>
+                <h3>Pet Services</h3>
+                <p>Grooming, boarding, training, and pet care franchises. Recession-resistant industry with passionate customer base and strong recurring revenue potential.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#128170;</span>
+                <h3>Fitness</h3>
+                <p>Gym franchises, boutique fitness studios, and specialized training concepts. Multiple price points and ownership models from owner-operator to semi-absentee.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#128187;</span>
+                <h3>Low-Investment / Home-Based</h3>
+                <p>Franchise concepts requiring surprisingly little upfront investment. Many can be operated from home or with minimal physical footprint. SBA financing often covers a significant portion.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#128736;</span>
+                <h3>Semi-Absentee</h3>
+                <p>Ownership models designed for investors who want revenue without daily operations. Manager-staffed concepts that generate returns with your oversight rather than your labor.</p>
+            </div>
+
+            <div class="category-card">
+                <span class="category-icon">&#128640;</span>
+                <h3>Resale Opportunities</h3>
+                <p>Existing franchise businesses available for purchase. Proven operations with established customer bases, often at lower cost than new builds. Due diligence becomes more straightforward.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Not Sure Which Category Fits?</h2>
+            <p>The assessment walks you through the questions that narrow down to your best options. No brand pressure. Just clarity on what fits.</p>
+            <a href="/assessment.html" class="cta-button">Take the Franchise Fit Assessment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Olson Franchise Advisory. All rights reserved.</p>
+            <p style="margin-top: 8px;">Structured franchise evaluation · Define what ownership must accomplish · No obligation at any point</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/franchiseguide" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                <a href="tel:7754202007" class="social-link">Call (775) 420-2007</a>
+                <a href="mailto:austin@olsonfa.com" class="social-link">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

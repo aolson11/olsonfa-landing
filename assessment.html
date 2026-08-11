@@ -433,6 +433,36 @@
             margin-bottom: 24px;
         }
 
+        .form-status {
+            display: none;
+            margin: 16px 0;
+            padding: 12px 14px;
+            border-radius: 8px;
+            color: var(--text-secondary);
+            background: rgba(201, 168, 76, 0.08);
+            border: 1px solid rgba(201, 168, 76, 0.25);
+        }
+
+        .form-status.active { display: block; }
+        .form-status.error {
+            color: #ffd4d4;
+            background: rgba(180, 40, 40, 0.12);
+            border-color: rgba(220, 80, 80, 0.45);
+        }
+
+        .consent-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .consent-option input { margin-top: 4px; }
+        .btn[disabled] { opacity: 0.65; cursor: wait; }
+
         /* Footer */
         footer {
             padding: 40px 0;
@@ -502,11 +532,12 @@
                     <div class="progress-step" data-step="4">4</div>
                 </div>
 
-                <form id="assessment-form" action="https://formsubmit.co/austin@olsoncg.com" method="POST">
-                    <input type="hidden" name="_subject" value="New Franchise Fit Assessment Submission">
+                <form id="assessment-form" action="https://formsubmit.co/ajax/admin@olsoncg.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Franchise Fit Assessment Submission - Full Assessment">
+                    <input type="hidden" name="form_origin" value="full_assessment">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="/thankyou.html">
+                    <input type="hidden" name="_next" value="https://olsonfa.com/thankyou.html">
 
                     <!-- STEP 1: Personal Background -->
                     <div class="form-step active" data-step="1">
@@ -702,7 +733,7 @@
                         </div>
 
                         <div class="button-group">
-                            <a href="#" class="btn btn-secondary" onclick="prevStep(1)">← Back</a>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(1)">← Back</button>
                             <button type="button" class="btn btn-primary" onclick="nextStep(3)">Continue →</button>
                         </div>
                     </div>
@@ -846,7 +877,7 @@
                         </div>
 
                         <div class="button-group">
-                            <a href="#" class="btn btn-secondary" onclick="prevStep(2)">← Back</a>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(2)">← Back</button>
                             <button type="button" class="btn btn-primary" onclick="nextStep(4)">Continue →</button>
                         </div>
                     </div>
@@ -960,8 +991,15 @@
                             </div>
                         </div>
 
+                        <label class="consent-option">
+                            <input type="checkbox" name="contact_consent" value="yes" required>
+                            <span>I agree that Olson Franchise Advisory may contact me by email or phone about this assessment. This does not enroll me in a newsletter.</span>
+                        </label>
+
+                        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+
                         <div class="button-group">
-                            <a href="#" class="btn btn-secondary" onclick="prevStep(3)">← Back</a>
+                            <button type="button" class="btn btn-secondary" onclick="prevStep(3)">← Back</button>
                             <button type="submit" class="btn btn-primary">Submit Assessment →</button>
                         </div>
                     </div>
@@ -970,7 +1008,7 @@
                     <div class="success-message" id="success-message">
                         <div class="success-icon">&#10003;</div>
                         <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; margin-bottom: 16px;">Assessment Received</h3>
-                        <p style="color: var(--text-secondary); max-width: 400px; margin: 0 auto;">I'll review your answers and reach out within 24 hours to schedule your discovery call.</p>
+                        <p style="color: var(--text-secondary); max-width: 400px; margin: 0 auto;">I'll review your answers and follow up with the appropriate next step.</p>
                     </div>
                 </form>
             </div>
@@ -985,16 +1023,16 @@
                 <p style="color: var(--text-secondary); max-width: 500px; margin: 0 auto;">Most franchise buyers skip the evaluation step and go straight to brand research. That's how you get sold into an opportunity that looks good on paper but doesn't fit your actual situation.</p>
                 <div class="guide-credentials">
                     <div class="credential">
-                        <div class="credential-number">750+</div>
-                        <div class="credential-label">Franchises Analyzed</div>
+                        <div class="credential-number">Multi-Brand</div>
+                        <div class="credential-label">Marketplace Access</div>
                     </div>
                     <div class="credential">
                         <div class="credential-number">JD</div>
-                        <div class="credential-label">Legal + Clinical Lens</div>
+                        <div class="credential-label">Legal Training + Behavioral Insight</div>
                     </div>
                     <div class="credential">
                         <div class="credential-number">15+</div>
-                        <div class="credential-label">Years Evaluating Fit</div>
+                        <div class="credential-label">Years in Public-Service Leadership</div>
                     </div>
                 </div>
             </div>
@@ -1106,13 +1144,64 @@
             if (el) el.addEventListener('input', updateFinancialTotals);
         });
 
-        // Form submission handler
-        document.getElementById('assessment-form').addEventListener('submit', function(e) {
+        // Form submission handler: never show success until FormSubmit confirms receipt.
+        document.getElementById('assessment-form').addEventListener('submit', async function(e) {
             e.preventDefault();
-            this.style.display = 'none';
-            document.querySelector('.progress-bar').style.display = 'none';
-            document.getElementById('success-message').classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (!this.checkValidity()) {
+                this.reportValidity();
+                return;
+            }
+
+            const submitButton = this.querySelector('button[type="submit"]');
+            const status = document.getElementById('form-status');
+            const originalLabel = submitButton.textContent;
+            const controller = new AbortController();
+            const timeout = window.setTimeout(() => controller.abort(), 15000);
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+            status.textContent = 'Submitting your assessment securely...';
+            status.className = 'form-status active';
+
+            try {
+                const formPayload = {};
+                for (const [rawKey, value] of new FormData(this).entries()) {
+                    const key = rawKey.endsWith('[]') ? rawKey.slice(0, -2) : rawKey;
+                    const existing = formPayload[key];
+                    formPayload[key] = existing === undefined
+                        ? value
+                        : Array.isArray(existing) ? [...existing, value] : [existing, value];
+                }
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: JSON.stringify(formPayload),
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    signal: controller.signal
+                });
+                const payload = await response.json().catch(() => null);
+                const successConfirmed = payload && (payload.success === true || payload.success === 'true');
+                const providerMessage = String(payload?.message || '');
+                if (!response.ok || !successConfirmed || /activat/i.test(providerMessage)) {
+                    throw new Error(`Submission was not confirmed by FormSubmit (status ${response.status})`);
+                }
+
+                status.className = 'form-status';
+                this.querySelectorAll('.form-step').forEach(step => step.classList.remove('active'));
+                document.querySelector('.progress-bar').style.display = 'none';
+                document.getElementById('success-message').classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } catch (error) {
+                status.textContent = 'Your assessment was not submitted. Please try again, call (775) 420-2007, or email austin@olsonfa.com.';
+                status.className = 'form-status active error';
+                submitButton.disabled = false;
+                submitButton.textContent = originalLabel;
+                console.error('Assessment submission failed:', error);
+            } finally {
+                window.clearTimeout(timeout);
+            }
         });
 
         // Initialize

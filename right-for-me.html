@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFA | Is Franchise Ownership Right for You?</title>
+    <meta name="description" content="Considering franchise ownership? Before you commit, answer the questions that actually matter: career dissatisfaction, golden handcuffs, fear of failure, family risk, and investment reality. Honest evaluation before brand commitment.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="OFA | Is Franchise Ownership Right for You?">
+    <meta property="og:description" content="Before you choose a franchise, define what ownership must accomplish for your life. Honest answers to the questions most advisors skip.">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --text-primary: #e8e8ed;
+            --text-secondary: #9494a3;
+            --accent: #c9a84c;
+            --accent-hover: #d4b85e;
+            --border: #2a2a3a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%;
+            background: rgba(10, 10, 15, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100; padding: 16px 0;
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; margin-left: 32px; font-size: 0.9rem; transition: color 0.3s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Page Header */
+        .page-header { padding-top: 140px; padding-bottom: 60px; text-align: center; position: relative; }
+        .page-header::before {
+            content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+            width: 600px; height: 400px;
+            background: radial-gradient(ellipse, rgba(201, 168, 76, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .section-label { color: var(--accent); font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; display: block; }
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.15; margin-bottom: 24px; position: relative; }
+        .page-header p { color: var(--text-secondary); font-size: 1.2rem; max-width: 700px; margin: 0 auto; position: relative; }
+
+        /* Content Sections */
+        .content-section { padding: 60px 0; border-top: 1px solid var(--border); }
+        .content-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 20px; color: var(--text-primary); }
+        .content-section p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.8; max-width: 700px; }
+
+        /* Question Cards */
+        .question-card { background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border); padding: 36px; margin-bottom: 32px; }
+        .question-card h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--accent); margin-bottom: 16px; }
+        .question-card p { max-width: none; font-size: 1rem; line-height: 1.75; }
+
+        /* When It's Wrong Section */
+        .wrong-section { background: rgba(180, 40, 40, 0.03); border: 1px solid rgba(180, 40, 40, 0.2); border-radius: 12px; padding: 36px; margin-top: 40px; }
+        .wrong-section h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: #d4a0a0; margin-bottom: 16px; }
+        .wrong-section p { max-width: none; font-size: 1rem; line-height: 1.75; }
+
+        /* CTA Section */
+        .cta-section { padding: 100px 0; text-align: center; background: var(--bg-secondary); border-top: 1px solid var(--border); }
+        .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 20px; }
+        .cta-section p { color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; }
+
+        .cta-button { display: inline-block; background: var(--accent); color: var(--bg-primary); padding: 16px 32px; font-size: 1rem; font-weight: 600; text-decoration: none; border-radius: 8px; transition: all 0.3s; border: none; cursor: pointer; }
+        .cta-button:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 10px 30px rgba(201, 168, 76, 0.3); }
+
+        /* Footer */
+        footer { padding: 48px 0; border-top: 1px solid var(--border); text-align: center; }
+        footer p { color: var(--text-secondary); font-size: 0.9rem; }
+        .social-links { display: flex; gap: 16px; justify-content: center; margin-top: 16px; }
+        .social-link { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+        .social-link:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="/" class="logo">Olson Franchise Advisory</a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/how-it-works">How It Works</a>
+                <a href="/right-for-me" style="color: var(--accent);">Is This Right for Me?</a>
+                <a href="/categories">Franchise Categories</a>
+                <a href="/funding">Funding & Readiness</a>
+                <a href="/blog/">Blog</a>
+                <a href="/assessment.html" class="cta-button" style="padding: 10px 24px; font-size: 0.9rem;">Take the Assessment</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <span class="section-label">Honest Evaluation</span>
+            <h1>Is Franchise Ownership Right for You?</h1>
+            <p>Before you choose a franchise, define what ownership must accomplish for your life. The answer to that question matters more than any brand.</p>
+        </div>
+    </section>
+
+    <!-- Content -->
+    <section class="content-section">
+        <div class="container">
+            <h2>The Question Nobody Asks First</h2>
+            <p>Most people start by looking at franchise brands. They browse websites, attend discovery days, and listen to sales presentations before asking the question that should come first: does franchise ownership fit what I am actually trying to build?</p>
+            <p style="margin-top: 16px;">That is not a small distinction. Starting with brands puts the cart before the horse. It means you are evaluating solutions before defining the problem. The result is often falling in love with an option that cannot work for your situation.</p>
+        </div>
+    </section>
+
+    <!-- Key Questions -->
+    <section class="content-section">
+        <div class="container">
+
+            <div class="question-card">
+                <h3>Career Dissatisfaction</h3>
+                <p>You have spent years building skills, credentials, and experience. But something is missing. The work no longer engages you. You feel like you are watching your life happen rather than directing it. That feeling is valid. It is also the starting point for honest evaluation.</p>
+            </div>
+
+            <div class="question-card">
+                <h3>Golden Handcuffs</h3>
+                <p>You have a good salary, benefits, and stability. But that stability has become a ceiling rather than a foundation. You know you could build something better. The question is whether the leap makes sense for your specific situation.</p>
+            </div>
+
+            <div class="question-card">
+                <h3>Fear of Failure</h3>
+                <p>You have seen what happens when people invest their life savings in the wrong opportunity. You know the stories. That fear is not irrational. It should inform your evaluation process, not prevent it entirely.</p>
+            </div>
+
+            <div class="question-card">
+                <h3>Owner-Operator vs Semi-Absentee</h3>
+                <p>Some people want to run the business themselves. Others want ownership with operational distance. Both are valid. But they require completely different franchise models. Getting this wrong means evaluating the wrong options.</p>
+            </div>
+
+            <div class="question-card">
+                <h3>Investment Reality</h3>
+                <p>You need to understand what you have available, not just what you could access through financing. Liquidity matters more than borrowing capacity. Family risk tolerance matters more than personal courage.</p>
+            </div>
+
+            <div class="question-card">
+                <h3>When Franchising Is Wrong</h3>
+                <p>Sometimes the honest answer is not yet. Maybe your financial situation needs strengthening first. Maybe you need more industry experience before taking on operational responsibility. Maybe a different path makes more sense entirely.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- When It's Wrong -->
+    <section class="content-section">
+        <div class="container">
+            <div class="wrong-section">
+                <h3>When Franchise Ownership Is Not the Right Move</h3>
+                <p>If you are looking for a get-rich-quick opportunity, franchising is not it. If you cannot tolerate the uncertainty of building something from scratch, even with a proven model, ownership may not be right yet. If your primary motivation is escaping a bad boss rather than pursuing a genuine opportunity, you need clarity on that first.</p>
+                <p style="margin-top: 16px;">The point is not to discourage you. It is to ensure that if you do move forward, it is for the right reasons with realistic expectations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Get an Honest Answer</h2>
+            <p>Take the Franchise Fit Assessment or schedule a clarity call. Either way, you get a direct answer about whether ownership fits your situation.</p>
+            <a href="/assessment.html" class="cta-button">Take the Franchise Fit Assessment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Olson Franchise Advisory. All rights reserved.</p>
+            <p style="margin-top: 8px;">Structured franchise evaluation · Define what ownership must accomplish · No obligation at any point</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/franchiseguide" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                <a href="tel:7754202007" class="social-link">Call (775) 420-2007</a>
+                <a href="mailto:austin@olsonfa.com" class="social-link">Email</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

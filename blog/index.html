@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Franchise Blog | Insights for Career Changers & Aspiring Franchise Owners</title>
     <meta name="description" content="Expert franchise advice from Austin Olson, JD. Guides on evaluating franchises, financing options, career transitions, and building your franchise portfolio.">
-    
+
     <!-- Open Graph -->
     <meta property="og:title" content="Franchise Blog | Olson Franchise Advisory">
     <meta property="og:description" content="Expert franchise advice for career changers, laid-off professionals, and aspiring business owners.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://olsonfa.com/blog/">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg-primary: #0a0a0f;
@@ -28,26 +28,26 @@
             --accent-hover: #d4b85e;
             --border: #2a2a3a;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
-        
+
         /* Navigation */
         nav {
             position: fixed;
@@ -59,13 +59,13 @@
             z-index: 100;
             padding: 16px 0;
         }
-        
+
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -73,7 +73,7 @@
             color: var(--accent);
             text-decoration: none;
         }
-        
+
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
@@ -81,32 +81,32 @@
             font-size: 0.9rem;
             transition: color 0.3s;
         }
-        
+
         .nav-links a:hover {
             color: var(--accent);
         }
-        
+
         /* Blog Header */
         .blog-header {
             padding: 140px 0 60px;
             text-align: center;
             border-bottom: 1px solid var(--border);
         }
-        
+
         .blog-header h1 {
             font-family: 'Playfair Display', serif;
             font-size: 3rem;
             margin-bottom: 16px;
             color: var(--text-primary);
         }
-        
+
         .blog-header p {
             font-size: 1.2rem;
             color: var(--text-secondary);
             max-width: 600px;
             margin: 0 auto;
         }
-        
+
         /* Blog Grid */
         .blog-grid {
             display: grid;
@@ -114,7 +114,7 @@
             gap: 32px;
             padding: 60px 0;
         }
-        
+
         .blog-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
@@ -122,16 +122,16 @@
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .blog-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
         }
-        
+
         .blog-card-content {
             padding: 32px;
         }
-        
+
         .blog-category {
             display: inline-block;
             background: rgba(201, 168, 76, 0.1);
@@ -144,7 +144,7 @@
             border-radius: 20px;
             margin-bottom: 16px;
         }
-        
+
         .blog-card h3 {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -154,14 +154,14 @@
             overflow-wrap: break-word;
             hyphens: auto;
         }
-        
+
         .blog-card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 24px;
         }
-        
+
         .blog-meta {
             display: flex;
             justify-content: space-between;
@@ -169,18 +169,18 @@
             color: var(--text-secondary);
             font-size: 0.85rem;
         }
-        
+
         .read-more {
             color: var(--accent);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s;
         }
-        
+
         .read-more:hover {
             color: var(--accent-hover);
         }
-        
+
         /* Footer */
         footer {
             background: var(--bg-secondary);
@@ -188,32 +188,32 @@
             padding: 60px 0 32px;
             margin-top: 60px;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 48px;
             margin-bottom: 48px;
         }
-        
+
         .footer-section h4 {
             font-family: 'Playfair Display', serif;
             font-size: 1.2rem;
             margin-bottom: 16px;
             color: var(--text-primary);
         }
-        
+
         .footer-section p,
         .footer-section a {
             color: var(--text-secondary);
             text-decoration: none;
             line-height: 1.8;
         }
-        
+
         .footer-section a:hover {
             color: var(--accent);
         }
-        
+
         .footer-bottom {
             border-top: 1px solid var(--border);
             padding-top: 32px;
@@ -221,15 +221,32 @@
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
-        
+
         @media (max-width: 768px) {
             .blog-header h1 {
                 font-size: 2rem;
             }
-            
+
             .blog-grid {
                 grid-template-columns: 1fr;
             }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 10px 24px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
         }
     </style>
 </head>
@@ -397,7 +414,7 @@
                 <div class="blog-card-content">
                     <span class="blog-category">Education</span>
                     <h3><a href="/blog/sba-loans-franchises" class="read-more">SBA Loans for Franchises: Complete Guide to Financing (2026)</a></h3>
-                    <p>How to get an SBA loan for a franchise — requirements, process, interest rates, and tips from someone who's helped dozens of professionals secure financing.</p>
+                    <p>A practical overview of SBA franchise financing requirements, process, interest-rate factors, and preparation questions to discuss with qualified lenders.</p>
                     <div class="blog-meta">
                         <span>Austin Olson, JD</span>
                         <a href="/blog/sba-loans-franchises" class="read-more">Read →</a>
@@ -591,7 +608,7 @@
                 <div class="blog-card-content">
                     <span class="blog-category">Education</span>
                     <h3><a href="/blog/sba-loans-franchises" class="read-more">SBA Loans for Franchises: Complete Guide to Financing (2026)</a></h3>
-                    <p>How to get an SBA loan for a franchise — requirements, process, interest rates, and tips from someone who's helped dozens of professionals secure financing.</p>
+                    <p>A practical overview of SBA franchise financing requirements, process, interest-rate factors, and preparation questions to discuss with qualified lenders.</p>
                     <div class="blog-meta">
                         <span>Austin Olson, JD</span>
                         <a href="/blog/sba-loans-franchises" class="read-more">Read →</a>
@@ -669,7 +686,7 @@
                 <div class="blog-card-content">
                     <span class="blog-category">Education</span>
                     <h3><a href="/blog/sba-loans-franchises" class="read-more">SBA Loans for Franchises: Complete Guide to Financing (2026)</a></h3>
-                    <p>How to get an SBA loan for a franchise — requirements, process, interest rates, and tips from someone who's helped dozens of professionals secure financing.</p>
+                    <p>A practical overview of SBA franchise financing requirements, process, interest-rate factors, and preparation questions to discuss with qualified lenders.</p>
                     <div class="blog-meta">
                         <span>Austin Olson, JD</span>
                         <a href="/blog/sba-loans-franchises" class="read-more">Read →</a>
@@ -722,7 +739,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>Email: austin@olsoncg.com</p>
+                    <p>Email: austin@olsonfa.com</p>
                     <p>Phone: 775-420-2007</p>
                     <p>Address: 5139 Dacite Ct, Sparks, NV 89436</p>
                 </div>

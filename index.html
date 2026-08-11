@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OFA | Is Franchise Ownership the Right Move for You?</title>
-    <meta name="description" content="Before you choose a franchise, define what ownership must accomplish for you. Austin Olson, J.D., evaluates franchise fit through structured discovery, not brand-first sales. Multi-brand inventory · 750+ concepts · No obligation.">
+    <meta name="description" content="Before you choose a franchise, define what ownership must accomplish for you. Austin Olson, J.D., evaluates franchise fit through structured discovery, not brand-first sales. Multi-brand evaluation with no obligation.">
     
     <!-- Open Graph -->
     <meta property="og:title" content="OFA | Is Franchise Ownership the Right Move for You?">
-    <meta property="og:description" content="Before you choose a franchise, define what ownership must accomplish for you. Austin Olson, J.D., evaluates franchise fit through structured discovery, not brand-first sales. Multi-brand inventory · 750+ concepts · No obligation.">
+    <meta property="og:description" content="Before you choose a franchise, define what ownership must accomplish for you. Austin Olson, J.D., evaluates franchise fit through structured discovery, not brand-first sales. Multi-brand evaluation with no obligation.">
     <meta property="og:type" content="website">
     
     <!-- Fonts -->
@@ -210,6 +210,7 @@
         
         .lead-magnet-form {
             display: flex;
+            flex-wrap: wrap;
             gap: 12px;
             justify-content: center;
             max-width: 520px;
@@ -248,6 +249,24 @@
         
         .lead-magnet-form button:hover {
             background: var(--accent-hover);
+        }
+
+        .lead-magnet-consent {
+            flex-basis: 100%;
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            line-height: 1.45;
+            text-align: left;
+        }
+
+        .lead-magnet-form .lead-magnet-consent input {
+            flex: 0 0 auto;
+            width: auto;
+            padding: 0;
+            margin-top: 3px;
         }
         
         .lead-magnet-note {
@@ -440,6 +459,18 @@
             gap: 16px;
         }
         
+        .contact-consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 4px 0 18px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .contact-consent input { margin-top: 4px; }
+
         .form-submit-btn {
             width: 100%;
             margin-top: 8px;
@@ -782,14 +813,15 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <a href="#" class="logo">Olson Franchise Advisory</a>
+            <a href="/" class="logo">Olson Franchise Advisory</a>
             <div class="nav-links">
-                <a href="#gap">Your Situation</a>
-                <a href="#differentiators">Why OFA</a>
-                <a href="#stakes">The Stakes</a>
-                <a href="#process">Our Approach</a>
+                <a href="/">Home</a>
+                <a href="/how-it-works">How It Works</a>
+                <a href="/right-for-me">Is This Right for Me?</a>
+                <a href="/categories">Categories</a>
+                <a href="/funding">Funding & Readiness</a>
                 <a href="/blog/">Blog</a>
-                <a href="#contact" class="cta-button" style="padding: 10px 24px; font-size: 0.9rem;">Get Clarity Now</a>
+                <a href="#contact" class="cta-button" style="padding: 10px 24px; font-size: 0.9rem;">Take the Assessment</a>
             </div>
         </div>
     </nav>
@@ -798,13 +830,13 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <span class="tagline">Franchises Don't Fit Everyone. Yours Should.</span>
-                <h1>Before You Pick a Franchise, Make Sure It Fits Your Money, Your Strengths, and the Territories Actually Available.</h1>
-                <p class="hero-subtitle">Most people pick a franchise because it sounds good. The right one fits your budget, your strengths, and the territories actually available. Not what a sales team needs to sell today.</p>
-                <p class="hero-stakes">After working with hundreds of people at this crossroads, I've learned: it's not capital or courage that separates those who thrive from those who struggle. It's fit.</p>
+                <span class="tagline">Before You Choose a Franchise, Define What Ownership Must Accomplish.</span>
+                <h1>The First Question Is Not Which Franchise. It Is What Ownership Must Accomplish for Your Life.</h1>
+                <p class="hero-subtitle">Most people start by looking at brands. That puts the cart before the horse. The right evaluation starts with defining what ownership needs to deliver for your life, your finances, and your future — then finding what actually fits.</p>
+                <p class="hero-stakes">People often arrive at this crossroads focused on capital or courage. The more useful question is whether the ownership model actually fits the life and future they are trying to build.</p>
                 <div>
-                    <a href="#contact" class="cta-button">Take Control of Your Next Chapter</a>
-                    <a href="#gap" class="cta-secondary">Explore Your Situation →</a>
+                    <a href="#contact" class="cta-button">Take the Franchise Fit Assessment</a>
+                    <a href="/how-it-works" class="cta-secondary">See How It Works →</a>
                 </div>
             </div>
         </div>
@@ -816,16 +848,25 @@
             <div class="lead-magnet-inner">
                 <p class="lead-magnet-label">Free Guide</p>
                 <h2>5 Questions Every Serious Buyer Asks Before Committing to a Franchise</h2>
-                <p>Most people skip the questions that actually matter. Get the framework I use in my first consultation. Free.</p>
-                <form class="lead-magnet-form" action="https://formsubmit.co/austin@olsoncg.com" method="POST">
+                <p>The first question is not which franchise. It is what ownership must accomplish for your life. Get the framework I use in my first consultation — free.</p>
+                <form class="lead-magnet-form" action="https://formsubmit.co/admin@olsoncg.com" method="POST">
                     <input type="hidden" name="_subject" value="Lead Magnet Download: 5 Questions Before Buying a Franchise">
+                    <input type="hidden" name="form_origin" value="homepage_guide">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_next" value="https://olsonfa.com/thankyou.html">
                     <input type="email" name="Email" placeholder="Your email address" required>
-                    <button type="submit">Download Free</button>
+                    <button type="submit">Open the Guide</button>
+                    <label class="lead-magnet-consent">
+                        <input type="checkbox" name="Guide_Request_Consent" value="yes" required>
+                        <span>I agree Olson Franchise Advisory may email me about this guide request.</span>
+                    </label>
+                    <label class="lead-magnet-consent">
+                        <input type="checkbox" name="Marketing_Consent" value="yes">
+                        <span>Also send occasional franchise-ownership insights. Optional.</span>
+                    </label>
                 </form>
-                <p class="lead-magnet-note">No spam. Unsubscribe anytime. I send one useful insight per week, max.</p>
+                <p class="lead-magnet-note">Guide access appears after submission. Marketing messages are sent only if you check the optional box.</p>
             </div>
         </div>
     </section>
@@ -934,7 +975,7 @@
                 <div class="guide-text">
                     <p class="section-label">The OFA Approach</p>
                     <h2 style="margin-bottom: 8px;">Austin Olson, J.D.</h2>
-                    <h2>I Do Not Start With a Brand I Want to Sell You. I Start With Your Situation.</h2>
+                    <h2>I Start With Your Situation. Not a Brand I Want to Sell You.</h2>
                     
                     <p>I grew up around entrepreneurship. My dad was a general contractor, and I worked construction and loaded trucks from high school through college. That taught me what it looks like to build something from nothing.</p>
                     
@@ -961,7 +1002,7 @@
     <section id="differentiators" class="differentiators">
         <div class="container">
             <p class="section-label">What Makes OFA Different</p>
-            <h2 style="text-align: center;">Most Advisors Want You to Buy. I Want You to Be Right.</h2>
+            <h2 style="text-align: center;">Structured Evaluation Over Brand Sales</h2>
             
             <div class="diff-grid">
                 <div class="diff-card">
@@ -1030,25 +1071,25 @@
     <section id="process" class="process">
         <div class="container">
             <p class="section-label">Our Approach</p>
-            <h2 style="text-align: center;">How I Evaluate Your Fit</h2>
+            <h2 style="text-align: center;">Structured Evaluation Before Brand Commitment</h2>
             
             <div class="process-steps">
                 <div class="step">
                     <div class="step-number">1</div>
-                    <h3>Situation & Strengths Alignment</h3>
-                    <p>Before we look at any brands, I assess your actual strengths, passions, risk tolerance, and economic reality. Most people care more about the output of ownership (freedom, stability, being your own boss) than the details of what the franchise does. We align on that first.</p>
+                    <h3>Define What Ownership Must Accomplish</h3>
+                    <p>Before any brand is mentioned, we start with the decision behind the decision. What does ownership need to deliver for your life? Income targets, lifestyle design, identity shift, family impact. Most people have never been asked these questions honestly.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">2</div>
-                    <h3>Territory & Multi-Brand Evaluation</h3>
-                    <p>I evaluate prospects across 50+ brands. I place territory availability checks on your behalf first. That tells us whether each brand is actually available in your area before we go deeper. I also examine what other advisors won't show you: the real support structure, the actual financials, and whether the franchisor has a track record of delivering.</p>
+                    <h3>Evaluate Your Situation & Constraints</h3>
+                    <p>Your strengths, risk tolerance, available capital, liquidity position, and timeline all matter. Once we understand what ownership needs to accomplish, we look at practical constraints: investment range, funding options, territory availability, and timeline.</p>
                 </div>
                 
                 <div class="step">
                     <div class="step-number">3</div>
-                    <h3>Clear Answer. Including "No"</h3>
-                    <p>You get a clear answer: does franchise ownership make sense for you, and if so, which option gives you the best shot at what you are looking for? If it doesn't make sense, I will tell you that too. And I will help you get ready when the time is right.</p>
+                    <h3>Narrow, Compare & Decide</h3>
+                    <p>You do not need to evaluate 750 options. You need to deeply understand the three to five that actually fit your situation. We narrow, compare, and examine each path with analytical rigor — then give you a clear answer: does ownership make sense for you right now?</p>
                 </div>
             </div>
         </div>
@@ -1057,8 +1098,8 @@
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
         <div class="container">
-            <h2>Take Control of Your Next Chapter</h2>
-            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">You have enough information. What you need is clarity on whether franchise ownership fits your situation, your strengths, and the territories that are genuinely available. Tell me what you're looking for, where you are, and what you hope to achieve.</p>
+            <h2>Start With the Right Question</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">The first question is not which franchise. It is what ownership must accomplish for your life. Take the assessment or schedule a clarity call — either way, you get an honest answer about whether ownership fits your situation.</p>
             
             <div style="text-align:center; margin-bottom:24px;">
                 <a href="tel:7754202007" class="cta-button" style="background:transparent; color:var(--accent); border:1px solid var(--accent); font-size:1.2rem; padding:14px 32px;">
@@ -1071,9 +1112,10 @@
                 <a href="/assessment.html" class="cta-button" style="font-size:1rem; padding:12px 32px;">Take the Franchise Fit Assessment</a>
             </div>
             
-            <form class="contact-form" action="https://formsubmit.co/austin@olsoncg.com" method="POST">
+            <form class="contact-form" action="https://formsubmit.co/admin@olsoncg.com" method="POST">
                 <!-- FormSubmit config -->
                 <input type="hidden" name="_subject" value="New Franchise Evaluation Request from olsonfa.com">
+                <input type="hidden" name="form_origin" value="homepage_contact">
                 <input type="hidden" name="_captcha" value="false">
                 <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_next" value="https://olsonfa.com?submitted=true">
@@ -1135,7 +1177,12 @@
                     <textarea id="message" name="Message" rows="3" placeholder="Tell me what you are looking for, where you are, and what you hope to achieve..."></textarea>
                 </div>
                 
-                <button type="submit" class="cta-button form-submit-btn">Get Clarity on What Is Right for You</button>
+                <label class="contact-consent">
+                    <input type="checkbox" name="Contact_Consent" value="yes" required>
+                    <span>I agree Olson Franchise Advisory may contact me by email or phone about this request. This does not enroll me in a newsletter.</span>
+                </label>
+
+                <button type="submit" class="cta-button form-submit-btn">Get Clarity on What Fits Your Situation</button>
             </form>
         </div>
     </section>
@@ -1144,11 +1191,11 @@
     <footer>
         <div class="container">
             <p>&copy; 2026 Olson Franchise Advisory. All rights reserved.</p>
-            <p style="margin-top: 8px;">Structured franchise evaluation · Multi-brand inventory (750+ concepts) · No obligation at any point</p>
+            <p style="margin-top: 8px;">Structured franchise evaluation · Define what ownership must accomplish · No obligation at any point</p>
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/franchiseguide" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
                 <a href="tel:7754202007" class="social-link">Call (775) 420-2007</a>
-                <a href="mailto:austin@olsoncg.com" class="social-link">Email</a>
+                <a href="mailto:austin@olsonfa.com" class="social-link">Email</a>
             </div>
         </div>
     </footer>
@@ -1170,7 +1217,7 @@
             const contact = document.getElementById('contact');
             const msg = document.createElement('div');
             msg.style.cssText = 'text-align:center; margin-top:32px; padding:24px; background:rgba(201,168,76,0.1); border-radius:12px; border:1px solid rgba(201,168,76,0.3);';
-            msg.innerHTML = '<p style="color:var(--accent); font-size:1.1rem; margin-bottom:4px;">Thank you.</p><p style="color:var(--text-secondary);">I will review your information and be in touch within 24 hours.</p>';
+            msg.innerHTML = '<p style="color:var(--accent); font-size:1.1rem; margin-bottom:4px;">Thank you.</p><p style="color:var(--text-secondary);">I will review your information and follow up with the appropriate next step.</p>';
             contact.querySelector('.container').appendChild(msg);
             
             // Clean URL after showing message
