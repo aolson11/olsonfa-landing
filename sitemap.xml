@@ -29,15 +29,79 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://olsonfa.com/e2</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://olsonfa.com/blog/</loc>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://olsonfa.com/e2</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://olsonfa.com/privacy</loc>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/best-franchises-after-layoff</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/franchise-cost-guide</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/best-franchises-for-nurses</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/blue-collar-franchises</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/career-transition-for-teachers</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/military-veteran-franchise-ownership</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/corporate-professional-franchise-transition</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/career-transition-for-small-business-owners</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/career-transition-for-real-estate-professionals</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/career-transition-for-healthcare-administrators</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/no-experience-franchise</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/how-to-evaluate-franchise</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/sba-loans-franchises</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/franchise-vs-independent-business</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/best-franchises-for-teachers</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olsonfa.com/blog/franchise-due-diligence-checklist</loc>
+    <priority>0.7</priority>
   </url>
 </urlset>
