@@ -15,6 +15,8 @@ const intake = read('intake-form.html');
 const index = read('index.html');
 const guide = read('guide.html');
 const e2 = read('e2/index.html');
+const decisionMap = read('e2/decision-map/index.html');
+const thankyou = read('thankyou.html');
 const sitemap = read('sitemap.xml');
 const formSuccess = JSON.parse(read('tests/form-success.json'));
 const formFailure = JSON.parse(read('tests/form-failure.json'));
@@ -31,7 +33,8 @@ check(!providerConfirmed({}), 'FormSubmit fixture: ambiguous empty response is r
 
 for (const [name, html, formId] of [
   ['assessment', assessment, 'assessment-form'],
-  ['intake', intake, 'franchise-fit-form']
+  ['intake', intake, 'franchise-fit-form'],
+  ['e2 business-fit', e2, 'e2-business-fit-form']
 ]) {
   const marker = `document.getElementById('${formId}').addEventListener('submit'`;
   const start = html.indexOf(marker);
@@ -78,7 +81,7 @@ check(budgetOptions.every(([value,label]) => expectedBudgets.get(value) === labe
 const htmlFiles = walk(ROOT).filter(f => f.endsWith('.html'));
 const allHtml = htmlFiles.map(f => fs.readFileSync(f,'utf8')).join('\n');
 const formMatches = [...allHtml.matchAll(/<form\b[^>]*action="https:\/\/formsubmit\.co\/(?:ajax\/)?([^"]+)"[^>]*>[\s\S]*?<\/form>/gi)];
-check(formMatches.length === 5, `site: exactly five FormSubmit forms found (found ${formMatches.length})`);
+check(formMatches.length === 6, `site: exactly six FormSubmit forms found (found ${formMatches.length})`);
 const formOrigins = [];
 const formSubjects = [];
 for (const [i,match] of formMatches.entries()) {
@@ -96,9 +99,9 @@ for (const [i,match] of formMatches.entries()) {
   check(/name="_template" value="table"/.test(match[0]), `form ${i+1}: table template is valid`);
   check(/name="(?:Guide_Request_Consent|Contact_Consent|contact_consent)"[^>]*required/.test(match[0]), `form ${i+1}: transactional contact consent is required`);
 }
-check(new Set(formOrigins).size === 5, 'site: all five FormSubmit forms have unique origins');
-check(new Set(formSubjects).size === 5, 'site: all five FormSubmit forms have unique subjects');
-check((allHtml.match(/action="https:\/\/formsubmit\.co\/ajax\/admin@olsoncg\.com"/g) || []).length === 2, 'site: exactly two async forms use the documented AJAX endpoint');
+check(new Set(formOrigins).size === 6, 'site: all six FormSubmit forms have unique origins');
+check(new Set(formSubjects).size === 6, 'site: all six FormSubmit forms have unique subjects');
+check((allHtml.match(/action="https:\/\/formsubmit\.co\/ajax\/admin@olsoncg\.com"/g) || []).length === 3, 'site: exactly three async forms use the documented AJAX endpoint');
 check(!allHtml.includes('href="#"'), 'site: placeholder hash-only links are absent');
 check(!allHtml.includes('content="width=device-width, 1.0"'), 'site: malformed responsive viewport is absent');
 check(!allHtml.includes('austin@olsoncg.com'), 'site: retired unmonitored public email is absent');
@@ -122,6 +125,19 @@ for (const pattern of banned) check(!pattern.test(allHtml), `claims: prohibited 
 check(/does not determine E-2 eligibility/i.test(e2), 'E-2 page: scope boundary is explicit');
 check(/independently retained, qualified immigration attorney/i.test(e2), 'E-2 page: independent counsel is required');
 check(!/href="#" class="btn-primary"/.test(e2), 'E-2 page: primary CTA has a real destination');
+check(e2.includes('Request an E-2 Franchise Business-Fit Review'), 'E-2 page: requested business-fit CTA is present');
+check(e2.includes('name="_subject" value="New Franchise Evaluation Request | E-2 Business-Fit"'), 'E-2 form: subject contains exact parser token');
+check(e2.includes('name="form_origin" value="e2_business_fit"'), 'E-2 form: stable origin is present');
+check(e2.includes('name="record_class" value="BUYER_INTENT_LEAD"') && e2.includes('name="intake_type" value="e2_business_fit"'), 'E-2 form: buyer-intent classification metadata is present');
+check(e2.includes('name="campaign_id" value="e2_franchise_business_capture_2026q3"') && e2.includes('name="channel" value="owned_site"') && e2.includes('name="self_reported_source" value="unknown"'), 'E-2 form: campaign, channel, and bounded source metadata are present');
+check(e2.includes('name="first_name"') && e2.includes('name="email"') && e2.includes('name="contact_consent" value="yes" type="checkbox" required'), 'E-2 form: required contact fields and transactional consent are present');
+check(e2.includes('name="last_name"') && e2.includes('name="phone"') && e2.includes('name="location"') && e2.includes('name="timeline"') && e2.includes('name="brand"') && e2.includes('name="message"') && e2.includes('name="marketing_consent"'), 'E-2 form: requested optional fields are present');
+check(!/name="[^"]*(?:eligibility|source_of_funds|asset|debt|net.?worth|household)[^"]*"/i.test(e2), 'E-2 form: prohibited sensitive fields are absent');
+check(!e2.includes('/assessment.html'), 'E-2 page: assessment CTA is absent');
+check(decisionMap.includes('stores nothing and submits nothing') && !/<form\b/i.test(decisionMap) && !/localStorage|sessionStorage|fetch\s*\(/i.test(decisionMap), 'E-2 decision map: private client-side worksheet stores and submits nothing');
+check(decisionMap.includes('What must the business accomplish?') && decisionMap.includes('Owner role') && decisionMap.includes('Stakeholders') && decisionMap.includes('Comparison path') && decisionMap.includes('Evidence questions') && decisionMap.includes('Professional role handoffs') && decisionMap.includes('Nonnegotiable business criteria') && decisionMap.includes('Next evidence step') && decisionMap.includes('Review date') && decisionMap.includes('Candidate disposition'), 'E-2 decision map: required locally printable decision fields are present');
+check(['Candidate','Olson Franchise Advisory','Immigration counsel','CPA or tax professional','Business-plan provider','Franchisor'].every((role) => decisionMap.includes(`<strong>${role}</strong>`)), 'E-2 decision map: six accountable role lanes are present');
+check(thankyou.includes('Thank you for reaching out.') && !thankyou.includes('Your Guide Is Ready') && !thankyou.includes('5 Questions to Ask'), 'thank-you page: generic cross-form confirmation is present');
 for (const route of ['/how-it-works','/right-for-me','/categories','/funding','/guide','/assessment','/e2','/blog/','/privacy']) {
   check(sitemap.includes(`<loc>https://olsonfa.com${route}</loc>`), `sitemap: ${route} is listed`);
 }

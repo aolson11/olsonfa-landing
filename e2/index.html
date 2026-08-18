@@ -3,221 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Franchise Evaluation for E-2 Investors | Olson Franchise Advisory</title>
-  <meta name="description" content="Evaluate franchise ownership as a business option while working separately with qualified immigration counsel on E-2 eligibility and legal requirements.">
+  <title>E-2 Franchise Business-Fit Review | Olson Franchise Advisory</title>
+  <meta name="description" content="Define what a business must accomplish before comparing franchise options in an E-2-related decision.">
   <style>
-    :root {
-      --primary: #1a365d;
-      --accent: #c8a951;
-      --light: #f7f5f0;
-      --text: #2d3748;
-      --muted: #718096;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); line-height: 1.7; }
-
-    /* Navigation */
-    nav { background: white; padding: 1rem 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; }
-    nav .logo { font-size: 1.2rem; font-weight: 700; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
-    nav .logo span { color: var(--accent); }
-    nav a.cta-nav { background: var(--accent); color: white; padding: 0.6rem 1.4rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: background 0.2s; }
-    nav a.cta-nav:hover { background: #b8973f; }
-
-    /* Hero */
-    .hero { background: linear-gradient(135deg, var(--primary) 0%, #2d4a7a 100%); color: white; padding: 6rem 2rem 5rem; text-align: center; }
-    .hero-inner { max-width: 800px; margin: 0 auto; }
-    .hero .tagline { display: inline-block; background: rgba(200,169,81,0.2); color: var(--accent); padding: 0.4rem 1.2rem; border-radius: 50px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.5rem; }
-    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.5rem; letter-spacing: -1px; }
-    .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.8; }
-    .hero-cta { display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-    .btn-primary { background: var(--accent); color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.2s; display: inline-block; }
-    .btn-primary:hover { background: #b8973f; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(200,169,81,0.4); }
-    .btn-secondary { color: white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; border: 2px solid rgba(255,255,255,0.4); transition: all 0.2s; display: inline-block; }
-    .btn-secondary:hover { border-color: white; background: rgba(255,255,255,0.1); }
-
-    /* Trust Bar */
-    .trust-bar { background: var(--light); padding: 2rem; text-align: center; border-bottom: 1px solid #e8e4dc; }
-    .trust-bar p { color: var(--muted); font-size: 0.9rem; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
-    .trust-logos { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; opacity: 0.5; font-size: 0.95rem; color: var(--muted); font-weight: 600; }
-
-    /* Problem Section */
-    .problem { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
-    .problem h2 { font-size: 2rem; color: var(--primary); margin-bottom: 1.5rem; letter-spacing: -0.5px; }
-    .problem p { font-size: 1.1rem; color: var(--muted); max-width: 650px; margin: 0 auto 1rem; }
-    .pain-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3rem; text-align: left; }
-    .pain-point { background: white; border: 1px solid #e8e4dc; border-radius: 10px; padding: 1.5rem; }
-    .pain-point .icon { font-size: 2rem; margin-bottom: 0.8rem; }
-    .pain-point h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 0.5rem; }
-    .pain-point p { font-size: 0.95rem; color: var(--muted); margin: 0; }
-
-    /* Guide Section */
-    .guide { background: var(--light); padding: 5rem 2rem; }
-    .guide-inner { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: center; }
-    .guide-photo { background: var(--primary); border-radius: 12px; height: 320px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; }
-    .guide h2 { font-size: 1.8rem; color: var(--primary); margin-bottom: 1rem; letter-spacing: -0.5px; }
-    .guide p { font-size: 1.05rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.8; }
-    .guide-credentials { display: flex; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
-    .credential { background: white; padding: 0.6rem 1rem; border-radius: 6px; font-size: 0.85rem; color: var(--primary); font-weight: 600; border-left: 3px solid var(--accent); }
-
-    /* Plan Section */
-    .plan { padding: 5rem 2rem; max-width: 800px; margin: 0 auto; text-align: center; }
-    .plan h2 { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; letter-spacing: -0.5px; }
-    .plan > p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto 3rem; }
-    .steps { display: grid; gap: 2rem; text-align: left; }
-    .step { display: flex; gap: 1.5rem; align-items: flex-start; background: white; border: 1px solid #e8e4dc; border-radius: 10px; padding: 2rem; transition: box-shadow 0.2s; }
-    .step:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-    .step-num { background: var(--accent); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; font-weight: 800; flex-shrink: 0; }
-    .step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.4rem; }
-    .step p { color: var(--muted); font-size: 0.95rem; margin: 0; }
-
-    /* Success Section */
-    .success { background: linear-gradient(135deg, #2d6a4f 0%, #1a365d 100%); color: white; padding: 5rem 2rem; text-align: center; }
-    .success-inner { max-width: 800px; margin: 0 auto; }
-    .success h2 { font-size: 2rem; margin-bottom: 1.5rem; letter-spacing: -0.5px; }
-    .success p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 3rem; line-height: 1.8; }
-    .outcomes { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; text-align: left; }
-    .outcome { background: rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 10px; backdrop-filter: blur(10px); }
-    .outcome .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
-    .outcome h3 { font-size: 1rem; margin-bottom: 0.3rem; }
-    .outcome p { font-size: 0.9rem; opacity: 0.8; margin: 0; }
-
-    /* Warning Section */
-    .warning { padding: 4rem 2rem; max-width: 700px; margin: 0 auto; text-align: center; background: #fff8f0; border-radius: 12px; margin-top: -2rem; position: relative; z-index: 10; }
-    .warning h3 { font-size: 1.3rem; color: var(--primary); margin-bottom: 1rem; }
-    .warning p { color: var(--muted); font-size: 1rem; }
-
-    /* Final CTA */
-    .final-cta { padding: 5rem 2rem; text-align: center; background: var(--light); }
-    .final-cta h2 { font-size: 2.2rem; color: var(--primary); margin-bottom: 1rem; letter-spacing: -0.5px; }
-    .final-cta p { color: var(--muted); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2.5rem; }
-
-    /* Footer */
-    footer { background: var(--primary); color: rgba(255,255,255,0.6); padding: 3rem 2rem; text-align: center; font-size: 0.9rem; }
-    footer a { color: var(--accent); text-decoration: none; }
-    footer .disclaimer { max-width: 600px; margin: 1rem auto 0; font-size: 0.8rem; opacity: 0.5; line-height: 1.6; }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .guide-inner { grid-template-columns: 1fr; text-align: center; }
-      .guide-credentials { justify-content: center; }
-      .hero { padding: 4rem 1.5rem 3.5rem; }
-    }
+    :root { --navy:#132d4f; --blue:#205a8b; --gold:#c8a951; --cream:#f6f3ed; --ink:#243244; --muted:#5c6978; --line:#dbe1e6; --white:#fff; }
+    * { box-sizing:border-box; margin:0; }
+    body { font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); line-height:1.55; background:var(--white); }
+    a { color:inherit; }
+    .nav { min-height:64px; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 20px; border-bottom:1px solid var(--line); background:#fff; }
+    .brand { color:var(--navy); font-weight:800; text-decoration:none; letter-spacing:-.02em; } .brand span { color:var(--gold); }
+    .nav-link { color:var(--navy); font-size:.9rem; font-weight:700; text-decoration:none; }
+    .wrap { width:min(100% - 40px, 1080px); margin:auto; }
+    .hero { color:#fff; background:linear-gradient(135deg,var(--navy),var(--blue)); padding:56px 0 46px; }
+    .eyebrow { color:#f5dc93; font-size:.78rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; margin-bottom:14px; }
+    h1 { max-width:780px; font-size:clamp(2.1rem,8vw,4rem); line-height:1.06; letter-spacing:-.045em; }
+    .hero p { max-width:700px; font-size:1.08rem; margin-top:20px; color:#e7eef5; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .button { display:inline-block; border:0; border-radius:7px; cursor:pointer; padding:14px 19px; text-decoration:none; font:700 1rem inherit; background:var(--gold); color:#142b49; }
+    .button:hover { background:#d7bb67; } .button.secondary { background:transparent; color:#fff; border:1px solid #aebfce; }
+    section { padding:48px 0; } h2 { color:var(--navy); font-size:clamp(1.65rem,5vw,2.35rem); line-height:1.16; letter-spacing:-.03em; margin-bottom:14px; } h3 { color:var(--navy); font-size:1.12rem; margin-bottom:7px; }
+    .intro { max-width:760px; color:var(--muted); font-size:1.06rem; }
+    .grid { display:grid; grid-template-columns:1fr; gap:15px; margin-top:24px; }
+    .card { border:1px solid var(--line); border-radius:10px; padding:21px; background:#fff; } .card p { color:var(--muted); }
+    .band { background:var(--cream); border-block:1px solid #e9e3d9; }
+    .two-col { display:grid; grid-template-columns:1fr; gap:26px; }
+    .note { border-left:4px solid var(--gold); background:#fffdf7; padding:18px; color:#44515e; margin-top:22px; }
+    .steps { counter-reset:step; display:grid; gap:16px; margin-top:25px; } .step { display:grid; grid-template-columns:36px 1fr; gap:13px; align-items:start; } .step::before { counter-increment:step; content:counter(step); background:var(--navy); color:#fff; width:32px; height:32px; border-radius:50%; text-align:center; line-height:32px; font-weight:800; }
+    .outcomes { background:var(--navy); color:#fff; } .outcomes h2 { color:#fff; } .outcomes .intro { color:#d8e2ec; } .outcomes .card { background:rgba(255,255,255,.08); border-color:rgba(255,255,255,.18); } .outcomes .card h3 { color:#f7dc91; } .outcomes .card p { color:#e0e9f0; }
+    .review { background:var(--cream); } .form-shell { max-width:760px; margin:auto; background:#fff; border:1px solid var(--line); padding:22px; border-radius:10px; }
+    label { display:block; color:var(--navy); font-size:.93rem; font-weight:750; margin:16px 0 6px; } .optional { color:var(--muted); font-weight:500; }
+    input,select,textarea { width:100%; border:1px solid #b8c4cf; border-radius:6px; padding:12px; color:var(--ink); font:1rem inherit; background:#fff; } textarea { min-height:90px; resize:vertical; }
+    .form-grid { display:grid; grid-template-columns:1fr; gap:0 14px; } .consent { display:flex; align-items:flex-start; gap:10px; margin-top:18px; color:#44515e; font-size:.9rem; } .consent input { width:auto; margin-top:4px; }
+    .form-status { min-height:1.4em; margin:15px 0 0; font-size:.92rem; } .form-status.active { color:#285b43; } .form-status.error { color:#a22626; } #success-message { display:none; padding:18px; background:#edf8f0; color:#214e35; border-radius:7px; margin-top:16px; } #success-message.active { display:block; }
+    footer { background:#0d223c; color:#c6d1db; padding:28px 0; font-size:.86rem; } footer p + p { margin-top:8px; } footer a { color:#f5dc93; }
+    @media (min-width:700px) { .nav { padding-inline:clamp(28px,7vw,78px); } .hero { padding:82px 0 70px; } section { padding:68px 0; } .grid { grid-template-columns:repeat(3,1fr); } .two-col { grid-template-columns:1fr 1fr; } .form-grid { grid-template-columns:1fr 1fr; } .form-grid .full { grid-column:1 / -1; } .form-shell { padding:34px; } }
+    @media print { .nav,.hero,.review,footer { display:none; } section { padding:20px 0; } }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="https://olsonfa.com" class="logo">Olson<span>FA</span></a>
-    <a href="/assessment.html" class="cta-nav">Start the Business Assessment</a>
-  </nav>
-
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="tagline">Franchise Evaluation for E-2 Investors</div>
-      <h1>Start With the Business Decision, Not a Visa Promise.</h1>
-      <p>A franchise may be one business option for an E-2 investor. Olson Franchise Advisory helps you evaluate the operating model, investment fit, and franchise tradeoffs. A qualified immigration attorney must separately advise you on eligibility and legal requirements.</p>
-      <div class="hero-cta" id="cta">
-        <a href="/assessment.html" class="btn-primary">Define Your Business Criteria</a>
-        <a href="#plan" class="btn-secondary">See the Evaluation Process ↓</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="trust-bar">
-    <p>Business evaluation coordinated with your independent legal and financial advisors</p>
-  </div>
-
-  <section class="problem">
-    <h2>Two Decisions Must Stay Separate</h2>
-    <p>Your immigration strategy is a legal matter. Your franchise choice is a business and ownership decision. Treating either one as automatic creates avoidable risk.</p>
-    <div class="pain-points">
-      <div class="pain-point">
-        <h3>Investment Fit</h3>
-        <p>Does the total investment, working-capital need, and downside exposure fit your actual resources?</p>
-      </div>
-      <div class="pain-point">
-        <h3>Operating Role</h3>
-        <p>Does the owner's required day-to-day role fit your experience, family needs, and desired level of involvement?</p>
-      </div>
-      <div class="pain-point">
-        <h3>Business Fundamentals</h3>
-        <p>Do the territory, unit economics, support model, and contractual obligations withstand independent review?</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="guide">
-    <div class="guide-inner">
-      <div class="guide-photo">OFA</div>
-      <div>
-        <h2>A Business-Evaluation Guide, Not Immigration Counsel</h2>
-        <p>Austin Olson, J.D., helps prospective owners define what the business must accomplish and compare franchise models against those criteria.</p>
-        <p>Olson Franchise Advisory does not determine E-2 eligibility, provide immigration legal advice, or promise a visa result. When immigration considerations are involved, the business evaluation should be coordinated with your independently retained immigration attorney.</p>
-        <div class="guide-credentials">
-          <span class="credential">J.D. and Structured Analysis</span>
-          <span class="credential">15+ Years of Public-Service Leadership</span>
-          <span class="credential">Multi-Brand Business Evaluation</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="plan" id="plan">
-    <h2>A Clear Three-Part Process</h2>
-    <p>Keep legal advice, business evaluation, and final commitment in the correct order.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div>
-          <h3>Obtain Independent Immigration Advice</h3>
-          <p>Ask a qualified immigration attorney to assess your circumstances, eligibility, timing, and legal requirements before you rely on any business option.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div>
-          <h3>Define the Business Criteria</h3>
-          <p>Clarify investment capacity, operating role, geography, timeline, family constraints, and the outcomes ownership must produce.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div>
-          <h3>Evaluate Specific Franchise Models</h3>
-          <p>Compare the business facts, validate assumptions, review the Franchise Disclosure Document with appropriate professional advisors, and coordinate factual information with your attorney.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="success">
-    <div class="success-inner">
-      <h2>The Goal Is a Defensible Decision</h2>
-      <p>A sound process does not promise an immigration outcome. It helps you determine whether a particular business deserves further legal, financial, and operational diligence.</p>
-      <div class="outcomes">
-        <div class="outcome"><h3>Decision Clarity</h3><p>Know why a franchise does or does not fit your objectives.</p></div>
-        <div class="outcome"><h3>Advisor Alignment</h3><p>Keep business facts and legal advice clearly separated and coordinated.</p></div>
-        <div class="outcome"><h3>Documented Assumptions</h3><p>Identify what must be verified before capital is committed.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="warning">
-    <h3>Do Not Commit Capital Based on a Visa Marketing Claim</h3>
-    <p>No franchise advisor can guarantee E-2 eligibility, approval, renewal, or permanent residency. Verify legal requirements with independent immigration counsel and business claims through appropriate diligence.</p>
-  </div>
-
-  <section class="final-cta">
-    <h2>Define What the Business Must Accomplish</h2>
-    <p>Use the franchise-fit assessment to organize the business side of the decision. It is not an immigration eligibility assessment.</p>
-    <a href="/assessment.html" class="btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Start the Business Assessment</a>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Olson Franchise Advisory. All rights reserved.</p>
-    <p><a href="https://olsonfa.com">olsonfa.com</a> | austin@olsonfa.com</p>
-    <div class="disclaimer">
-      Olson Franchise Advisory provides franchise and business-evaluation support, not immigration legal advice. Nothing on this page is a statement of E-2 eligibility or a prediction of any immigration outcome. Consult an independently retained, qualified immigration attorney before acting.
-    </div>
-  </footer>
+  <nav class="nav"><a class="brand" href="/">Olson<span>FA</span></a><a class="nav-link" href="#review">Request a review</a></nav>
+  <main>
+    <section class="hero"><div class="wrap">
+      <p class="eyebrow">E-2 franchise business-fit</p>
+      <h1>First decide what the business must accomplish.</h1>
+      <p>A franchise is a business option, not a petition strategy. Before comparing brands, define the work, owner role, stakeholders, operating realities, and evidence the business needs to support.</p>
+      <div class="actions"><a class="button" href="#review">Request an E-2 Franchise Business-Fit Review</a><a class="button secondary" href="/e2/decision-map/">Open the private decision map</a></div>
+    </div></section>
+    <section><div class="wrap"><h2>You own the decision. Austin helps make the business case visible.</h2><p class="intro">Austin Olson guides a structured comparison of franchise options against the business outcomes you identify. The point is not to talk you into a brand. It is to make a useful, candidate-owned decision about whether to proceed, investigate further, wait, or say no.</p><div class="grid"><article class="card"><h3>Start with the job</h3><p>Name what the business must do in your life and operating plan before a particular franchise becomes the answer.</p></article><article class="card"><h3>Test the operating fit</h3><p>Compare owner involvement, customer model, location, support, staffing, and other business realities against your criteria.</p></article><article class="card"><h3>Keep questions in the right lane</h3><p>Business facts belong in the business review. Legal and tax questions belong with independently retained professionals.</p></article></div></div></section>
+    <section class="band"><div class="wrap two-col"><div><h2>A business guide, with clear boundaries.</h2><p class="intro">OFA provides franchise and business-evaluation support. OFA does not provide immigration legal advice, does not determine E-2 eligibility, does not prepare or file immigration matters, and does not promise an immigration outcome.</p></div><div><h3>Independent counsel has an independent role.</h3><p class="intro">When immigration questions are part of your decision, work with an independently retained, qualified immigration attorney for legal advice. OFA can help organize business-side questions and factual diligence for you to discuss with your own advisors.</p><div class="note">A business review is not a substitute for legal, tax, financial, or investment advice.</div></div></div></section>
+    <section><div class="wrap two-col"><div><h2>How the review works</h2><div class="steps"><div><h3>Define your business-fit criteria</h3><p>Clarify the outcomes, owner role, stakeholders, comparison path, and open questions.</p></div><div><h3>Compare options against evidence</h3><p>Use your criteria to evaluate operating and franchise facts, not a sales narrative.</p></div><div><h3>Choose your next disposition</h3><p>Proceed, further investigation, not yet, or no are all valid candidate-owned outcomes.</p></div></div></div><div><h2>OFA's role and compensation</h2><p class="intro">OFA helps candidates evaluate and compare franchise business options. If a candidate elects to pursue a franchise introduced through OFA and completes a transaction, OFA may receive compensation from the franchisor. That potential compensation does not change your right to decline, pause, compare alternatives, or use independent advisors.</p><p class="note">Ask about the compensation arrangement connected to any option you are considering. You should decide based on your own criteria and diligence.</p></div></div></section>
+    <section class="outcomes"><div class="wrap"><h2>A good outcome is an informed one.</h2><p class="intro">This process is designed to preserve your ability to decide.</p><div class="grid"><article class="card"><h3>Proceed</h3><p>You see a business case worth moving into the next stage of diligence.</p></article><article class="card"><h3>Further investigation</h3><p>Important evidence, comparisons, or professional input is still needed.</p></article><article class="card"><h3>Not yet or no</h3><p>The timing or option does not fit. That is useful information, not a failed outcome.</p></article></div></div></section>
+    <section class="review" id="review"><div class="wrap"><div class="form-shell"><h2>Request an E-2 Franchise Business-Fit Review</h2><p class="intro">Share only what helps start a business-fit conversation. This is not an E-2 eligibility review.</p>
+      <form id="e2-business-fit-form" action="https://formsubmit.co/ajax/admin@olsoncg.com" method="POST">
+        <input type="hidden" name="_subject" value="New Franchise Evaluation Request | E-2 Business-Fit">
+        <input type="hidden" name="form_origin" value="e2_business_fit">
+        <input type="hidden" name="record_class" value="BUYER_INTENT_LEAD">
+        <input type="hidden" name="intake_type" value="e2_business_fit">
+        <input type="hidden" name="campaign_id" value="e2_franchise_business_capture_2026q3">
+        <input type="hidden" name="channel" value="owned_site">
+        <input type="hidden" name="self_reported_source" value="unknown">
+        <input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="https://olsonfa.com/thankyou.html">
+        <div class="form-grid"><div><label for="first-name">First name *</label><input id="first-name" name="first_name" autocomplete="given-name" required></div><div><label for="last-name">Last name <span class="optional">optional</span></label><input id="last-name" name="last_name" autocomplete="family-name"></div><div><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div><div><label for="phone">Phone <span class="optional">optional</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div><div><label for="location">Location <span class="optional">optional</span></label><input id="location" name="location" autocomplete="address-level2"></div><div><label for="stage">Current stage <span class="optional">optional</span></label><select id="stage" name="timeline"><option value="">Select if useful</option><option>Defining business criteria</option><option>Comparing options</option><option>Conducting diligence</option><option>Not sure yet</option></select></div><div class="full"><label for="brand">Brand or business option <span class="optional">optional</span></label><input id="brand" name="brand" placeholder="Leave blank if you are not comparing a specific option"></div><div class="full"><label for="message">What would you like the business to accomplish? <span class="optional">optional</span></label><textarea id="message" name="message"></textarea></div></div>
+        <label class="consent"><input name="contact_consent" value="yes" type="checkbox" required> <span>I agree that Olson Franchise Advisory may contact me about this requested business-fit review.</span></label>
+        <label class="consent"><input name="marketing_consent" value="yes" type="checkbox"> <span>I would like to receive optional franchise ownership insights.</span></label>
+        <button class="button" type="submit" style="margin-top:20px">Request an E-2 Franchise Business-Fit Review</button><p id="form-status" class="form-status" aria-live="polite"></p>
+      </form><div id="success-message" role="status"><strong>Request received.</strong> I will follow up about your requested business-fit review.</div>
+    </div></div></section>
+  </main>
+  <footer><div class="wrap"><p>&copy; 2026 Olson Franchise Advisory</p><p><a href="/privacy.html">Privacy</a> · <a href="mailto:austin@olsonfa.com">austin@olsonfa.com</a></p><p>OFA provides franchise and business-evaluation support, not immigration legal advice. Consult independently retained qualified counsel for legal questions.</p></div></footer>
+  <script>
+    // Never show success until FormSubmit explicitly confirms receipt.
+    document.getElementById('e2-business-fit-form').addEventListener('submit', async function(e) {
+      e.preventDefault(); if (!this.checkValidity()) { this.reportValidity(); return; }
+      const submitButton = this.querySelector('button[type="submit"]'); const status = document.getElementById('form-status'); const originalLabel = submitButton.textContent; const controller = new AbortController(); const timeout = window.setTimeout(() => controller.abort(), 15000);
+      submitButton.disabled = true; submitButton.textContent = 'Submitting...'; status.textContent = 'Submitting your request...'; status.className = 'form-status active';
+      try { const formPayload = {}; for (const [rawKey,value] of new FormData(this).entries()) { const key = rawKey.endsWith('[]') ? rawKey.slice(0,-2) : rawKey; const existing = formPayload[key]; formPayload[key] = existing === undefined ? value : Array.isArray(existing) ? [...existing,value] : [existing,value]; }
+        const response = await fetch(this.action, { method:'POST', body: JSON.stringify(formPayload), headers:{ 'Content-Type': 'application/json', 'Accept':'application/json' }, signal:controller.signal });
+        const payload = await response.json().catch(() => null); const successConfirmed = payload && (payload.success === true || payload.success === 'true'); const providerMessage = String(payload?.message || '');
+        if (!response.ok || !successConfirmed || /activat/i.test(providerMessage)) throw new Error(`Submission was not confirmed by FormSubmit (status ${response.status})`);
+        status.className = 'form-status'; this.style.display = 'none'; document.getElementById('success-message').classList.add('active');
+      } catch (error) { status.textContent = 'Your request was not submitted. Please try again, call (775) 420-2007, or email austin@olsonfa.com.'; status.className = 'form-status active error'; submitButton.disabled = false; submitButton.textContent = originalLabel; console.error('E-2 business-fit submission failed:', error); } finally { window.clearTimeout(timeout); }
+    });
+  </script>
 </body>
 </html>
