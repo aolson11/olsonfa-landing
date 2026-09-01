@@ -50,7 +50,7 @@ import { resolveRouteSelection } from './tentacle-routing.mjs';
     root.querySelector('[data-preview-band]').textContent = result.bands.exposure.label;
     root.querySelector('[data-preview-drivers]').textContent = result.topDrivers.length ? result.topDrivers.join(' and ') : 'no elevated exposure driver';
     const impact = result.answers.impact[0].toLowerCase();
-    root.querySelector('[data-preview-reflection]').textContent = `The practical question is whether your present runway gives you enough room to protect ${impact} while you investigate before the timing is decided for you.`;
+    root.querySelector('[data-preview-reflection]').textContent = `Your present runway matters because it affects how much room you have to protect ${impact}, compare options, and choose a next step from evidence.`;
     form.elements.exposure_band.value = result.bands.exposure.label;
     form.elements.control_gap.value = result.bands.control.label;
     form.elements.investigation_posture.value = result.bands.posture.label;

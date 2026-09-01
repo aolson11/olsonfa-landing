@@ -2,7 +2,7 @@
   "$schema": "./tentacle.schema.json",
   "id": "career_concentration_check",
   "formId": "career-control-form",
-  "campaignId": "employment_concentration_ai_layoff_2026q3",
+  "campaignId": "employment_concentration_risk_2026q3",
   "route": {
     "path": "/career-control",
     "canonical": "https://olsonfa.com/career-control"
