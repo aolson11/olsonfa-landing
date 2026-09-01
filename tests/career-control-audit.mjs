@@ -3,56 +3,113 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { resolveRouteSelection } from '../assets/tentacle-routing.mjs';
+
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const read=file=>fs.readFileSync(path.join(ROOT,file),'utf8');
-const html=read('career-control/index.html'); const runtime=read('assets/tentacle-diagnostic.js'); const css=read('assets/tentacle-system.css');
-const campaign=JSON.parse(read('tentacles/career-concentration.json')); const schema=JSON.parse(read('tentacles/tentacle.schema.json'));
-const failures=[]; const checks=[]; const check=(ok,label)=>{checks.push(label);if(!ok)failures.push(label)}; const has=(source,...terms)=>terms.every(term=>source.includes(term));
+const html=read('career-control/index.html');
+const runtime=read('assets/tentacle-diagnostic.js');
+const css=read('assets/tentacle-system.css');
+const campaign=JSON.parse(read('tentacles/career-concentration.json'));
+const schema=JSON.parse(read('tentacles/tentacle.schema.json'));
+const failures=[];
+const checks=[];
+const check=(ok,label)=>{checks.push(label);if(!ok)failures.push(label)};
+const has=(source,...terms)=>terms.every(term=>source.includes(term));
+const visibleCopy=html.replace(/<script[\s\S]*?<\/script>/gi,' ').replace(/<style[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ');
 
-check(html.indexOf('The meeting can be fifteen minutes.') < html.indexOf('<p class="eyebrow">Career Concentration Check</p>'), 'recognizable hero scene precedes diagnostic abstraction');
-check(html.includes('<h2>Is it time to take more control of your future?</h2>'), 'diagnostic carries the broader life stakes into the investigation');
-check(has(html,'How much of your life can one employer change without your consent?','Work is more than income. It shapes how you introduce yourself','The title, income, benefits, schedule, and identity you built can all change in a meeting you did not call.','The decision today is not whether to quit or buy. It is whether the concentration is acceptable and which options deserve evidence.','You do not have to feel fearless. You have to decide whether fear gets to make the decision without evidence.'), 'hero names identity and whole-life stakes without blaming the candidate and restores evidence-based agency');
-check(campaign.questions.length===7 && campaign.questions.map(q=>q.id).join('|')==='income|changes|impact|runway|control|future|timing','seven questions follow required GAP order');
-check(Object.keys(campaign.dimensions).join('|')==='exposure|control|posture' && has(runtime,'scores = { exposure: 0, control: 0, posture: 0 }','scores[question.dimension] += value.weight'), 'three score dimensions remain separate');
+// Buyer-language and conversion architecture
+check(has(html,'too much to lose to “just quit”','Your job pays for your life. It should not own your future.','mortgage, health insurance, family plans, and the identity','burned out','undervalued','one employer in charge'), 'hero directly names livelihood, identity, family, burnout, recognition, and employer dependence');
+check(has(html,'You need a Plan B you can investigate before you need it.','Take the 2-minute check','Why OFA is different'), 'hero offers a concrete Plan B and direct conversion action');
+check(has(html,'The Career Crossroads Check','See whether ownership belongs in your Plan B.','Which Plan B deserves a serious look?'), 'public diagnostic name and promise use natural buyer language');
+check(has(html,'A real advisory starting point, not an anonymous quiz.','First name, mobile, email, and two quick background choices unlock your pressure points, next questions, and OFA follow-up.'), 'hero states the full contact-for-result exchange before the questions');
+check(has(html,'The paycheck is real. So are the golden handcuffs.','mortgage, health insurance, family plans','company decision becomes a family emergency'), 'stakes section names the practical and emotional cost without inventing a personal diagnosis');
+check(has(html,'Losing the job is not the only risk.','no attractive option except another job search','Replace one employer with another.','Build an ownership option you can accept or reject.'), 'Challenger reframe converts job-loss fear into an ownership-option comparison');
+check(has(html,'You do not have to choose between another job and inventing a business from scratch.','A system to inspect, not invent','Training and support to verify','Owners you can question','The advantage is not safety.'), 'franchise possibility explains the structured middle path and its limits');
+check(has(html,'You do not need another broker sending you the same list of brands.','what your next chapter has to protect','every business has to earn its place'), 'OFA differentiation leads with decision quality rather than brand inventory');
+check(has(html,'Austin Olson, J.D.','Claims versus proof.','The owner job beneath the pitch.','Buyer-side perspective.','made a franchise decision himself'), 'guide section combines relevant J.D. authority with truthful buyer-side empathy');
+check(has(html,'Executive / Senior Leader','Skilled Trades / Operator','First-Time Owner','Manager-Led Investor','Second Act','E-2 Business Fit'), 'six visibly different buyer situations receive targeted routes');
+check(has(html,'Tell the truth about the current deal','Define what ownership has to change','Make the business prove it'), 'three-step plan moves from current state through criteria to evidence');
+check(!/\bcareer control\b|\bemployment concentration\b|\binvestigation posture\b|\bNo contact first\b/i.test(visibleCopy), 'public copy excludes rejected internal abstractions and anonymous-preview language');
+check(!/FTC|Federal Trade Commission|claim ledger|funnel|buyer tier|The Challenger|\bGAP\b|Cialdini|StoryBrand/i.test(visibleCopy), 'public copy keeps regulatory and persuasion-framework language backstage');
+
+// DOM journey and conversion close
+const idxStakes=html.indexOf('id="stakes"');
+const idxEvidence=html.indexOf('aria-label="Workforce context"');
+const idxReframe=html.indexOf('id="reframe"');
+const idxOwnership=html.indexOf('id="why-ownership"');
+const idxGuide=html.indexOf('id="why-ofa"');
+const idxPlan=html.indexOf('id="plan"');
+const idxDisclosure=html.indexOf('id="disclosure"');
+const idxAction=html.indexOf('id="career-check"');
+const idxForm=html.indexOf('<form id="career-control-form"');
+check([idxStakes,idxEvidence,idxReframe,idxOwnership,idxGuide,idxPlan,idxDisclosure,idxAction,idxForm].every(i=>i>=0) && idxStakes<idxEvidence && idxEvidence<idxReframe && idxReframe<idxOwnership && idxOwnership<idxGuide && idxGuide<idxPlan && idxPlan<idxDisclosure && idxDisclosure<idxAction && idxAction<idxForm, 'DOM journey moves from recognition through grounding, reframe, ownership, guide, plan, disclosure, and final diagnostic action');
+check(!html.slice(html.indexOf('<section class="hero">'),idxStakes).includes('<form'), 'hero offers direct value and CTA without prematurely embedding the form');
+check(html.lastIndexOf('<section class="section ')<idxAction && idxAction-html.lastIndexOf('<section class="section ')<120, 'personalized assessment is the final main-page conversion section');
+
+// Evidence grounding
+check(has(html,'21%','52%','22%','Pew Research Center','Gallup','These numbers do not predict your job.'), 'approved workforce grounding remains visible and bounded');
+
+// Diagnostic configuration
+check(campaign.questions.length===7 && campaign.questions.map(q=>q.id).join('|')==='income|changes|impact|runway|control|future|timing', 'seven questions preserve the required GAP sequence');
+check(has(JSON.stringify(campaign.questions),'How much of your household income disappears if this job does?','If the role changed or disappeared, what gets hit first?','What are you most tired of letting the job decide?','When do you need a real option?'), 'diagnostic questions use direct, natural stakes language');
+check(Object.keys(campaign.dimensions).join('|')==='exposure|control|posture' && has(runtime,'scores = { exposure: 0, control: 0, posture: 0 }','scores[question.dimension] += value.weight'), 'exposure, desired change, and action posture remain separately scored');
 const future=campaign.questions.find(q=>q.id==='future');
-check(future.dimension==='posture' && campaign.questions.filter(q=>q.dimension==='exposure').every(q=>!['future','control'].includes(q.id)), 'ownership interest is excluded from exposure scoring');
-check(has(html,'name="record_class" value="FIRST_PARTY_OPTIN"','name="entry_route" value="recognition_optin"','name="doorway" value="employment_concentration_risk"','name="buyer_context_self_reported"','name="route_candidate"','name="route_artifact"','name="noncustomer_tier_self_reported"','name="requested_next_step" value="personalized_diagnostic"'), 'canonical first-party metadata is present');
-check(campaign.campaignId==='employment_concentration_risk_2026q3'&&html.includes('name="campaign_id" value="employment_concentration_risk_2026q3"'),'page and configuration use the validated canonical campaign ID');
-check(has(html,'name="operating_context"','name="e2_business_intent" value="yes"','name="prior_franchise_research"','value="stopped_or_rejected"') && !/<option value="e2_business_intent">/.test(html), 'E-2 intent is voluntary and separate from canonical operating context');
-const expectedRoutes={executive_leader:['EXECUTIVE_OWNERSHIP_STRATEGY','Executive Ownership Decision Brief','Executive Ownership Strategy Review'],skilled_trades_operator:['SKILLED_TRADES_OPERATOR_TO_OWNER','Operator-to-Owner Role Map','Operator-to-Owner Fit Review'],portfolio_investor:['PORTFOLIO_GOVERNANCE_DILIGENCE','Manager-Led Diligence Brief','Manager-Led Franchise Diligence Review'],first_time_owner:['FIRST_TIME_OWNER_EDUCATION','Start/Buy/Franchise and Owner-Role Brief','First Ownership Model Review'],second_act_flexible_role:['SECOND_ACT_ROLE_DESIGN','Second-Act Owner Role Map','Second-Act Ownership Design Review'],general_or_unknown:['GENERAL_GAP_DIAGNOSTIC','Franchise Evaluation Sequence','Franchise Decision Review'],e2_business_intent:['E2_BUSINESS_FIT','E-2 Business Decision Map','E-2 Franchise Business-Fit Review']};
-for(const [key,[routeKey,artifact,cta]] of Object.entries(expectedRoutes)){const route=campaign.routes[key];check(route&&route.routeKey===routeKey&&route.artifact===artifact&&route.cta.includes(cta)&&route.criteria.length===3&&route.contradiction,`${key} has exact canonical routeKey, distinct artifact, CTA, criteria, and contradiction`)}
-const executiveE2=resolveRouteSelection(campaign,'executive_leader',true);
-check(executiveE2.routeKey==='E2_BUSINESS_FIT'&&executiveE2.buyerContextSelfReported==='executive_leader'&&executiveE2.secondaryBuyerContext==='executive_leader'&&executiveE2.routeOverrideApplied==='yes','simulated executive + E-2 case preserves context and makes E2_BUSINESS_FIT primary');
-check(campaign.routes.e2_business_intent.boundary.includes('Business-fit only') && has(html,'name="e2_business_intent_self_reported"','name="route_override_applied"','name="route_override_reason"','name="secondary_buyer_context"') && runtime.includes('Primary route: E-2 business fit.'), 'E-2 override metadata, boundary, and explicit result context are present');
-check(campaign.routes.general_or_unknown.lowConfidence===true && /not yet specific enough|neutral sequence/.test(campaign.routes.general_or_unknown.interpretation) && resolveRouteSelection(campaign,'',false).routeConfigKey==='general_or_unknown', 'unknown context maps to neutral low-confidence route');
-check(JSON.stringify(campaign.tierMap)==='{"no":"Tier 3","stopped_or_rejected":"Tier 2","active":"Tier 1","unknown":"Unknown"}', 'self-reported noncustomer tier mapping is exact');
-check(!/market.?signal|intent.?signal|lead.?score|conversion.?score/i.test(runtime+JSON.stringify(campaign)), 'no market-signal conversion or inferred tier logic');
-check(runtime.includes("payload.success === true || payload.success === 'true'") && runtime.indexOf('await fetch(form.action') < runtime.indexOf('fullResult.hidden = false') && runtime.includes('/activat/i.test(providerMessage)'), 'route result requires explicit submission confirmation');
-check(runtime.includes('submitButton.disabled = false')&&runtime.includes('Your preview and answers are still here')&&runtime.includes('austin@olsonfa.com'),'failure recovery preserves answers and contact alternatives');
-check(html.match(/Educational only/g)?.length===1 && !/not a prediction/g.test(html.replace('Educational only; this diagnostic is not a prediction','')), 'one concise educational/no-guarantee boundary is used');
-check(has(html,'Your current pattern: <span data-preview-band>','Two self-reported drivers','data-preview-reflection') && has(runtime,'Your present runway matters because it affects how much room you have to protect','compare options, and choose a next step from evidence.'), 'preview heading and reflection use natural evidence-based language');
-check(has(html,'Choose whether to continue the investigation.','Request your context-specific starting map','three route-specific questions','do not establish franchise fit','Why OFA:','Your desired future and owner role come before brands.','not a recommendation to buy.','Request My Starting Map'), 'capture names the exact immediate value and limits before requesting contact details');
-check(has(html,'This request creates no obligation.','Privacy Policy','FormSubmit processing','may be compensated by a franchisor if you later pursue'),'capture places privacy and compensation context beside the commitment');
-check(has(html,'does not enroll me in recurring promotional messages','Reply STOP','name="marketing_consent"') && !html.includes('I truthfully request'), 'requested-response and separate marketing consent are natural and explicit');
-const visibleCopy=html.replace(/<[^>]+>/g,' ');
-check(!/The Challenger reframe|\bgated\b/i.test(visibleCopy) && !/\bGAP\b/.test(visibleCopy) && (visibleCopy.match(/FormSubmit/g)||[]).length===1, 'public copy excludes framework jargon and names the form processor only in the adjacent privacy disclosure');
-check(css.includes('.field select{display:block;width:100%;max-width:100%')&&css.includes('.field select:focus-visible'), 'selects match inputs and preserve visible keyboard focus');
-check(has(runtime,'desiredControl','desiredFuture','Use evidence to revise either answer'), 'self-authored control and future answers echo into result and remain revisable');
-check(has(html,'<strong>Proceed</strong>','<strong>Investigate further</strong>','<strong>Not yet</strong>','<strong>No</strong>'), 'every result preserves all four candidate-owned conclusions');
+check(future.dimension==='posture' && campaign.questions.filter(q=>q.dimension==='exposure').every(q=>!['future','control'].includes(q.id)), 'ownership interest cannot inflate job-dependence scoring');
+check(campaign.dimensions.exposure.bands.map(b=>b.label).join('|')==='not heavily dependent on one job|meaningfully dependent on one job|heavily dependent on one job', 'result bands translate internal scoring into buyer language');
+
+// Contact gate: no personal result leakage before provider confirmation
+const openCaptureStart=runtime.indexOf('const openCapture');
+const prepareSubmissionStart=runtime.indexOf('const prepareSubmission');
+const submitStart=runtime.indexOf("form.addEventListener('submit'");
+const openCaptureBlock=runtime.slice(openCaptureStart,prepareSubmissionStart);
+const beforeSubmit=runtime.slice(0,submitStart);
+const afterSubmit=runtime.slice(submitStart);
+check(has(openCaptureBlock,'capture.hidden = false','form.elements.first_name.focus()') && !openCaptureBlock.includes('compute()') && !openCaptureBlock.includes('[data-preview-') && !openCaptureBlock.includes('[data-route-'), 'finishing question seven reveals only the contact gate and writes no personalized result into the DOM');
+check(beforeSubmit.indexOf('const prepareSubmission')>=0 && beforeSubmit.indexOf('result = compute()')>beforeSubmit.indexOf('const prepareSubmission') && afterSubmit.indexOf('const personalizedView = prepareSubmission()')>=0, 'personal scoring and route preparation begin only inside the valid contact-form submission path');
+check(runtime.includes("payload.success === true || payload.success === 'true'") && runtime.includes('/activat/i.test(providerMessage)'), 'provider confirmation must be explicit and activation responses are rejected');
+check(afterSubmit.indexOf('await fetch(form.action')>=0 && afterSubmit.indexOf('await fetch(form.action')<afterSubmit.indexOf('renderPersonalizedResult(personalizedView)') && afterSubmit.indexOf('renderPersonalizedResult(personalizedView)')<afterSubmit.indexOf('preview.hidden = false') && afterSubmit.indexOf('preview.hidden = false')<afterSubmit.indexOf('fullResult.hidden = false'), 'personalized DOM content and both result sections appear only after awaited provider confirmation');
+check(runtime.includes('submitButton.disabled = false') && runtime.includes('Your answers and contact details are still here') && runtime.includes('austin@olsonfa.com'), 'failure recovery preserves answers, contact fields, retry, phone, and email paths');
+check(has(html,'data-preview hidden','data-full-result hidden','data-capture hidden'), 'all personalized and capture states begin hidden');
+
+// Capture value, fields, consent, and metadata
+check(/name="first_name"[^>]*required/.test(html) && /name="phone"[^>]*maxlength="25"[^>]*required/.test(html) && /name="email"[^>]*required/.test(html) && has(runtime,"mobileDigits.length < 10 || mobileDigits.length > 15",'Enter a valid mobile number so OFA can contact you about your result.'), 'first name, valid mobile, and valid email are required before the personalized result');
+check(has(html,'Your answers are ready','Unlock your result and next-step map.','pressure points matter most','three questions someone with your background should answer next','Show my result and next-step map'), 'capture names the immediate personalized value and exact requested response');
+check(has(html,'does not enroll me in recurring promotional messages','name="contact_consent" value="yes" required','name="marketing_consent" value="yes"','Consent is not a condition of receiving my result','Reply STOP'), 'requested response and optional recurring promotional consent are separate and explicit');
+check(!/name="marketing_consent"[^>]*required/.test(html), 'promotional consent is optional');
+check(has(html,'Privacy Policy','franchisor may compensate OFA','do not pay OFA a separate brokerage fee'), 'privacy and commercial relationship are adjacent to the commitment');
+check(has(html,'name="record_class" value="FIRST_PARTY_OPTIN"','name="entry_route" value="recognition_optin"','name="entry_door" value="employment_concentration_risk"','name="doorway" value="employment_concentration_risk"','name="source" value="owned_site"','name="requested_next_step" value="personalized_diagnostic"','name="buyer_context_self_reported"','name="route_candidate"','name="route_artifact"'), 'canonical first-party and routed-result metadata are present');
+check(has(html,'name="captured_at"','name="requested_response_consent_at"','name="marketing_consent_at"') && has(runtime,'new Date().toISOString()','requested_response_consent_at.value = capturedAt','marketing_consent_at.value = form.elements.marketing_consent.checked'), 'capture and separate consent timestamps are recorded at submission');
+check(campaign.campaignId==='employment_concentration_risk_2026q3' && html.includes('name="campaign_id" value="employment_concentration_risk_2026q3"'), 'page and configuration share the validated campaign ID');
+check(has(html,'name="operating_context"','name="e2_business_intent" value="yes"','name="prior_franchise_research"','value="stopped_or_rejected"') && !/<option value="e2_business_intent">/.test(html), 'E-2 intent remains voluntary and separate from operating background');
+check(has(html,'action="https://formsubmit.co/ajax/admin@olsoncg.com"','name="_next" value="https://olsonfa.com/thankyou.html"','name="_captcha" value="false"'), 'form uses the monitored endpoint and stable fallback configuration');
 check(['utm_source','utm_medium','utm_campaign','utm_content','utm_term','referrer','landing_url'].every(name=>html.includes(`name="${name}"`)) && has(runtime,'window.location.search','document.referrer','window.location.href'), 'UTM, referrer, and landing metadata are preserved');
+
+// Canonical route behavior
+const expectedRoutes={executive_leader:['EXECUTIVE_OWNERSHIP_STRATEGY','Executive Ownership Decision Brief','Executive Ownership Strategy Review'],skilled_trades_operator:['SKILLED_TRADES_OPERATOR_TO_OWNER','Operator-to-Owner Role Map','Operator-to-Owner Fit Review'],portfolio_investor:['PORTFOLIO_GOVERNANCE_DILIGENCE','Manager-Led Diligence Brief','Manager-Led Franchise Diligence Review'],first_time_owner:['FIRST_TIME_OWNER_EDUCATION','Start/Buy/Franchise and Owner-Role Brief','First Ownership Model Review'],second_act_flexible_role:['SECOND_ACT_ROLE_DESIGN','Second-Act Owner Role Map','Second-Act Ownership Design Review'],general_or_unknown:['GENERAL_GAP_DIAGNOSTIC','Franchise Evaluation Sequence','Franchise Decision Review'],e2_business_intent:['E2_BUSINESS_FIT','E-2 Business Decision Map','E-2 Franchise Business-Fit Review']};
+for(const [key,[routeKey,artifact,cta]] of Object.entries(expectedRoutes)){const route=campaign.routes[key];check(route && route.routeKey===routeKey && route.artifact===artifact && route.cta.includes(cta) && route.criteria.length===3 && route.contradiction,`${key} preserves its canonical route, artifact, CTA, criteria, and contradiction`)}
+const executiveE2=resolveRouteSelection(campaign,'executive_leader',true);
+check(executiveE2.routeKey==='E2_BUSINESS_FIT' && executiveE2.buyerContextSelfReported==='executive_leader' && executiveE2.secondaryBuyerContext==='executive_leader' && executiveE2.routeOverrideApplied==='yes', 'voluntary executive plus E-2 selection preserves context and makes business fit primary');
+check(campaign.routes.e2_business_intent.boundary.includes('Business-fit only') && has(html,'name="e2_business_intent_self_reported"','name="route_override_applied"','name="route_override_reason"','name="secondary_buyer_context"'), 'E-2 override metadata and business-fit boundary remain present');
+check(campaign.routes.general_or_unknown.lowConfidence===true && resolveRouteSelection(campaign,'',false).routeConfigKey==='general_or_unknown', 'unknown background maps to the neutral low-confidence route');
+check(JSON.stringify(campaign.tierMap)==='{"no":"Tier 3","stopped_or_rejected":"Tier 2","active":"Tier 1","unknown":"Unknown"}', 'self-reported research-stage mapping remains exact');
+check(!/market.?signal|intent.?signal|lead.?score|conversion.?score/i.test(runtime+JSON.stringify(campaign)), 'runtime does not infer buyer tier or market intent');
+check(has(runtime,"result.answerValues.control[0] === 'none'",'You did not identify one job-controlled factor you need to change.','toSecondPerson(result.answers.control[0])','Use evidence to revise either answer'), 'self-authored desired change and future path echo naturally, including the none-of-these branch');
+
+// Result quality and boundaries
+check(has(html,'<strong>Proceed</strong>','<strong>Investigate further</strong>','<strong>Not yet</strong>','<strong>No</strong>'), 'personalized result preserves all four candidate-owned conclusions');
+check(has(runtime,"result.topDrivers.length === 1 ? 'Your strongest pressure point is '",'Your answers did not surface one dominant pressure point.',"result.answerValues.impact[0] === 'manageable'",'immediate practical impact would be manageable','Your starting point:','Research so far: Just starting or not yet researching franchises.') && !/Primary route:|Self-reported research stage:/.test(runtime), 'result handles singular, no-driver, manageable-impact, route, and research-stage language naturally');
+check(has(html,'Your next conversation','OFA has your result and will follow up using the contact details you provided.') && !html.includes('data-route-cta href=') && !runtime.includes('nextStep.href'), 'post-result state confirms OFA follow-up without asking for a redundant email request');
+check(has(html,'starting map, not a financial, legal, tax, or immigration conclusion','Staying, changing employers, building another income stream, starting, buying, and franchising'), 'result boundary preserves non-franchise alternatives');
+check(!/CRM receipt|production router|automated email/i.test(html+runtime), 'page makes no unsupported CRM, production-router, or automated-email claim');
 check(!/localStorage|sessionStorage/.test(runtime), 'runtime uses no local or session storage');
-check(!/CRM receipt|production router|automated email/i.test(html+runtime), 'no unsupported CRM, router, or email confirmation claim');
-check(schema.required.includes('dimensions')&&schema.required.includes('routes')&&schema.$defs.resultRoute.required.includes('routeKey')&&schema.$defs.resultRoute.properties.criteria.maxItems===3,'schema validates canonical routed multi-dimensional configuration');
-check(has(html,'Why franchising belongs in the comparison','You can investigate ownership without starting from a blank page.','developed business format and brand','training, operating materials, or assistance','meaningful execution, financial, and contractual risk','What has to earn the constraints','What OFA helps you test')&&!/FTC|Federal Trade Commission|consumers-guide-buying-franchise/i.test(html),'franchise possibility stays plain-language while preserving advantage, owner responsibility, tradeoff, and OFA diligence role');
-const idxAwakening=html.indexOf('id="awakening"'), idxReframe=html.indexOf('id="decision-path"'), idxFranchise=html.indexOf('id="franchise-possibility"'), idxGuide=html.indexOf('The decision before the brand'), idxPlan=html.indexOf('<p class="eyebrow">The plan</p>'), idxAction=html.indexOf('id="career-check"'), idxForm=html.indexOf('<form id="career-control-form"');
-check([idxAwakening,idxReframe,idxFranchise,idxGuide,idxPlan,idxAction,idxForm].every(i=>i>=0)&&idxAwakening<idxReframe&&idxReframe<idxFranchise&&idxFranchise<idxGuide&&idxGuide<idxPlan&&idxPlan<idxAction&&idxAction<idxForm,'DOM sequence moves from recognition through reframe, possibility, guide trust, plan, and only then diagnostic action');
-check(has(html,'A private preview before any contact request.','No contact first','Only then decide whether to request context-specific questions from OFA.','viewing the preview does not request contact.')&&!html.slice(html.indexOf('<section class="hero">'),idxAwakening).includes('<form'),'hero demonstrates reciprocal value without exposing contact capture');
-check(html.indexOf('The next move is evidence, not a leap')>idxAction&&idxForm>html.indexOf('The next move is evidence, not a leap'),'closing agency message immediately introduces the diagnostic rather than sending the visitor backward');
-check(!has(html,'More influence does not mean no dependence.','Ownership changes the dependency map'),'one-sided late dependency warning was removed rather than left before the CTA');
-check(html.includes('Austin Olson, J.D.')&&has(html,'The decision before the brand','That experience informs the questions, not your answer.','What you can expect from OFA','come before brands','investigated rather than assumed','may be compensated by a franchisor'),'guide trust demonstrates empathy, process, candidate control, and commercial transparency');
-check(has(html,'The next move is evidence, not a leap','Build a decision you can defend.','whether franchising deserves a place in the comparison.'),'final CTA closes on the desired evidence-based transformation');
-check(!/timing is still yours|decides the timing for you|before the timing is decided for you|Do not wait for a forced decision|Begin while the choice is yours/i.test(html+runtime),'generic scarcity and forced-timing pressure are absent');
-check(css.includes('@media(max-width:900px)')&&css.includes('@media(max-width:560px)')&&css.includes('.footer-row>span+span{margin-top:10px}')&&css.includes('prefers-reduced-motion')&&css.includes(':focus-visible'),'responsive, mobile-footer spacing, and accessibility CSS remain');
-const banned=[/immune to the economy/i,/recession-proof/i,/AI-proof/i,/guaranteed (?:income|security|success|control|wealth)/i,/ownership is safer than employment/i,/limited spots/i,/act now/i]; for(const pattern of banned)check(!pattern.test(html),`banned claim absent: ${pattern}`);
-if(failures.length){console.error(`CAREER CONTROL AUDIT FAILED: ${failures.length}/${checks.length}`);failures.forEach(f=>console.error(`- ${f}`));process.exit(1)}
-console.log(`CAREER CONTROL AUDIT PASSED: ${checks.length} checks`);
+check(schema.required.includes('dimensions') && schema.required.includes('routes') && schema.$defs.resultRoute.required.includes('routeKey') && schema.$defs.resultRoute.properties.criteria.maxItems===3, 'schema preserves canonical routed multidimensional configuration');
+
+// Visual and claim controls
+check(has(css,'.possibility-grid','.audience-grid','.outcome-grid','.field select{display:block;width:100%;max-width:100%',':focus-visible','prefers-reduced-motion'), 'new persuasion sections and form states retain responsive and keyboard-accessible styling');
+check(css.includes('@media(max-width:900px)') && css.includes('@media(max-width:560px)') && css.includes('.footer-row>span+span{margin-top:10px}'), 'desktop, tablet, mobile, and footer layouts remain covered');
+check(!/timing is still yours|decides the timing for you|before the timing is decided for you|Do not wait for a forced decision|limited spots|act now/i.test(html+runtime), 'synthetic scarcity and forced-timing pressure are absent');
+const banned=[/immune to the economy/i,/recession-proof/i,/AI-proof/i,/guaranteed (?:income|security|success|control|wealth)/i,/ownership is safer than employment/i,/no commission from franchisors/i,/attorney-level expertise/i,/reviewed hundreds of franchise disclosure/i];
+for(const pattern of banned) check(!pattern.test(html),`banned claim absent: ${pattern}`);
+
+if(failures.length){console.error(`CAREER CROSSROADS AUDIT FAILED: ${failures.length}/${checks.length}`);failures.forEach(f=>console.error(`- ${f}`));process.exit(1)}
+console.log(`CAREER CROSSROADS AUDIT PASSED: ${checks.length} checks`);
