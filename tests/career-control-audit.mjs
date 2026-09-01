@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const read = file => fs.readFileSync(path.join(ROOT, file), 'utf8');
+const html = read('career-control/index.html');
+const runtime = read('assets/tentacle-diagnostic.js');
+const css = read('assets/tentacle-system.css');
+const campaign = JSON.parse(read('tentacles/career-concentration.json'));
+const schema = JSON.parse(read('tentacles/tentacle.schema.json'));
+const vercel = read('vercel.json'); const sitemap = read('sitemap.xml');
+const failures=[]; const checks=[]; const check=(ok,label)=>{checks.push(label);if(!ok)failures.push(label)};
+const has = (...terms) => terms.every(term => html.includes(term));
+
+check(schema.required.includes('questions') && schema.required.includes('bands'), 'schema defines reusable questions and bands');
+check(campaign.questions.length === 6, 'campaign config has six GAP-ordered questions');
+check(campaign.bands.map(b=>b.label).join('|') === 'Monitor, do not manufacture urgency|Concentrated, build optionality|Control gap worth investigating|Time-sensitive, not rush-worthy', 'four required result bands are exact and ordered');
+check(has('Stop letting one employer decide what happens to your entire future.','You cannot make work risk-free. You can stop making one paycheck your only plan.','Check My Career Concentration','See what control actually changes'), 'chosen hero and CTAs are exact');
+check(has('AI can compress role value, advancement, compensation, or headcount','strong performance does not provide a vote in the org chart','stable salary can hide','reduce the time and options'), 'near-page stakes are explicit');
+check(has('52%','27% vs. 17%','18%','pewresearch.org','gallup.com','not an individual forecast'), 'primary evidence links and individual-risk disclaimer are present');
+check(has('Ownership does not eliminate dependence. It changes the dependency map.','customers, demand, capital','pricing, hiring, operations','franchisor terms','franchise agreement','owner role','Resale value'), 'ownership dependency disclosure is complete');
+check(has('Measure exposure','Define what control must accomplish','Compare real paths','Austin Olson, J.D.','no</strong>','not yet</strong>','further investigation</strong>'), 'plan, guide, and candidate-owned outcomes are present');
+check(has('name="first_name"','name="email"','name="phone"','name="contact_consent" value="yes" type="checkbox" required','name="marketing_consent" value="yes"'), 'capture fields and separate consents are present');
+check(has('This request does not enroll me in recurring promotional messages.','Reply STOP to stop texts.'), 'transactional consent boundary and STOP language are present');
+check(has('name="_subject" value="New Career Concentration Check | AI and Layoff Control"','name="form_origin" value="career_concentration_check"','name="record_class" value="PERSONALIZED_GUIDANCE_OPT_IN"','name="campaign_id" value="employment_concentration_ai_layoff_2026q3"','name="diagnostic_band"','name="summarized_answers"'), 'unique parser and diagnostic metadata are present');
+check(['utm_source','utm_medium','utm_campaign','utm_content','utm_term','referrer','landing_url'].every(n => html.includes(`name="${n}"`)) && runtime.includes('window.location.search') && runtime.includes('document.referrer') && runtime.includes('window.location.href'), 'current-request source metadata is captured');
+check(!/localStorage|sessionStorage/.test(runtime), 'runtime uses no browser storage');
+check(runtime.includes("payload.success === true || payload.success === 'true'") && runtime.includes('/activat/i.test(providerMessage)') && runtime.indexOf('await fetch') < runtime.indexOf('fullResult.hidden = false'), 'full result requires explicit provider confirmation');
+check(runtime.includes('submitButton.disabled = false') && runtime.includes('Your preview is still here') && runtime.includes('austin@olsonfa.com'), 'failure preserves preview and recovery path');
+check(has('not a prediction, psychometric instrument, financial-suitability determination, or guarantee'), 'educational diagnostic limitations are explicit');
+check(has('Stay, strengthen employability, or change roles','Spread the exposure','Further investigation, not yet, and no') && html.includes('not a franchise-fit verdict'), 'higher concern does not imply franchise fit and legitimate paths remain');
+const banned=[/immune to the economy/i,/recession-proof/i,/AI-proof/i,/never feel fear again/i,/guaranteed (?:income|security|success|control|wealth)/i,/ownership is safer than employment/i];
+for(const pattern of banned) check(!pattern.test(html),`banned absolute absent: ${pattern}`);
+check(vercel.includes('"source": "/career-control"') && sitemap.includes('<loc>https://olsonfa.com/career-control</loc>'), 'route exists in Vercel and sitemap');
+check(fs.existsSync(path.join(ROOT,'assets/tentacle-system.css')) && fs.existsSync(path.join(ROOT,'assets/tentacle-diagnostic.js')) && html.includes('/assets/tentacle-system.css') && html.includes('/assets/tentacle-diagnostic.js'), 'reusable local assets exist and resolve');
+check(css.includes('@media(max-width:900px)') && css.includes('@media(max-width:560px)') && css.includes('prefers-reduced-motion') && css.includes(':focus-visible'), 'responsive, reduced-motion, and focus rules exist');
+check(html.includes('aria-live="polite"') && runtime.includes('<fieldset') && runtime.includes('<legend'), 'diagnostic status and generated question semantics are represented');
+if(failures.length){console.error(`CAREER CONTROL AUDIT FAILED: ${failures.length}/${checks.length}`);failures.forEach(f=>console.error(`- ${f}`));process.exit(1)}
+console.log(`CAREER CONTROL AUDIT PASSED: ${checks.length} checks`);

@@ -6,6 +6,7 @@
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/blog/(.*)", "destination": "/blog/$1.html" },
     { "source": "/e2", "destination": "/e2/index.html" },
+    { "source": "/career-control", "destination": "/career-control/index.html" },
     { "source": "/how-it-works", "destination": "/how-it-works.html" },
     { "source": "/right-for-me", "destination": "/right-for-me.html" },
     { "source": "/categories", "destination": "/categories.html" },

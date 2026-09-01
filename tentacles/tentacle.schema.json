@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://olsonfa.com/tentacles/tentacle.schema.json",
+  "title": "OFA diagnostic tentacle configuration",
+  "type": "object",
+  "required": ["id", "formId", "questions", "bands"],
+  "properties": {
+    "id": { "type": "string" },
+    "formId": { "type": "string" },
+    "campaignId": { "type": "string" },
+    "metrics": { "type": "object", "additionalProperties": { "type": "string" } },
+    "route": { "type": "object", "required": ["path", "canonical"], "properties": { "path": { "type": "string" }, "canonical": { "type": "string", "format": "uri" } } },
+    "questions": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "required": ["id", "legend", "options"],
+        "properties": {
+          "id": { "type": "string" }, "legend": { "type": "string" }, "help": { "type": "string" }, "multi": { "type": "boolean" },
+          "options": { "type": "array", "items": { "type": "object", "required": ["value", "label", "weight"], "properties": { "value": { "type": "string" }, "label": { "type": "string" }, "weight": { "type": "number" }, "driver": { "type": "string" } } } }
+        }
+      }
+    },
+    "bands": { "type": "array", "items": { "type": "object", "required": ["id", "min", "label", "summary"], "properties": { "id": { "type": "string" }, "min": { "type": "number" }, "label": { "type": "string" }, "summary": { "type": "string" } } } }
+  }
+}

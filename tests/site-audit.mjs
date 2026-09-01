@@ -16,6 +16,8 @@ const index = read('index.html');
 const guide = read('guide.html');
 const e2 = read('e2/index.html');
 const decisionMap = read('e2/decision-map/index.html');
+const careerControl = read('career-control/index.html');
+const careerRuntime = read('assets/tentacle-diagnostic.js');
 const thankyou = read('thankyou.html');
 const sitemap = read('sitemap.xml');
 const formSuccess = JSON.parse(read('tests/form-success.json'));
@@ -54,6 +56,19 @@ for (const [name, html, formId] of [
   check(handler.includes('form-status active error'), `${name}: visible failure status exists`);
 }
 
+check(careerControl.includes('id="career-control-form" action="https://formsubmit.co/ajax/admin@olsoncg.com"'), 'career-control: async form uses FormSubmit AJAX endpoint');
+check(careerRuntime.includes("form.addEventListener('submit', async function"), 'career-control: submit handler is async');
+check(careerRuntime.includes('await fetch'), 'career-control: submission awaits FormSubmit');
+check(careerRuntime.includes('body: JSON.stringify(formPayload)'), 'career-control: AJAX request sends documented JSON payload');
+check(careerRuntime.includes("'Content-Type': 'application/json'"), 'career-control: AJAX content type is JSON');
+check(careerRuntime.includes('response.ok'), 'career-control: response status is checked');
+check(careerRuntime.includes("payload.success === true || payload.success === 'true'"), 'career-control: provider success must be explicit');
+check(careerRuntime.includes('catch(() => null)'), 'career-control: malformed JSON cannot default to success');
+check(careerRuntime.includes('/activat/i.test(providerMessage)'), 'career-control: activation response is rejected');
+check(careerRuntime.indexOf('await fetch') < careerRuntime.indexOf('fullResult.hidden = false'), 'career-control: full result follows awaited provider confirmation');
+check(careerRuntime.includes('submitButton.disabled = false'), 'career-control: failure re-enables submit');
+check(careerRuntime.includes("form-status active error"), 'career-control: visible failure status exists');
+
 check(intake.includes('name="_template" value="table"'), 'intake: FormSubmit template field is valid');
 check(!intake.includes('name="_template" table'), 'intake: malformed template field is absent');
 check(assessment.includes('name="contact_consent" value="yes" required'), 'assessment: contact consent is required');
@@ -81,7 +96,7 @@ check(budgetOptions.every(([value,label]) => expectedBudgets.get(value) === labe
 const htmlFiles = walk(ROOT).filter(f => f.endsWith('.html'));
 const allHtml = htmlFiles.map(f => fs.readFileSync(f,'utf8')).join('\n');
 const formMatches = [...allHtml.matchAll(/<form\b[^>]*action="https:\/\/formsubmit\.co\/(?:ajax\/)?([^"]+)"[^>]*>[\s\S]*?<\/form>/gi)];
-check(formMatches.length === 6, `site: exactly six FormSubmit forms found (found ${formMatches.length})`);
+check(formMatches.length === 7, `site: exactly seven FormSubmit forms found (found ${formMatches.length})`);
 const formOrigins = [];
 const formSubjects = [];
 for (const [i,match] of formMatches.entries()) {
@@ -99,9 +114,9 @@ for (const [i,match] of formMatches.entries()) {
   check(/name="_template" value="table"/.test(match[0]), `form ${i+1}: table template is valid`);
   check(/name="(?:Guide_Request_Consent|Contact_Consent|contact_consent)"[^>]*required/.test(match[0]), `form ${i+1}: transactional contact consent is required`);
 }
-check(new Set(formOrigins).size === 6, 'site: all six FormSubmit forms have unique origins');
-check(new Set(formSubjects).size === 6, 'site: all six FormSubmit forms have unique subjects');
-check((allHtml.match(/action="https:\/\/formsubmit\.co\/ajax\/admin@olsoncg\.com"/g) || []).length === 3, 'site: exactly three async forms use the documented AJAX endpoint');
+check(new Set(formOrigins).size === 7, 'site: all seven FormSubmit forms have unique origins');
+check(new Set(formSubjects).size === 7, 'site: all seven FormSubmit forms have unique subjects');
+check((allHtml.match(/action="https:\/\/formsubmit\.co\/ajax\/admin@olsoncg\.com"/g) || []).length === 4, 'site: exactly four async forms use the documented AJAX endpoint');
 check(!allHtml.includes('href="#"'), 'site: placeholder hash-only links are absent');
 check(!allHtml.includes('content="width=device-width, 1.0"'), 'site: malformed responsive viewport is absent');
 check(!allHtml.includes('austin@olsoncg.com'), 'site: retired unmonitored public email is absent');
@@ -138,7 +153,7 @@ check(decisionMap.includes('stores nothing and submits nothing') && !/<form\b/i.
 check(decisionMap.includes('What must the business accomplish?') && decisionMap.includes('Owner role') && decisionMap.includes('Stakeholders') && decisionMap.includes('Comparison path') && decisionMap.includes('Evidence questions') && decisionMap.includes('Professional role handoffs') && decisionMap.includes('Nonnegotiable business criteria') && decisionMap.includes('Next evidence step') && decisionMap.includes('Review date') && !decisionMap.includes('Candidate disposition'), 'E-2 decision map: required locally printable client fields are present without internal disposition');
 check(['Candidate','Olson Franchise Advisory','Immigration counsel','CPA or tax professional','Business-plan provider','Franchisor'].every((role) => decisionMap.includes(`<strong>${role}</strong>`)), 'E-2 decision map: six accountable role lanes are present');
 check(thankyou.includes('Thank you for reaching out.') && !thankyou.includes('Your Guide Is Ready') && !thankyou.includes('5 Questions to Ask'), 'thank-you page: generic cross-form confirmation is present');
-for (const route of ['/how-it-works','/right-for-me','/categories','/funding','/guide','/assessment','/e2','/blog/','/privacy']) {
+for (const route of ['/how-it-works','/right-for-me','/categories','/funding','/guide','/assessment','/e2','/career-control','/blog/','/privacy']) {
   check(sitemap.includes(`<loc>https://olsonfa.com${route}</loc>`), `sitemap: ${route} is listed`);
 }
 
