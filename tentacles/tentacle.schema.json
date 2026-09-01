@@ -1,25 +1,228 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://olsonfa.com/tentacles/tentacle.schema.json",
-  "title": "OFA diagnostic tentacle configuration",
+  "title": "OFA routed diagnostic tentacle configuration",
   "type": "object",
-  "required": ["id", "formId", "questions", "bands"],
+  "required": [
+    "id",
+    "formId",
+    "questions",
+    "dimensions",
+    "routes",
+    "tierMap"
+  ],
   "properties": {
-    "id": { "type": "string" },
-    "formId": { "type": "string" },
-    "campaignId": { "type": "string" },
-    "metrics": { "type": "object", "additionalProperties": { "type": "string" } },
-    "route": { "type": "object", "required": ["path", "canonical"], "properties": { "path": { "type": "string" }, "canonical": { "type": "string", "format": "uri" } } },
-    "questions": {
-      "type": "array", "minItems": 1,
-      "items": {
-        "type": "object", "required": ["id", "legend", "options"],
-        "properties": {
-          "id": { "type": "string" }, "legend": { "type": "string" }, "help": { "type": "string" }, "multi": { "type": "boolean" },
-          "options": { "type": "array", "items": { "type": "object", "required": ["value", "label", "weight"], "properties": { "value": { "type": "string" }, "label": { "type": "string" }, "weight": { "type": "number" }, "driver": { "type": "string" } } } }
+    "id": {
+      "type": "string"
+    },
+    "formId": {
+      "type": "string"
+    },
+    "campaignId": {
+      "type": "string"
+    },
+    "route": {
+      "type": "object",
+      "required": [
+        "path",
+        "canonical"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "canonical": {
+          "type": "string",
+          "format": "uri"
         }
       }
     },
-    "bands": { "type": "array", "items": { "type": "object", "required": ["id", "min", "label", "summary"], "properties": { "id": { "type": "string" }, "min": { "type": "number" }, "label": { "type": "string" }, "summary": { "type": "string" } } } }
+    "dimensions": {
+      "type": "object",
+      "required": [
+        "exposure",
+        "control",
+        "posture"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/dimension"
+      }
+    },
+    "questions": {
+      "type": "array",
+      "minItems": 7,
+      "items": {
+        "$ref": "#/$defs/question"
+      }
+    },
+    "routes": {
+      "type": "object",
+      "required": [
+        "executive_leader",
+        "skilled_trades_operator",
+        "portfolio_investor",
+        "first_time_owner",
+        "second_act_flexible_role",
+        "general_or_unknown",
+        "e2_business_intent"
+      ],
+      "additionalProperties": {
+        "$ref": "#/$defs/resultRoute"
+      }
+    },
+    "tierMap": {
+      "type": "object",
+      "required": [
+        "no",
+        "active",
+        "stopped_or_rejected",
+        "unknown"
+      ],
+      "additionalProperties": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "band": {
+      "type": "object",
+      "required": [
+        "id",
+        "min",
+        "label"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "min": {
+          "type": "number"
+        },
+        "label": {
+          "type": "string"
+        }
+      }
+    },
+    "dimension": {
+      "type": "object",
+      "required": [
+        "label",
+        "bands"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "bands": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/band"
+          }
+        }
+      }
+    },
+    "option": {
+      "type": "object",
+      "required": [
+        "value",
+        "label",
+        "weight"
+      ],
+      "properties": {
+        "value": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "weight": {
+          "type": "number"
+        },
+        "driver": {
+          "type": "string"
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "required": [
+        "id",
+        "dimension",
+        "legend",
+        "options"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "dimension": {
+          "enum": [
+            "exposure",
+            "control",
+            "posture"
+          ]
+        },
+        "legend": {
+          "type": "string"
+        },
+        "help": {
+          "type": "string"
+        },
+        "multi": {
+          "type": "boolean"
+        },
+        "options": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/option"
+          }
+        }
+      }
+    },
+    "resultRoute": {
+      "type": "object",
+      "required": [
+        "routeKey",
+        "artifact",
+        "cta",
+        "interpretation",
+        "criteria",
+        "contradiction"
+      ],
+      "properties": {
+        "artifact": {
+          "type": "string"
+        },
+        "cta": {
+          "type": "string"
+        },
+        "interpretation": {
+          "type": "string"
+        },
+        "criteria": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string"
+          }
+        },
+        "contradiction": {
+          "type": "string"
+        },
+        "boundary": {
+          "type": "string"
+        },
+        "lowConfidence": {
+          "type": "boolean"
+        },
+        "routeKey": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]+$"
+        }
+      }
+    }
   }
 }

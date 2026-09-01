@@ -3,32 +3,396 @@
   "id": "career_concentration_check",
   "formId": "career-control-form",
   "campaignId": "employment_concentration_ai_layoff_2026q3",
-  "route": { "path": "/career-control", "canonical": "https://olsonfa.com/career-control" },
-  "metrics": { "start": "career_concentration_start", "preview": "career_concentration_preview", "capture": "career_concentration_capture", "success": "career_concentration_success" },
-  "bands": [
-    { "id": "monitor", "min": 0, "label": "Monitor, do not manufacture urgency", "summary": "Your answers do not point to a reason for urgency. Keep watching the variables that matter and strengthen your options deliberately." },
-    { "id": "concentrated", "min": 7, "label": "Concentrated, build optionality", "summary": "A meaningful share of your working future sits with one employer. Building options can be useful without abandoning a role that still works." },
-    { "id": "control-gap", "min": 13, "label": "Control gap worth investigating", "summary": "Your current exposure and desired control are far enough apart to justify a structured comparison of possible paths." },
-    { "id": "time-sensitive", "min": 19, "label": "Time-sensitive, not rush-worthy", "summary": "Your answers make timing relevant. Move promptly toward facts and options, not toward a rushed ownership decision." }
-  ],
+  "route": {
+    "path": "/career-control",
+    "canonical": "https://olsonfa.com/career-control"
+  },
+  "dimensions": {
+    "exposure": {
+      "label": "Exposure / security concentration",
+      "bands": [
+        {
+          "id": "distributed",
+          "min": 0,
+          "label": "More distributed"
+        },
+        {
+          "id": "meaningful",
+          "min": 4,
+          "label": "Meaningfully concentrated"
+        },
+        {
+          "id": "high",
+          "min": 8,
+          "label": "Highly concentrated"
+        }
+      ]
+    },
+    "control": {
+      "label": "Control gap",
+      "bands": [
+        {
+          "id": "narrow",
+          "min": 0,
+          "label": "Narrow"
+        },
+        {
+          "id": "material",
+          "min": 3,
+          "label": "Material"
+        },
+        {
+          "id": "wide",
+          "min": 6,
+          "label": "Wide"
+        }
+      ]
+    },
+    "posture": {
+      "label": "Investigation posture",
+      "bands": [
+        {
+          "id": "observe",
+          "min": 0,
+          "label": "Observe and define"
+        },
+        {
+          "id": "compare",
+          "min": 3,
+          "label": "Ready to compare"
+        },
+        {
+          "id": "active",
+          "min": 6,
+          "label": "Active investigation"
+        }
+      ]
+    }
+  },
   "questions": [
-    { "id": "income", "legend": "How much of your household income depends on your current employment?", "help": "Use the closest broad range.", "options": [
-      { "value": "under-25", "label": "Less than 25%", "weight": 0 }, { "value": "25-49", "label": "25–49%", "weight": 1 }, { "value": "50-74", "label": "50–74%", "weight": 3, "driver": "household income concentration" }, { "value": "75-plus", "label": "75% or more", "weight": 5, "driver": "household income concentration" }
-    ]},
-    { "id": "changes", "legend": "What observable changes are happening at work?", "help": "Select all that apply.", "multi": true, "options": [
-      { "value": "ai-workflow", "label": "AI workflow changes", "weight": 2, "driver": "AI workflow changes" }, { "value": "freeze-reorg", "label": "Hiring freeze or reorganization", "weight": 3, "driver": "a hiring freeze or reorganization" }, { "value": "compressed-scope", "label": "Compressed role scope or headcount", "weight": 3, "driver": "role or headcount compression" }, { "value": "narrowing", "label": "Narrowing advancement or compensation", "weight": 2, "driver": "narrowing advancement or compensation" }, { "value": "none", "label": "None of these", "weight": 0 }
-    ]},
-    { "id": "runway", "legend": "If this income stopped, how long before a major household decision would be forced?", "options": [
-      { "value": "12-plus", "label": "More than 12 months", "weight": 0 }, { "value": "6-12", "label": "6–12 months", "weight": 1 }, { "value": "3-6", "label": "3–6 months", "weight": 3, "driver": "limited decision runway" }, { "value": "under-3", "label": "Less than 3 months", "weight": 5, "driver": "limited decision runway" }
-    ]},
-    { "id": "control", "legend": "What would you most like more control over?", "options": [
-      { "value": "income-ceiling", "label": "Income ceiling", "weight": 2, "driver": "income ceiling" }, { "value": "schedule", "label": "Schedule", "weight": 2, "driver": "schedule control" }, { "value": "location", "label": "Location", "weight": 1, "driver": "location control" }, { "value": "role-continuity", "label": "Role continuity", "weight": 3, "driver": "role continuity" }, { "value": "asset", "label": "Asset creation", "weight": 2, "driver": "asset creation" }, { "value": "none", "label": "None of these", "weight": 0 }
-    ]},
-    { "id": "future", "legend": "Which future state are you considering now?", "options": [
-      { "value": "strengthen", "label": "Strengthen my current role", "weight": 0 }, { "value": "change", "label": "Change employers", "weight": 1 }, { "value": "diversify", "label": "Diversify income", "weight": 2 }, { "value": "investigate", "label": "Investigate ownership", "weight": 2 }, { "value": "evaluate", "label": "Actively evaluate ownership", "weight": 3 }
-    ]},
-    { "id": "timing", "legend": "What timing applies to this decision?", "options": [
-      { "value": "none", "label": "No deadline", "weight": 0 }, { "value": "12-months", "label": "Within 12 months", "weight": 1 }, { "value": "6-months", "label": "Within 6 months", "weight": 3, "driver": "a six-month decision horizon" }, { "value": "under-way", "label": "Disruption is already under way", "weight": 5, "driver": "disruption already under way" }
-    ]}
-  ]
+    {
+      "id": "income",
+      "dimension": "exposure",
+      "legend": "How much of your household income depends on your current employment?",
+      "help": "Use the closest broad range.",
+      "options": [
+        {
+          "value": "under-25",
+          "label": "Less than 25%",
+          "weight": 0
+        },
+        {
+          "value": "25-49",
+          "label": "25–49%",
+          "weight": 1
+        },
+        {
+          "value": "50-74",
+          "label": "50–74%",
+          "weight": 3,
+          "driver": "household income concentration"
+        },
+        {
+          "value": "75-plus",
+          "label": "75% or more",
+          "weight": 5,
+          "driver": "household income concentration"
+        }
+      ]
+    },
+    {
+      "id": "changes",
+      "dimension": "exposure",
+      "legend": "What observable changes are happening at work?",
+      "help": "Select all that apply.",
+      "multi": true,
+      "options": [
+        {
+          "value": "ai-workflow",
+          "label": "AI workflow changes",
+          "weight": 2,
+          "driver": "AI workflow changes"
+        },
+        {
+          "value": "freeze-reorg",
+          "label": "Hiring freeze or reorganization",
+          "weight": 3,
+          "driver": "a hiring freeze or reorganization"
+        },
+        {
+          "value": "compressed-scope",
+          "label": "Compressed role scope or headcount",
+          "weight": 3,
+          "driver": "role or headcount compression"
+        },
+        {
+          "value": "narrowing",
+          "label": "Narrowing advancement or compensation",
+          "weight": 2,
+          "driver": "narrowing advancement or compensation"
+        },
+        {
+          "value": "none",
+          "label": "None of these",
+          "weight": 0
+        }
+      ]
+    },
+    {
+      "id": "impact",
+      "dimension": "control",
+      "legend": "What would a forced role change disrupt most?",
+      "help": "Choose the practical area that would matter most—not a clinical assessment.",
+      "options": [
+        {
+          "value": "home-income",
+          "label": "Household income and obligations",
+          "weight": 3,
+          "driver": "household obligations"
+        },
+        {
+          "value": "benefits",
+          "label": "Benefits or healthcare continuity",
+          "weight": 3,
+          "driver": "benefits continuity"
+        },
+        {
+          "value": "family-plans",
+          "label": "Family plans or location",
+          "weight": 2,
+          "driver": "family or location plans"
+        },
+        {
+          "value": "identity",
+          "label": "Professional identity and momentum",
+          "weight": 2,
+          "driver": "professional momentum"
+        },
+        {
+          "value": "manageable",
+          "label": "It would be manageable",
+          "weight": 0
+        }
+      ]
+    },
+    {
+      "id": "runway",
+      "dimension": "exposure",
+      "legend": "If this income stopped, how long before a major household decision would be forced?",
+      "options": [
+        {
+          "value": "12-plus",
+          "label": "More than 12 months",
+          "weight": 0
+        },
+        {
+          "value": "6-12",
+          "label": "6–12 months",
+          "weight": 1
+        },
+        {
+          "value": "3-6",
+          "label": "3–6 months",
+          "weight": 3,
+          "driver": "limited decision runway"
+        },
+        {
+          "value": "under-3",
+          "label": "Less than 3 months",
+          "weight": 5,
+          "driver": "limited decision runway"
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "dimension": "control",
+      "legend": "What would you most like more control over?",
+      "options": [
+        {
+          "value": "income-ceiling",
+          "label": "Income ceiling",
+          "weight": 3
+        },
+        {
+          "value": "schedule",
+          "label": "Schedule",
+          "weight": 2
+        },
+        {
+          "value": "location",
+          "label": "Location",
+          "weight": 2
+        },
+        {
+          "value": "role-continuity",
+          "label": "Role continuity",
+          "weight": 3
+        },
+        {
+          "value": "asset",
+          "label": "Building an asset",
+          "weight": 3
+        },
+        {
+          "value": "none",
+          "label": "None of these",
+          "weight": 0
+        }
+      ]
+    },
+    {
+      "id": "future",
+      "dimension": "posture",
+      "legend": "Which future are you willing to investigate with evidence?",
+      "options": [
+        {
+          "value": "strengthen",
+          "label": "Strengthen my current role",
+          "weight": 1
+        },
+        {
+          "value": "change",
+          "label": "Change employers",
+          "weight": 2
+        },
+        {
+          "value": "diversify",
+          "label": "Diversify income",
+          "weight": 3
+        },
+        {
+          "value": "investigate",
+          "label": "Investigate ownership",
+          "weight": 3
+        },
+        {
+          "value": "evaluate",
+          "label": "Actively compare ownership models",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "timing",
+      "dimension": "posture",
+      "legend": "When would evidence need to be useful for this decision?",
+      "options": [
+        {
+          "value": "none",
+          "label": "No defined deadline",
+          "weight": 0
+        },
+        {
+          "value": "12-months",
+          "label": "Within 12 months",
+          "weight": 1
+        },
+        {
+          "value": "6-months",
+          "label": "Within 6 months",
+          "weight": 2
+        },
+        {
+          "value": "under-way",
+          "label": "Disruption is already under way",
+          "weight": 3
+        }
+      ]
+    }
+  ],
+  "routes": {
+    "executive_leader": {
+      "artifact": "Executive Ownership Decision Brief",
+      "cta": "Request My Executive Ownership Strategy Review",
+      "interpretation": "Your executive background may bring decision discipline and leadership range, while ownership asks you to test how close you want to be to daily execution.",
+      "criteria": [
+        "Which executive strengths transfer to an owner-operator role?",
+        "What decision rights must ownership add?",
+        "Which models fit your capital, leadership span, and operating involvement?"
+      ],
+      "contradiction": "Test this: senior leadership experience does not automatically mean a semi-absentee model is the better fit.",
+      "routeKey": "EXECUTIVE_OWNERSHIP_STRATEGY"
+    },
+    "skilled_trades_operator": {
+      "artifact": "Operator-to-Owner Role Map",
+      "cta": "Request My Operator-to-Owner Fit Review",
+      "interpretation": "Your operating experience may create practical credibility, but the owner role can shift from doing the work to building the system and leading people.",
+      "criteria": [
+        "Which field skills create an advantage without trapping you in production?",
+        "How much hiring, sales, and people leadership does the model require?",
+        "What operating territory and demand assumptions need proof?"
+      ],
+      "contradiction": "Test this: being excellent at the work is not the same as wanting the owner's job.",
+      "routeKey": "SKILLED_TRADES_OPERATOR_TO_OWNER"
+    },
+    "portfolio_investor": {
+      "artifact": "Manager-Led Diligence Brief",
+      "cta": "Request My Manager-Led Franchise Diligence Review",
+      "interpretation": "Your portfolio perspective may support comparative diligence, while a manager-led franchise still requires active governance and operating accountability.",
+      "criteria": [
+        "What manager economics are supported after full labor costs?",
+        "Which controls let you govern without pretending the asset is passive?",
+        "How concentrated would capital, territory, and franchisor exposure become?"
+      ],
+      "contradiction": "Test this: manager-led does not mean passive, and diversification can create a new concentration.",
+      "routeKey": "PORTFOLIO_GOVERNANCE_DILIGENCE"
+    },
+    "first_time_owner": {
+      "artifact": "Start/Buy/Franchise and Owner-Role Brief",
+      "cta": "Request My First Ownership Model Review",
+      "interpretation": "As a first-time owner, your most useful first comparison is not brand versus brand; it is the owner role and tradeoffs across starting, buying, and franchising.",
+      "criteria": [
+        "Which owner role fits your strengths and non-negotiables?",
+        "What support are you actually paying for in each path?",
+        "What capital, runway, and household boundaries must the model respect?"
+      ],
+      "contradiction": "Test this: more support does not remove owner responsibility or make a model suitable.",
+      "routeKey": "FIRST_TIME_OWNER_EDUCATION"
+    },
+    "second_act_flexible_role": {
+      "artifact": "Second-Act Owner Role Map",
+      "cta": "Request My Second-Act Ownership Design Review",
+      "interpretation": "Your next act may need to fit the life you have built, so role design matters as much as category appeal or projected economics.",
+      "criteria": [
+        "What weekly role and schedule are genuinely acceptable?",
+        "Which responsibilities do you want to keep, delegate, or avoid?",
+        "How must the path fit family, location, capital, and legacy goals?"
+      ],
+      "contradiction": "Test this: a flexible goal does not make a business flexible during launch or staffing pressure.",
+      "routeKey": "SECOND_ACT_ROLE_DESIGN"
+    },
+    "general_or_unknown": {
+      "artifact": "Franchise Evaluation Sequence",
+      "cta": "Request My Franchise Decision Review",
+      "lowConfidence": true,
+      "interpretation": "Your background is not yet specific enough for a responsible role-fit conclusion. The next useful move is a neutral sequence that defines what must change before narrowing options.",
+      "criteria": [
+        "What must change from the current state?",
+        "Which owner role and constraints need definition?",
+        "What evidence would support proceed, more investigation, not yet, or no?"
+      ],
+      "contradiction": "Test this: interest in control is not evidence that franchise ownership is the right vehicle.",
+      "routeKey": "GENERAL_GAP_DIAGNOSTIC"
+    },
+    "e2_business_intent": {
+      "artifact": "E-2 Business Decision Map",
+      "cta": "Request My E-2 Franchise Business-Fit Review",
+      "boundary": "Business-fit only: OFA does not provide immigration or legal advice, determine visa eligibility, or promise an immigration outcome.",
+      "interpretation": "Your volunteered E-2 business intent makes capitalization, active direction, operating role, and business evidence important fit questions alongside ordinary ownership diligence.",
+      "criteria": [
+        "Does the business role fit how you expect to direct and develop the enterprise?",
+        "Are capitalization and operating assumptions supportable with independent advice?",
+        "Which franchise constraints affect the business case and your intended role?"
+      ],
+      "contradiction": "Test this: a business that appears franchise-ready is not automatically suitable for your goals or sufficient for an E-2 case.",
+      "routeKey": "E2_BUSINESS_FIT"
+    }
+  },
+  "tierMap": {
+    "no": "Tier 3",
+    "stopped_or_rejected": "Tier 2",
+    "active": "Tier 1",
+    "unknown": "Unknown"
+  }
 }
