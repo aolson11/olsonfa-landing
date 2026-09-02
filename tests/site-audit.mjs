@@ -143,6 +143,8 @@ check(!/href="#" class="btn-primary"/.test(e2), 'E-2 page: primary CTA has a rea
 check(e2.includes('Request an E-2 Franchise Business-Fit Review'), 'E-2 page: requested business-fit CTA is present');
 check(e2.includes('name="_subject" value="New Franchise Evaluation Request | E-2 Business-Fit"'), 'E-2 form: subject contains exact parser token');
 check(e2.includes('name="form_origin" value="e2_business_fit"'), 'E-2 form: stable origin is present');
+check(careerControl.includes('name="_subject" value="New Franchise Evaluation Request | Career Crossroads Check"'), 'career-control: subject contains exact parser token and Career Crossroads suffix');
+check(careerControl.includes('name="form_origin" value="career_crossroads_check"'), 'career-control: stable origin is present');
 check(e2.includes('name="record_class" value="BUYER_INTENT_LEAD"') && e2.includes('name="intake_type" value="e2_business_fit"'), 'E-2 form: buyer-intent classification metadata is present');
 check(e2.includes('name="campaign_id" value="e2_franchise_business_capture_2026q3"') && e2.includes('name="channel" value="owned_site"') && e2.includes('name="self_reported_source" value="unknown"'), 'E-2 form: campaign, channel, and bounded source metadata are present');
 check(e2.includes('name="first_name"') && e2.includes('name="email"') && e2.includes('name="contact_consent" value="yes" type="checkbox" required'), 'E-2 form: required contact fields and transactional consent are present');
