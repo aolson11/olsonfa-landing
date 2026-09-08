@@ -1,0 +1,192 @@
+{
+  "schemaVersion": "1.0",
+  "verticalId": "therapists",
+  "brand": "Olson Consulting Group",
+  "audience": "independently licensed therapists planning or restarting a one-state solo practice",
+  "eligibility": "Independently licensed therapists considering a solo cash-pay or hybrid practice within twelve months.",
+  "variants": {
+    "control": {
+      "eyebrow": "Practice Launch Architecture",
+      "headline": "Your license prepared you to practice. It may not have prepared you to build the practice.",
+      "subhead": "Map the operating decisions, professional handoffs, and next three actions before you spend money in the wrong order."
+    },
+    "sequence": {
+      "eyebrow": "Before You File or Buy Software",
+      "headline": "Put your private-practice decisions in the right order.",
+      "subhead": "Compare the operating routes, identify the questions that belong with qualified professionals, and generate a practical next-action map."
+    }
+  },
+  "diagnostic": {
+    "title": "Map your practice path",
+    "intro": "Ten self-reported questions produce an operating route, missing-evidence list, and next three actions. This is business education, not a legal, tax, clinical, licensing, payer, privacy, or compliance determination.",
+    "questions": [
+      {
+        "id": "desired_change",
+        "legend": "What would a different work structure need to change for you?",
+        "options": [
+          {"value": "clients", "label": "More choice about clients or services", "scores": {"lean": 1, "hybrid": 1}},
+          {"value": "schedule", "label": "More control over schedule or workload", "scores": {"lean": 2}},
+          {"value": "income", "label": "A different income model", "scores": {"lean": 1, "hybrid": 1, "supported": 1}},
+          {"value": "admin", "label": "Less administrative burden", "scores": {"supported": 2, "hybrid": 1}},
+          {"value": "asset", "label": "Build an asset, team, or broader business", "scores": {"supported": 3}},
+          {"value": "unsure", "label": "I am still defining the change", "scores": {"clarify": 3}}
+        ]
+      },
+      {
+        "id": "professional_position",
+        "legend": "Which statement best describes your current professional position?",
+        "options": [
+          {"value": "licensed_employed", "label": "Independently licensed and employed", "scores": {"lean": 1, "hybrid": 1}},
+          {"value": "licensed_contracting", "label": "Independently licensed and contracting", "scores": {"lean": 2}},
+          {"value": "already_solo", "label": "Already operating solo", "scores": {"lean": 1, "hybrid": 1}},
+          {"value": "restarting", "label": "Restarting a prior practice", "scores": {"lean": 1, "hybrid": 1}},
+          {"value": "pending", "label": "Independent authority or license is still pending", "scores": {"clarify": 4}},
+          {"value": "unsure", "label": "Other or unsure", "scores": {"clarify": 3}}
+        ]
+      },
+      {
+        "id": "timing",
+        "legend": "When might you want a new structure operating?",
+        "options": [
+          {"value": "0_3", "label": "Within 3 months", "scores": {"lean": 2, "hybrid": 1}},
+          {"value": "4_6", "label": "In 4 to 6 months", "scores": {"lean": 2, "hybrid": 2}},
+          {"value": "7_12", "label": "In 7 to 12 months", "scores": {"lean": 1, "hybrid": 1}},
+          {"value": "later", "label": "More than 12 months", "scores": {"clarify": 2}},
+          {"value": "exploring", "label": "Exploring only", "scores": {"clarify": 3}}
+        ]
+      },
+      {
+        "id": "capacity",
+        "legend": "How much protected nonclinical launch time can you use each week for the next 90 days?",
+        "options": [
+          {"value": "under_2", "label": "Under 2 hours", "scores": {"clarify": 3, "supported": 1}},
+          {"value": "2_4", "label": "2 to 4 hours", "scores": {"lean": 1, "supported": 1}},
+          {"value": "5_8", "label": "5 to 8 hours", "scores": {"lean": 2, "hybrid": 1}},
+          {"value": "9_plus", "label": "9 or more hours", "scores": {"lean": 2, "hybrid": 2}},
+          {"value": "unknown", "label": "I have not protected the time", "scores": {"clarify": 3}}
+        ]
+      },
+      {
+        "id": "payment_model",
+        "legend": "Which client-payment model are you considering?",
+        "options": [
+          {"value": "cash", "label": "Cash pay", "scores": {"lean": 4}},
+          {"value": "insurance", "label": "Insurance", "scores": {"hybrid": 5}},
+          {"value": "hybrid", "label": "Hybrid", "scores": {"hybrid": 5}},
+          {"value": "platform", "label": "A platform or group relationship", "scores": {"supported": 4}},
+          {"value": "unknown", "label": "Not sure", "scores": {"clarify": 3}}
+        ]
+      },
+      {
+        "id": "economics",
+        "legend": "How visible are your practice economics today?",
+        "options": [
+          {"value": "visible", "label": "I can state target sessions, realized rate, fixed costs, nonclinical hours, and runway", "scores": {"lean": 2, "hybrid": 2}},
+          {"value": "partial", "label": "Some are known", "scores": {"lean": 1, "hybrid": 1}},
+          {"value": "assumptions", "label": "Mostly assumptions", "scores": {"clarify": 3}},
+          {"value": "not_started", "label": "I have not started the numbers", "scores": {"clarify": 4}}
+        ]
+      },
+      {
+        "id": "demand_evidence",
+        "legend": "What evidence do you have that appropriate clients can find or be referred to you?",
+        "options": [
+          {"value": "repeat_referrals", "label": "Repeat referral sources", "scores": {"lean": 2, "hybrid": 1}},
+          {"value": "inquiries", "label": "Audience, directory, or search inquiries", "scores": {"lean": 2}},
+          {"value": "transition", "label": "Employer or group transition evidence", "scores": {"hybrid": 1, "supported": 1}},
+          {"value": "informal", "label": "Informal interest only", "scores": {"clarify": 2}},
+          {"value": "none", "label": "None tested", "scores": {"clarify": 4}}
+        ]
+      },
+      {
+        "id": "operating_preference",
+        "legend": "How much routine business administration do you want to own personally?",
+        "options": [
+          {"value": "most", "label": "I am comfortable owning most of it", "scores": {"lean": 3}},
+          {"value": "selected", "label": "I will own selected work and delegate the rest", "scores": {"lean": 1, "hybrid": 2}},
+          {"value": "coordinated", "label": "I want most of it coordinated or delegated", "scores": {"supported": 4}},
+          {"value": "unknown", "label": "I have not decided", "scores": {"clarify": 2}}
+        ]
+      },
+      {
+        "id": "complexity",
+        "legend": "Which complexity level best describes the launch you are considering?",
+        "options": [
+          {"value": "simple", "label": "One state, solo, no employees or partners", "scores": {"lean": 3}},
+          {"value": "payer", "label": "Insurance panels or credentialing are central", "scores": {"hybrid": 5}},
+          {"value": "complex", "label": "More than one state, employees, partners, group practice, public payers, or a lease", "scores": {"supported": 6}},
+          {"value": "unknown", "label": "Unsure", "scores": {"clarify": 3}}
+        ]
+      },
+      {
+        "id": "preferred_route",
+        "legend": "Which route do you most want to investigate now?",
+        "options": [
+          {"value": "validate", "label": "Validate while keeping my current work", "scores": {"clarify": 5}},
+          {"value": "solo", "label": "Build a solo practice", "scores": {"lean": 6}},
+          {"value": "payer", "label": "Build a hybrid or payer-supported practice", "scores": {"hybrid": 7}},
+          {"value": "join", "label": "Join or contract with a supported platform or group", "scores": {"supported": 6}},
+          {"value": "buy", "label": "Buy an existing practice or business", "scores": {"supported": 6}},
+          {"value": "franchise", "label": "Separately compare franchise or other structured ownership", "scores": {"supported": 6}, "affirmativeOwnershipComparison": true},
+          {"value": "unsure", "label": "Not sure", "scores": {"clarify": 5}}
+        ]
+      }
+    ]
+  },
+  "routes": {
+    "clarify": {
+      "priority": 1,
+      "title": "Clarify Before Spending",
+      "summary": "Your answers point to missing operating evidence that should be resolved before major filing, software, or launch commitments.",
+      "tradeoff": "Speed now versus preserving the ability to change the model cheaply.",
+      "nextActions": ["Write the three outcomes the practice must produce", "Complete the capacity and economics worksheet", "Identify the first official or professional question that could change the route"],
+      "nonConclusions": "This result does not determine professional eligibility, financial suitability, or whether you should open a practice.",
+      "artifact": "Seven-Day Evidence Plan"
+    },
+    "lean": {
+      "priority": 2,
+      "title": "Lean Solo Validation",
+      "summary": "Your answers support investigating a focused one-state solo operating model with minimal fixed commitments and a deliberate demand test.",
+      "tradeoff": "More direct control versus personally owning more acquisition and operating work.",
+      "nextActions": ["Model sessions, realized rate, nonclinical hours, and runway", "Get the regulated entity and tax questions answered by the appropriate professionals", "Choose one measurable referral or search demand test"],
+      "nonConclusions": "This result does not select cash pay, an entity, a filing state, a tax election, or a clinical model.",
+      "artifact": "Lean Solo 30/60/90 Board"
+    },
+    "hybrid": {
+      "priority": 3,
+      "title": "Hybrid and Payer Operations",
+      "summary": "Your answers make credentialing, billing, documentation, reimbursement timing, and payer administration central operating dependencies.",
+      "tradeoff": "Potential payer-sourced volume and access versus additional administrative and reimbursement constraints.",
+      "nextActions": ["Map payer, credentialing, billing, and cash-flow dependencies", "Assign each regulated or payer question to a qualified owner", "Compare a self-managed stack with specialist or platform-supported fulfillment"],
+      "nonConclusions": "This result does not recommend a payer, interpret a contract, determine credentialing eligibility, or establish billing compliance.",
+      "artifact": "Payer-Operations Dependency Map"
+    },
+    "supported": {
+      "priority": 4,
+      "title": "Supported Path Comparison",
+      "summary": "Your answers support comparing models that provide more infrastructure, coordination, or an existing operating system before committing to a standalone build.",
+      "tradeoff": "More support and structure versus fees, constraints, and reduced operating independence.",
+      "nextActions": ["Define the support you require and the control you will not trade away", "Compare join, contract, buy, and independent-build paths against the same criteria", "Request a separate franchise comparison only if that vehicle is genuinely relevant"],
+      "nonConclusions": "This result does not recommend a transaction, platform, practice, franchise, or ownership structure.",
+      "artifact": "Start–Join–Buy–Supported Ownership Comparison"
+    }
+  },
+  "products": [
+    {"id": "free_route", "name": "Practice Path Result", "price": 0, "type": "standard", "cta": "Generate my route"},
+    {"id": "launch_system", "name": "Practice Launch Decision System", "price": 197, "type": "standard", "cta": "Get the $197 system"},
+    {"id": "formation_package", "name": "OCG Formation and Maintenance Package", "price": null, "type": "provider_dependent", "cta": "Available after provider confirmation"},
+    {"id": "premium_consulting", "name": "High-Judgment Business Consulting", "price": null, "type": "premium_paid", "cta": "Purchase consulting before scheduling"}
+  ],
+  "marketing": {
+    "maxCac": {"launch_system": 65, "formation_package": 100},
+    "keywords": ["private practice consultant for therapists", "therapist private practice business setup", "how to start private practice therapist", "therapist private practice business plan", "cash pay vs insurance therapist", "LCSW private practice setup", "LMFT private practice startup", "counselor private practice setup"],
+    "negativeKeywords": ["therapy near me", "therapist near me", "treatment", "client", "jobs", "salary", "degree", "school", "internship", "associate license", "supervision", "exam", "CE credits", "progress notes", "treatment plan", "free templates"],
+    "channels": ["google_search_exact", "state_association", "specialist_affiliate", "owned_seo"]
+  },
+  "boundaries": {
+    "disclaimer": "Olson Consulting Group provides general business education, operating frameworks, and coordination. It does not provide legal, tax, accounting, clinical, licensing, credentialing, payer, privacy, HIPAA, insurance, or compliance advice or certification.",
+    "ofaRule": "No OFA or FranTracker record may be created without a separate affirmative franchise-comparison request and applicable disclosure.",
+    "prohibitedClaims": ["guaranteed clients", "guaranteed income", "legally compliant", "HIPAA compliant", "best entity", "right tax election", "approved by your board"]
+  },
+  "provider": {"adapter": "mock", "requiredCapabilities": ["professional_entity_support", "white_label", "customer_ownership", "status_export", "error_remediation"]}
+}

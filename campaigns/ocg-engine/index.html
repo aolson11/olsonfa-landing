@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Practice Launch Architecture | Olson Consulting Group</title>
+  <meta name="description" content="Map the operating decisions, professional handoffs, and next actions for your independent practice.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600;6..72,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Olson Consulting Group home"><span>Olson</span> Consulting Group</a>
+    <a class="header-cta" href="#diagnostic">Map your path</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow" data-eyebrow>Practice Launch Architecture</p>
+          <h1 data-headline>Put the business decisions in the right order.</h1>
+          <p class="hero-copy" data-subhead>Generate a practical operating route before you commit money and time.</p>
+          <a class="button primary" href="#diagnostic" data-hero-cta>Map my path</a>
+          <p class="eligibility" data-eligibility></p>
+        </div>
+        <aside class="route-preview" aria-label="What the result includes">
+          <p class="mini-label">Your route result</p>
+          <ul>
+            <li>The operating path your answers currently support</li>
+            <li>What your answers do not establish</li>
+            <li>Your most consequential tradeoff</li>
+            <li>Your next three actions</li>
+          </ul>
+          <p class="route-note">No sales call is required.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="problem-section">
+      <div class="section-heading">
+        <p class="eyebrow">The decision before the tools</p>
+        <h2>A filing, software subscription, or service contract cannot decide what kind of business you are building.</h2>
+      </div>
+      <div class="three-grid">
+        <article><span>01</span><h3>Define the outcome</h3><p>Make the desired customers, work, economics, control, and owner role explicit.</p></article>
+        <article><span>02</span><h3>Choose a route to investigate</h3><p>Compare an independent build, a validation path, and models offering more infrastructure or support.</p></article>
+        <article><span>03</span><h3>Sequence the work</h3><p>Assign operating decisions, professional questions, evidence, vendors, and due dates.</p></article>
+      </div>
+    </section>
+
+    <section class="diagnostic-section" id="diagnostic">
+      <div class="diagnostic-shell" data-app>
+        <div class="diagnostic-intro">
+          <p class="eyebrow">Self-service diagnostic</p>
+          <h2 data-diagnostic-title>Map your path</h2>
+          <p data-diagnostic-intro></p>
+          <div class="progress-row"><span data-progress>Question 1</span><span data-progress-percent>0%</span></div>
+          <div class="progress-track"><span data-progress-bar></span></div>
+        </div>
+        <form data-diagnostic-form novalidate>
+          <div data-question-host></div>
+          <section class="capture-card" data-capture hidden>
+            <p class="mini-label">Your route is ready</p>
+            <h3>Generate the complete result</h3>
+            <p>Enter an email for the requested result. This local prototype does not transmit or store the address.</p>
+            <label>Email address<input name="email" type="email" autocomplete="email" required placeholder="you@example.com"></label>
+            <label class="check"><input name="requested_result" type="checkbox" required> I am requesting this personalized business-education result.</label>
+            <button class="button primary" type="submit">Generate my route</button>
+            <p class="form-status" data-status role="status"></p>
+          </section>
+        </form>
+        <section class="result-card" data-result hidden tabindex="-1">
+          <p class="eyebrow">Your current operating route</p>
+          <h2 data-result-title></h2>
+          <p class="result-summary" data-result-summary></p>
+          <div class="result-grid">
+            <div><p class="mini-label">Consequential tradeoff</p><p data-result-tradeoff></p></div>
+            <div><p class="mini-label">What this does not establish</p><p data-result-boundary></p></div>
+          </div>
+          <div class="next-actions"><p class="mini-label">Your next three actions</p><ol data-result-actions></ol></div>
+          <p class="artifact"><span>Generated artifact:</span> <strong data-result-artifact></strong></p>
+          <div data-ownership-option hidden>
+            <label class="check"><input type="checkbox" data-ownership-request> I separately request information about comparing franchise or other structured-ownership paths.</label>
+            <p class="small">This affirmative request is separate from your practice-launch result. No OFA or FranTracker record is created in this prototype.</p>
+          </div>
+          <div class="product-grid" data-products></div>
+          <p class="form-status" data-product-status role="status"></p>
+        </section>
+      </div>
+    </section>
+
+    <section class="boundary-section">
+      <div>
+        <p class="eyebrow">Clear division of responsibility</p>
+        <h2>OCG organizes the business investigation. Qualified professionals decide regulated questions.</h2>
+      </div>
+      <p data-disclaimer></p>
+    </section>
+
+    <section class="debug-panel" data-debug hidden>
+      <h2>Campaign configuration</h2>
+      <div class="debug-grid">
+        <div><h3>Keywords</h3><ul data-keywords></ul></div>
+        <div><h3>Negative keywords</h3><ul data-negatives></ul></div>
+        <div><h3>CAC ceilings</h3><pre data-cac></pre></div>
+        <div><h3>Local events</h3><pre data-events></pre></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Olson Consulting Group</strong></p>
+    <p>General business education and operating architecture. Not legal, tax, clinical, licensing, payer, privacy, insurance, credentialing, or compliance advice.</p>
+    <p>Local prototype. No checkout, CRM submission, provider order, or production deployment.</p>
+  </footer>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

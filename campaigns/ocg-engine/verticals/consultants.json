@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "1.0",
+  "verticalId": "consultants",
+  "brand": "Olson Consulting Group",
+  "audience": "experienced professionals evaluating an independent consulting business",
+  "eligibility": "Professionals evaluating a one-owner consulting business within twelve months.",
+  "variants": {"control": {"eyebrow": "Consulting Business Architecture", "headline": "Turn your expertise into an operating business, not another unfinished idea.", "subhead": "Define the offer, evidence, operating model, and next actions before buying tools or filing in the wrong order."}},
+  "diagnostic": {
+    "title": "Map your consulting path",
+    "intro": "Three self-reported questions generate a business investigation route.",
+    "questions": [
+      {"id": "offer", "legend": "How clear is the paid problem you will solve?", "options": [{"value": "clear", "label": "Clear and tested", "scores": {"build": 3}}, {"value": "partial", "label": "Partly defined", "scores": {"clarify": 2}}, {"value": "unknown", "label": "Not yet defined", "scores": {"clarify": 4}}]},
+      {"id": "demand", "legend": "What demand evidence exists?", "options": [{"value": "paid", "label": "Prior paid work or explicit buying interest", "scores": {"build": 4}}, {"value": "informal", "label": "Informal interest", "scores": {"clarify": 2}}, {"value": "none", "label": "None tested", "scores": {"clarify": 4}}]},
+      {"id": "route", "legend": "What do you want to investigate?", "options": [{"value": "validate", "label": "Validate before committing", "scores": {"clarify": 5}}, {"value": "build", "label": "Build the operating system", "scores": {"build": 5}}]}
+    ]
+  },
+  "routes": {
+    "clarify": {"priority": 1, "title": "Validate the Paid Problem", "summary": "Define the buyer, painful problem, evidence, and offer before infrastructure.", "tradeoff": "Speed to build versus preserving the ability to change the offer.", "nextActions": ["Name the buyer and paid problem", "Collect buying evidence", "Test one offer"], "nonConclusions": "This result does not determine legal, tax, or financial suitability.", "artifact": "Seven-Day Demand Test"},
+    "build": {"priority": 2, "title": "Build the Consulting System", "summary": "Your answers support sequencing the offer, delivery, acquisition, and business infrastructure.", "tradeoff": "Customization versus repeatability.", "nextActions": ["Standardize the outcome", "Set delivery boundaries", "Build one acquisition path"], "nonConclusions": "This result does not select an entity, tax election, contract, or regulated structure.", "artifact": "Consulting Business 30/60/90 Board"}
+  },
+  "products": [
+    {"id": "free_route", "name": "Consulting Path Result", "price": 0, "type": "standard", "cta": "Generate my route"},
+    {"id": "launch_system", "name": "Consulting Launch Decision System", "price": 197, "type": "standard", "cta": "Get the $197 system"},
+    {"id": "premium_consulting", "name": "High-Judgment Business Consulting", "price": null, "type": "premium_paid", "cta": "Purchase consulting before scheduling"}
+  ],
+  "marketing": {"maxCac": {"launch_system": 65}, "keywords": ["start consulting business", "consulting business setup"], "negativeKeywords": ["jobs", "salary", "free", "template"], "channels": ["google_search_exact", "owned_seo"]},
+  "boundaries": {"disclaimer": "Olson Consulting Group provides general business education and operating frameworks, not legal, tax, accounting, licensing, financial, or compliance advice.", "ofaRule": "No OFA or FranTracker record may be created without a separate affirmative franchise-comparison request and applicable disclosure.", "prohibitedClaims": ["guaranteed clients", "guaranteed income", "legally compliant", "best entity"]},
+  "provider": {"adapter": "mock", "requiredCapabilities": ["white_label", "customer_ownership", "status_export", "error_remediation"]}
+}
