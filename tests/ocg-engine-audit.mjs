@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateConfig, resolveRoute } from '../campaigns/ocg-engine/route-engine.mjs';
+import { createProductIntent, validateProductIntent } from '../campaigns/ocg-engine/product-intent.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, '..');
@@ -27,12 +28,25 @@ const profiles = {
 };
 
 for (const [expected, answers] of Object.entries(profiles)) assert.equal(resolveRoute(therapists, answers).routeKey, expected, `${expected} fixture did not route correctly`);
+const launchProduct = therapists.products.find(product => product.id === 'launch_system');
+assert.equal(launchProduct?.price, 197);
+assert.equal(launchProduct?.version, '1.0.0');
+assert.ok(launchProduct?.includes?.length >= 6);
+const hybridResult = resolveRoute(therapists, profiles.hybrid);
+const productIntent = createProductIntent({config:therapists, result:hybridResult, product:launchProduct});
+assert.equal(validateProductIntent(productIntent), true);
+assert.equal(productIntent.routeKey, 'hybrid');
+assert.equal(productIntent.productVersion, '1.0.0');
+assert.equal(productIntent.receiptStatus, 'not_started');
+assert.equal(productIntent.deliveryStatus, 'not_entitled');
+assert.equal(productIntent.affirmativeOwnershipComparison, false);
+assert.equal(JSON.stringify(productIntent).toLowerCase().includes('email'), false);
 const franchiseAnswers = {...profiles.supported, preferred_route:'franchise'};
 assert.equal(resolveRoute(therapists, franchiseAnswers).affirmativeOwnershipComparison, true);
 assert.equal(resolveRoute(therapists, profiles.supported).affirmativeOwnershipComparison, false);
 assert.ok(Object.keys(consultants.routes).length >= 2, 'Second vertical config failed');
 
-const sourceFiles = ['campaigns/ocg-engine/index.html','campaigns/ocg-engine/app.js','campaigns/ocg-engine/route-engine.mjs','campaigns/ocg-engine/provider-adapter.mjs','campaigns/ocg-engine/styles.css'].map(file => fs.readFileSync(path.join(root, file), 'utf8')).join('\n');
+const sourceFiles = ['campaigns/ocg-engine/index.html','campaigns/ocg-engine/app.js','campaigns/ocg-engine/route-engine.mjs','campaigns/ocg-engine/provider-adapter.mjs','campaigns/ocg-engine/product-intent.mjs','campaigns/ocg-engine/styles.css'].map(file => fs.readFileSync(path.join(root, file), 'utf8')).join('\n');
 const forbidden = ['schedule a free call', 'book a free call', '45-minute session', 'guaranteed clients', 'guaranteed income', 'best entity for you', 'we certify compliance'];
 for (const phrase of forbidden) assert.equal(sourceFiles.toLowerCase().includes(phrase), false, `Forbidden phrase present: ${phrase}`);
 const premiumProduct = therapists.products.find(product => product.type === 'premium_paid');

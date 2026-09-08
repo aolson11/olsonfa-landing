@@ -1,5 +1,6 @@
 import { validateConfig, resolveRoute } from './route-engine.mjs';
 import { createProviderAdapter } from './provider-adapter.mjs';
+import { createProductIntent, validateProductIntent } from './product-intent.mjs';
 
 const params = new URLSearchParams(window.location.search);
 const safeId = value => /^[a-z0-9_-]+$/i.test(value || '') ? value : '';
@@ -8,6 +9,7 @@ const variantId = safeId(params.get('variant')) || 'control';
 const debugEnabled = params.get('debug') === '1';
 const root = document.querySelector('[data-app]');
 const eventKey = 'ocg_engine_events_v1';
+const productIntentKey = 'ocg_product_intent_v1';
 
 function readEvents() {
   try { return JSON.parse(localStorage.getItem(eventKey) || '[]'); } catch { return []; }
@@ -60,14 +62,24 @@ function renderProducts(config, result, provider) {
     card.append(el('h3', '', product.name));
     const price = product.price === null ? 'Price set before launch' : `$${product.price}`;
     card.append(el('p', 'product-price', price));
+    if (product.description) card.append(el('p', 'product-description', product.description));
+    if (Array.isArray(product.includes)) {
+      const list = el('ul', 'product-includes');
+      list.append(...product.includes.map(item => el('li', '', item)));
+      card.append(list);
+    }
+    if (product.delivery) card.append(el('p', 'small product-delivery', product.delivery));
     const button = el('button', 'button secondary', product.cta);
     button.type = 'button';
     if (product.type === 'provider_dependent') button.disabled = true;
     button.addEventListener('click', async () => {
       if (product.type === 'standard') {
-        record('checkout_start', { productId: product.id, price: product.price, routeKey: result.routeKey });
+        const intent = createProductIntent({config, result, product});
+        validateProductIntent(intent);
+        localStorage.setItem(productIntentKey, JSON.stringify(intent));
+        record('checkout_start', { productId: product.id, productVersion: product.version, price: product.price, routeKey: result.routeKey, productIntentPrepared: true });
         status.className = 'form-status';
-        status.textContent = 'Checkout adapter is intentionally disabled in this local prototype.';
+        status.textContent = `${product.name} version ${product.version || '1.0'} is built and personalization is prepared for the ${result.route.title} route. This validation page does not collect payment or expose the paid file; checkout and verified-receipt delivery are the next integration.`;
       } else if (product.type === 'premium_paid') {
         record('premium_checkout_start', { productId: product.id, routeKey: result.routeKey });
         status.className = 'form-status';

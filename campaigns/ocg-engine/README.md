@@ -1,6 +1,6 @@
 # OCG Automated Vertical Engine
 
-Local, configuration-driven prototype for Olson Consulting Group.
+Configuration-driven validation deployment for Olson Consulting Group.
 
 ## Purpose
 
@@ -23,13 +23,23 @@ Open:
 
 ## Safety state
 
-- No production deployment
-- No checkout
+- Standalone `noindex,nofollow` validation deployment at `https://olsoncg-engine.vercel.app/`
+- No live checkout or payment collection
+- No paid product file exposed by the static site
 - No CRM or email submission
 - No live provider order
 - No raw email stored in analytics
+- The $197 product button prepares a route-and-answer product intent locally without email, mobile, payment data, or OFA/FranTracker action
 - No Austin calendar path before a future paid-consulting receipt
 
 ## Clone a vertical
 
 Copy `verticals/consultants.json`, replace audience, variants, questions, routes, products, marketing controls, boundaries, and provider requirements, then load it with `?vertical=<verticalId>`. No engine change should be required.
+
+## Paid product source
+
+The private, receipt-gated product source and delivery adapter are versioned at:
+
+`/Users/olson/Documents/Owner-Command-Center/products/ocg/practice-launch-decision-system/`
+
+The public validation site describes the product and prepares a non-PII route payload. It does not serve the customer file. A verified paid receipt is required by the private delivery adapter before generation.

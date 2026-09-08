@@ -78,6 +78,10 @@ h3 { line-height: 1.2; }
 .product-card { padding: 22px; border: 1px solid var(--line); border-radius: 10px; }
 .product-card h3 { margin: 0 0 8px; }
 .product-price { color: var(--forest-2); font-size: 1.4rem; font-weight: 700; }
+.product-description { color: var(--muted); }
+.product-includes { padding-left: 19px; color: var(--ink); font-size: .88rem; }
+.product-includes li { margin: 7px 0; }
+.product-delivery { padding-top: 12px; border-top: 1px solid var(--line); }
 .product-card .button { width: 100%; margin-top: 10px; }
 .small { color: var(--muted); font-size: .85rem; }
 .form-status { min-height: 24px; margin-top: 14px; }

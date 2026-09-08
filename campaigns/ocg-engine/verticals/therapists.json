@@ -173,7 +173,24 @@
   },
   "products": [
     {"id": "free_route", "name": "Practice Path Result", "price": 0, "type": "standard", "cta": "Generate my route"},
-    {"id": "launch_system", "name": "Practice Launch Decision System", "price": 197, "type": "standard", "cta": "Get the $197 system"},
+    {
+      "id": "launch_system",
+      "name": "Practice Launch Decision System",
+      "price": 197,
+      "type": "standard",
+      "version": "1.0.0",
+      "cta": "Get the $197 system",
+      "description": "A route-personalized operating workspace that turns your answers into visible assumptions, owned decisions, professional handoffs, evidence tests, and a sequenced launch board.",
+      "delivery": "One self-contained interactive file with local autosave, backup/import, working-brief export, handoff downloads, and section printing.",
+      "includes": [
+        "Outcome Design and practice-economics lab",
+        "Bounded demand-test planner and source-level result math",
+        "Twelve-row decision register with owners and evidence",
+        "Six qualified-professional question packets",
+        "Vendor-neutral comparison and route-specific execution board",
+        "Proceed, further-investigation, not-yet, and no review outcomes"
+      ]
+    },
     {"id": "formation_package", "name": "OCG Formation and Maintenance Package", "price": null, "type": "provider_dependent", "cta": "Available after provider confirmation"},
     {"id": "premium_consulting", "name": "High-Judgment Business Consulting", "price": null, "type": "premium_paid", "cta": "Purchase consulting before scheduling"}
   ],
