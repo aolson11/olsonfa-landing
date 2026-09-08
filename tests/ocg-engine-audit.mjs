@@ -40,6 +40,7 @@ assert.equal(premiumProduct?.cta, 'Purchase consulting before scheduling', 'Prem
 assert.ok(sourceFiles.includes('No sales call is required.'), 'Standard route must not require a sales call');
 assert.equal(fs.readFileSync(path.join(root, 'campaigns/ocg-engine/index.html'), 'utf8').includes('EHR, or payer'), false, 'Shared engine shell contains therapist-only copy');
 assert.ok(fs.readFileSync(path.join(root, 'campaigns/ocg-engine/index.html'), 'utf8').includes('Map my path'), 'Shared CTA is not vertical-neutral');
+assert.equal(fs.readFileSync(path.join(root, 'campaigns/ocg-engine/index.html'), 'utf8').includes('Local prototype'), false, 'Deployed validation copy still claims to be local');
 assert.ok(sourceFiles.includes('No OFA or FranTracker record'), 'OFA separation is missing');
 assert.ok(sourceFiles.includes('checkout_start'), 'Checkout event missing');
 assert.ok(sourceFiles.includes('utm_source'), 'Attribution capture missing');
